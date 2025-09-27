@@ -25,7 +25,7 @@ The new system uses a single `CacheMode` enum:
 ### Old Code (Deprecated)
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async def use_proxy():
     async with AsyncWebCrawler(verbose=True) as crawler:
@@ -45,8 +45,8 @@ if __name__ == "__main__":
 ### New Code (Recommended)
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CacheMode
-from crawl4ai.async_configs import CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CacheMode
+from cr4wlr.async_configs import CrawlerRunConfig
 
 async def use_proxy():
     # Use CacheMode in CrawlerRunConfig

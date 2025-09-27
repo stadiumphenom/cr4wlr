@@ -20,7 +20,7 @@ Below is a quick overview of how to do it.
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Single JS command
@@ -69,7 +69,7 @@ Sometimes, you just want to wait for a specific element to appear. For example:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     config = CrawlerRunConfig(
@@ -117,7 +117,7 @@ Many modern sites require **multiple steps**: scrolling, clicking “Load More,�
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Step 1: Load initial Hacker News page
@@ -211,7 +211,7 @@ Below is a simplified script that does multiple “Load More” clicks on GitHub
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def multi_page_commits():
     browser_cfg = BrowserConfig(
@@ -296,7 +296,7 @@ if __name__ == "__main__":
 Once dynamic content is loaded, you can attach an **`extraction_strategy`** (like `JsonCssExtractionStrategy` or `LLMExtractionStrategy`). For example:
 
 ```python
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import JsonCssExtractionStrategy
 
 schema = {
     "name": "Commits",
@@ -349,7 +349,7 @@ With these tools, you can scrape modern, interactive webpages confidently. For a
 For sites that use **virtual scrolling** (where content is replaced rather than appended as you scroll, like Twitter or Instagram), Crawl4AI provides a dedicated `VirtualScrollConfig`:
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig
 
 async def crawl_twitter_timeline():
     # Configure virtual scroll for Twitter-like feeds

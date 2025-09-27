@@ -6,12 +6,12 @@ import os
 import json
 import tempfile
 from pathlib import Path
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy, LLMExtractionStrategy, LLMConfig
-from crawl4ai.content_filter_strategy import BM25ContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
-from crawl4ai.async_url_seeder import AsyncUrlSeeder
-from crawl4ai.utils import RobotsParser
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy, LLMExtractionStrategy, LLMConfig
+from cr4wlr.content_filter_strategy import BM25ContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr.async_url_seeder import AsyncUrlSeeder
+from cr4wlr.utils import RobotsParser
 
 
 class TestCrawl4AIv070:

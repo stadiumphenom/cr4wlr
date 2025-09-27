@@ -1,5 +1,5 @@
-from crawl4ai.async_webcrawler import AsyncWebCrawler
-from crawl4ai.async_configs import CrawlerRunConfig, BrowserConfig
+from cr4wlr.async_webcrawler import AsyncWebCrawler
+from cr4wlr.async_configs import CrawlerRunConfig, BrowserConfig
 import asyncio
 import aiohttp
 from aiohttp import web

@@ -38,10 +38,10 @@ Key highlights:
 
 ## Project History
 
-Curious about how Crawl4AI has evolved? Check out our [complete changelog](https://github.com/unclecode/crawl4ai/blob/main/CHANGELOG.md) for a detailed history of all versions and updates.
+Curious about how Crawl4AI has evolved? Check out our [complete changelog](https://github.com/unclecode/cr4wlr/blob/main/CHANGELOG.md) for a detailed history of all versions and updates.
 
 ## Stay Updated
 
-- Star us on [GitHub](https://github.com/unclecode/crawl4ai)
+- Star us on [GitHub](https://github.com/unclecode/cr4wlr)
 - Follow [@unclecode](https://twitter.com/unclecode) on Twitter
 - Join our community discussions on GitHub

@@ -1,5 +1,5 @@
 import asyncio
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,

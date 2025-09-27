@@ -18,7 +18,7 @@ Table extraction now follows the same strategy pattern used throughout Crawl4AI:
 ### New Classes
 
 ```python
-from crawl4ai import (
+from cr4wlr import (
     TableExtractionStrategy,    # Abstract base class
     DefaultTableExtraction,      # Current implementation (default)
     NoTableExtraction           # Explicitly disable extraction
@@ -183,7 +183,7 @@ result = await crawler.arun(url, config)
 
 **Before (v0.7.2):**
 ```
-crawl4ai/
+cr4wlr/
   content_scraping_strategy.py
     - LXMLWebScrapingStrategy
       - is_data_table()      # Table detection
@@ -192,7 +192,7 @@ crawl4ai/
 
 **After (v0.7.3):**
 ```
-crawl4ai/
+cr4wlr/
   content_scraping_strategy.py
     - LXMLWebScrapingStrategy
       # Table methods removed, uses strategy
@@ -208,7 +208,7 @@ crawl4ai/
 **New imports available (optional):**
 ```python
 # These are now available but not required for existing code
-from crawl4ai import (
+from cr4wlr import (
     TableExtractionStrategy,
     DefaultTableExtraction,
     NoTableExtraction
@@ -252,7 +252,7 @@ Run this to verify your extraction still works:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def verify_extraction():
     url = "your_url_here"
@@ -265,7 +265,7 @@ async def verify_extraction():
         result_old = await crawler.arun(url, config_old)
         
         # Test 2: New explicit approach
-        from crawl4ai import DefaultTableExtraction
+        from cr4wlr import DefaultTableExtraction
         config_new = CrawlerRunConfig(
             table_extraction=DefaultTableExtraction(
                 table_score_threshold=7
@@ -335,7 +335,7 @@ strategy = DefaultTableExtraction(
 **Solution**:
 ```python
 # Add imports if using new features
-from crawl4ai import (
+from cr4wlr import (
     DefaultTableExtraction,
     NoTableExtraction,
     TableExtractionStrategy

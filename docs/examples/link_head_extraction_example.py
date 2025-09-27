@@ -9,7 +9,7 @@ This example demonstrates Crawl4AI's advanced link analysis capabilities:
 4. Multiple practical use cases
 
 Requirements:
-- crawl4ai installed
+- cr4wlr installed
 - Internet connection
 
 Usage:
@@ -17,8 +17,8 @@ Usage:
 """
 
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai import LinkPreviewConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import LinkPreviewConfig
 
 
 async def basic_link_head_extraction():

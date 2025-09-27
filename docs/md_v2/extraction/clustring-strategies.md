@@ -14,7 +14,7 @@ The Cosine Strategy:
 ## Basic Usage
 
 ```python
-from crawl4ai import CosineStrategy
+from cr4wlr import CosineStrategy
 
 strategy = CosineStrategy(
     semantic_filter="product reviews",    # Target content type

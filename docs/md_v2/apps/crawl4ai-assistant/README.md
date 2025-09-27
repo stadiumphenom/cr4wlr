@@ -18,7 +18,7 @@ Visual extraction tools for Crawl4AI - Click to extract data and content from an
 1. Open Chrome and navigate to `chrome://extensions/`
 2. Enable "Developer mode" in the top right corner
 3. Click "Load unpacked"
-4. Select the `crawl4ai-assistant` folder
+4. Select the `cr4wlr-assistant` folder
 5. The extension icon (🚀🤖) will appear in your toolbar
 
 ### Method 2: Generate Icons First
@@ -71,7 +71,7 @@ async def test_extraction():
 
 To use it:
 
-1. Install Crawl4AI: `pip install crawl4ai`
+1. Install Crawl4AI: `pip install cr4wlr`
 2. Run the script: `python crawl4ai_schema_*.py`
 3. The script will generate a `generated_schema.json` file
 4. Use this schema in your Crawl4AI projects!
@@ -116,8 +116,8 @@ To use it:
 
 This extension is part of the Crawl4AI project. Contributions are welcome!
 
-- Report issues: [GitHub Issues](https://github.com/unclecode/crawl4ai/issues)
-- Join discussion: [Discord](https://discord.gg/crawl4ai)
+- Report issues: [GitHub Issues](https://github.com/unclecode/cr4wlr/issues)
+- Join discussion: [Discord](https://discord.gg/cr4wlr)
 
 ## 📄 License
 

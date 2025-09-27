@@ -11,7 +11,7 @@ import os
 import json
 import re
 from typing import List
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,
@@ -19,8 +19,8 @@ from crawl4ai import (
     LLMExtractionStrategy,
     JsonCssExtractionStrategy,
 )
-from crawl4ai.content_filter_strategy import RelevantContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr.content_filter_strategy import RelevantContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 from bs4 import BeautifulSoup
 
 # Sample HTML for demonstrations

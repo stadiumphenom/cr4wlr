@@ -43,7 +43,7 @@ This guide covers both features and helps you choose the right approach for your
 Stealth mode is the simpler anti-bot solution that works with both regular and undetected browsers:
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig
 
 # Enable stealth mode with regular browser
 browser_config = BrowserConfig(
@@ -71,19 +71,19 @@ For sites with sophisticated bot detection that stealth mode can't bypass, use t
 - **Drop-in Replacement**: Uses the same API as regular browser mode
 - **Enhanced Stealth**: Built-in patches to evade common detection methods
 - **Browser Adapter Pattern**: Seamlessly switch between regular and undetected modes
-- **Automatic Installation**: `crawl4ai-setup` installs all necessary browser dependencies
+- **Automatic Installation**: `cr4wlr-setup` installs all necessary browser dependencies
 
 ### Quick Start
 
 ```python
 import asyncio
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler, 
     BrowserConfig, 
     CrawlerRunConfig,
     UndetectedAdapter
 )
-from crawl4ai.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 async def main():
     # Create the undetected adapter
@@ -121,8 +121,8 @@ asyncio.run(main())
 For maximum evasion, combine stealth mode with undetected browser:
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig, UndetectedAdapter
-from crawl4ai.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, UndetectedAdapter
+from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 # Create browser config with stealth enabled
 browser_config = BrowserConfig(
@@ -152,7 +152,7 @@ async with AsyncWebCrawler(
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def test_stealth_mode():
     # Simple stealth mode configuration
@@ -183,13 +183,13 @@ asyncio.run(test_stealth_mode())
 
 ```python
 import asyncio
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,
     UndetectedAdapter
 )
-from crawl4ai.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 
 async def main():
@@ -244,11 +244,11 @@ The undetected browser support is implemented using an adapter pattern, allowing
 
 ```python
 # Regular browser adapter (default)
-from crawl4ai import PlaywrightAdapter
+from cr4wlr import PlaywrightAdapter
 regular_adapter = PlaywrightAdapter()
 
 # Undetected browser adapter
-from crawl4ai import UndetectedAdapter
+from cr4wlr import UndetectedAdapter
 undetected_adapter = UndetectedAdapter()
 ```
 
@@ -325,7 +325,7 @@ async def crawl_with_progressive_evasion(url):
 The undetected browser dependencies are automatically installed when you run:
 
 ```bash
-crawl4ai-setup
+cr4wlr-setup
 ```
 
 This command installs all necessary browser dependencies for both regular and undetected modes.
@@ -343,7 +343,7 @@ This command installs all necessary browser dependencies for both regular and un
 
 Run the setup command:
 ```bash
-crawl4ai-setup
+cr4wlr-setup
 ```
 
 ### Detection Still Occurring

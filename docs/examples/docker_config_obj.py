@@ -1,11 +1,11 @@
-from crawl4ai import BrowserConfig, CrawlerRunConfig, PruningContentFilter, DefaultMarkdownGenerator
-from crawl4ai.deep_crawling.filters import ContentTypeFilter, DomainFilter
-from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer, PathDepthScorer
-from crawl4ai.cache_context import CacheMode
-from crawl4ai.deep_crawling.bfs_strategy import BFSDeepCrawlStrategy
-from crawl4ai.deep_crawling.filters import FilterChain
-from crawl4ai.deep_crawling.scorers import CompositeScorer
-from crawl4ai.docker_client import Crawl4aiDockerClient
+from cr4wlr import BrowserConfig, CrawlerRunConfig, PruningContentFilter, DefaultMarkdownGenerator
+from cr4wlr.deep_crawling.filters import ContentTypeFilter, DomainFilter
+from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer, PathDepthScorer
+from cr4wlr.cache_context import CacheMode
+from cr4wlr.deep_crawling.bfs_strategy import BFSDeepCrawlStrategy
+from cr4wlr.deep_crawling.filters import FilterChain
+from cr4wlr.deep_crawling.scorers import CompositeScorer
+from cr4wlr.docker_client import Crawl4aiDockerClient
 import json
 from rich.console import Console
 from rich.syntax import Syntax

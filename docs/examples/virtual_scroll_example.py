@@ -12,7 +12,7 @@ import http.server
 import socketserver
 import threading
 from pathlib import Path
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig, CacheMode, BrowserConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig, CacheMode, BrowserConfig
 
 # Get the assets directory path
 ASSETS_DIR = Path(__file__).parent / "assets"

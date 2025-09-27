@@ -1,9 +1,9 @@
 import os
 import json
-from crawl4ai.web_crawler import WebCrawler
-from crawl4ai.chunking_strategy import *
-from crawl4ai import *
-from crawl4ai.crawler_strategy import *
+from cr4wlr.web_crawler import WebCrawler
+from cr4wlr.chunking_strategy import *
+from cr4wlr import *
+from cr4wlr.crawler_strategy import *
 
 url = r"https://marketplace.visualstudio.com/items?itemName=Unclecode.groqopilot"
 

@@ -112,7 +112,7 @@ debug_browser = base_browser.clone(
 **Minimal Example**:
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig
 
 browser_conf = BrowserConfig(
     browser_type="firefox",
@@ -285,8 +285,8 @@ In a typical scenario, you define **one** `BrowserConfig` for your crawler sessi
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig, LLMContentFilter, DefaultMarkdownGenerator
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig, LLMContentFilter, DefaultMarkdownGenerator
+from cr4wlr import JsonCssExtractionStrategy
 
 async def main():
     # 1) Browser config: headless, bigger viewport, no proxy

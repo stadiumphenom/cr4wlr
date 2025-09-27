@@ -1,8 +1,8 @@
 import os
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from crawl4ai import LLMConfig
-from crawl4ai.content_filter_strategy import LLMContentFilter
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import LLMConfig
+from cr4wlr.content_filter_strategy import LLMContentFilter
 
 async def test_llm_filter():
     # Create an HTML source that needs intelligent filtering

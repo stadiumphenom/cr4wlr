@@ -1,7 +1,7 @@
 import json
 import time
 from bs4 import BeautifulSoup
-from crawl4ai.content_scraping_strategy import (
+from cr4wlr.content_scraping_strategy import (
     WebScrapingStrategy,
     LXMLWebScrapingStrategy,
 )

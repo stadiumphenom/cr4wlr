@@ -6,7 +6,7 @@ Complete Docker deployment guide with pre-built images, API endpoints, configura
 
 ```bash
 # Pull latest image
-docker pull unclecode/crawl4ai:latest
+docker pull unclecode/cr4wlr:latest
 
 # Setup LLM API keys
 cat > .llm.env << EOL
@@ -19,17 +19,17 @@ EOL
 # Run with LLM support
 docker run -d \
   -p 11235:11235 \
-  --name crawl4ai \
+  --name cr4wlr \
   --env-file .llm.env \
   --shm-size=1g \
-  unclecode/crawl4ai:latest
+  unclecode/cr4wlr:latest
 
 # Basic run (no LLM)
 docker run -d \
   -p 11235:11235 \
-  --name crawl4ai \
+  --name cr4wlr \
   --shm-size=1g \
-  unclecode/crawl4ai:latest
+  unclecode/cr4wlr:latest
 
 # Check health
 curl http://localhost:11235/health
@@ -39,13 +39,13 @@ curl http://localhost:11235/health
 
 ```bash
 # Clone and setup
-git clone https://github.com/unclecode/crawl4ai.git
-cd crawl4ai
+git clone https://github.com/unclecode/cr4wlr.git
+cd cr4wlr
 cp deploy/docker/.llm.env.example .llm.env
 # Edit .llm.env with your API keys
 
 # Run pre-built image
-IMAGE=unclecode/crawl4ai:latest docker compose up -d
+IMAGE=unclecode/cr4wlr:latest docker compose up -d
 
 # Build locally
 docker compose up --build -d
@@ -64,29 +64,29 @@ docker compose down
 
 ```bash
 # Clone repository
-git clone https://github.com/unclecode/crawl4ai.git
-cd crawl4ai
+git clone https://github.com/unclecode/cr4wlr.git
+cd cr4wlr
 
 # Build for current architecture
-docker buildx build -t crawl4ai-local:latest --load .
+docker buildx build -t cr4wlr-local:latest --load .
 
 # Build for multiple architectures
 docker buildx build --platform linux/amd64,linux/arm64 \
-  -t crawl4ai-local:latest --load .
+  -t cr4wlr-local:latest --load .
 
 # Build with specific features
 docker buildx build \
   --build-arg INSTALL_TYPE=all \
   --build-arg ENABLE_GPU=false \
-  -t crawl4ai-local:latest --load .
+  -t cr4wlr-local:latest --load .
 
 # Run custom build
 docker run -d \
   -p 11235:11235 \
-  --name crawl4ai-custom \
+  --name cr4wlr-custom \
   --env-file .llm.env \
   --shm-size=1g \
-  crawl4ai-local:latest
+  cr4wlr-local:latest
 ```
 
 ### Build Arguments
@@ -100,7 +100,7 @@ docker buildx build \
   --build-arg USE_LOCAL=true \       # Use local source
   --build-arg GITHUB_REPO=url \      # Git repo if USE_LOCAL=false
   --build-arg GITHUB_BRANCH=main \   # Git branch
-  -t crawl4ai-custom:latest --load .
+  -t cr4wlr-custom:latest --load .
 ```
 
 ### Core API Endpoints
@@ -185,8 +185,8 @@ response = requests.get("http://localhost:11235/ask", params={
 
 ```python
 import asyncio
-from crawl4ai.docker_client import Crawl4aiDockerClient
-from crawl4ai import BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr.docker_client import Crawl4aiDockerClient
+from cr4wlr import BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def main():
     async with Crawl4aiDockerClient(base_url="http://localhost:11235") as client:
@@ -380,15 +380,15 @@ logging:
 ```bash
 # Method 1: Mount custom config
 docker run -d -p 11235:11235 \
-  --name crawl4ai-custom \
+  --name cr4wlr-custom \
   --env-file .llm.env \
   --shm-size=1g \
   -v $(pwd)/my-config.yml:/app/config.yml \
-  unclecode/crawl4ai:latest
+  unclecode/cr4wlr:latest
 
 # Method 2: Build with custom config
 # Edit deploy/docker/config.yml then build
-docker buildx build -t crawl4ai-custom:latest --load .
+docker buildx build -t cr4wlr-custom:latest --load .
 ```
 
 ### Monitoring and Health Checks
@@ -441,7 +441,7 @@ print("Final result:", status)
 ```bash
 # Production-ready deployment
 docker run -d \
-  --name crawl4ai-prod \
+  --name cr4wlr-prod \
   --restart unless-stopped \
   -p 11235:11235 \
   --env-file .llm.env \
@@ -449,13 +449,13 @@ docker run -d \
   --memory=8g \
   --cpus=4 \
   -v /path/to/custom-config.yml:/app/config.yml \
-  unclecode/crawl4ai:latest
+  unclecode/cr4wlr:latest
 
 # With Docker Compose for production
 version: '3.8'
 services:
-  crawl4ai:
-    image: unclecode/crawl4ai:latest
+  cr4wlr:
+    image: unclecode/cr4wlr:latest
     ports:
       - "11235:11235"
     environment:
@@ -475,8 +475,8 @@ services:
 
 ```python
 # Method 1: Create config objects and dump to see expected JSON structure
-from crawl4ai import BrowserConfig, CrawlerRunConfig, LLMConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy, LLMExtractionStrategy
+from cr4wlr import BrowserConfig, CrawlerRunConfig, LLMConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy, LLMExtractionStrategy
 import json
 
 # Create browser config and see JSON structure
@@ -519,7 +519,7 @@ print(json.dumps(crawler_json, indent=2))
 
 ```python
 # Method 2: Load JSON back to config objects for validation
-from crawl4ai.async_configs import from_serializable_dict
+from cr4wlr.async_configs import from_serializable_dict
 
 # Test JSON structure by converting back to objects
 test_browser_json = {
@@ -823,4 +823,4 @@ if pre_flight_check(payload):
     pass
 ```
 
-**📖 Learn more:** [Complete Docker Guide](https://docs.crawl4ai.com/core/docker-deployment/), [API Reference](https://docs.crawl4ai.com/api/), [MCP Integration](https://docs.crawl4ai.com/core/docker-deployment/#mcp-model-context-protocol-support), [Configuration Options](https://docs.crawl4ai.com/core/docker-deployment/#server-configuration)
+**📖 Learn more:** [Complete Docker Guide](https://docs.cr4wlr.com/core/docker-deployment/), [API Reference](https://docs.cr4wlr.com/api/), [MCP Integration](https://docs.cr4wlr.com/core/docker-deployment/#mcp-model-context-protocol-support), [Configuration Options](https://docs.cr4wlr.com/core/docker-deployment/#server-configuration)

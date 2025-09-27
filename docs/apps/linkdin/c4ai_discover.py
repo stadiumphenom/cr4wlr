@@ -50,7 +50,7 @@ from urllib.parse import quote
 from pathlib import Path
 from glob import glob
 
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     BrowserConfig,
     CacheMode,
@@ -279,7 +279,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
         parser.add_argument("--title-filters", default="Product,Engineering", help="comma list of job keywords")
         parser.add_argument("--max-companies", type=int, default=1000)
         parser.add_argument("--max-people", type=int, default=500)
-        parser.add_argument("--profile-name", default=str(pathlib.Path.home() / ".crawl4ai/profiles/profile_linkedin_uc"))
+        parser.add_argument("--profile-name", default=str(pathlib.Path.home() / ".cr4wlr/profiles/profile_linkedin_uc"))
         parser.add_argument("--outdir", default="./output")
         parser.add_argument("--concurrency", type=int, default=4)
         parser.add_argument("--log-level", default="info", choices=["debug", "info", "warn", "error"])

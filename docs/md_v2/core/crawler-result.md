@@ -123,8 +123,8 @@ print(result.cleaned_html)  # Freed of forms, header, footer, data-* attributes
 ### 3.2 Basic Example with a Markdown Generator
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 config = CrawlerRunConfig(
     markdown_generator=DefaultMarkdownGenerator(
@@ -152,8 +152,8 @@ If you run a JSON-based extraction strategy (CSS, XPath, LLM, etc.), the structu
 ```python
 import asyncio
 import json
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def main():
     schema = {
@@ -222,7 +222,7 @@ Tables that score above the threshold (default: 7) are extracted and stored in r
 ### Accessing Table data:
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     async with AsyncWebCrawler() as crawler:

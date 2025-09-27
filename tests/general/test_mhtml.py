@@ -4,8 +4,8 @@ import pytest
 import asyncio
 import re  # For more robust MHTML checks
 
-# Assuming these can be imported directly from the crawl4ai library
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CrawlResult
+# Assuming these can be imported directly from the cr4wlr library
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CrawlResult
 
 # A reliable, simple static HTML page for testing
 # Using httpbin as it's designed for testing clients

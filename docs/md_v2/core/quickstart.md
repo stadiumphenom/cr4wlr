@@ -29,7 +29,7 @@ Here’s a minimal Python script that creates an **`AsyncWebCrawler`**, fetches 
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async def main():
     async with AsyncWebCrawler() as crawler:
@@ -60,7 +60,7 @@ Below is an example with minimal usage:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def main():
     browser_conf = BrowserConfig(headless=True)  # or False to see the browser
@@ -97,9 +97,9 @@ By default, Crawl4AI automatically generates Markdown from each crawled page. Ho
 ### Example: Using a Filter with `DefaultMarkdownGenerator`
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_filter_strategy import PruningContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_filter_strategy import PruningContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 md_generator = DefaultMarkdownGenerator(
     content_filter=PruningContentFilter(threshold=0.4, threshold_type="fixed")
@@ -127,8 +127,8 @@ Crawl4AI can also extract structured data (JSON) using CSS or XPath selectors. B
 > **New!** Crawl4AI now provides a powerful utility to automatically generate extraction schemas using LLM. This is a one-time cost that gives you a reusable schema for fast, LLM-free extractions:
 
 ```python
-from crawl4ai import JsonCssExtractionStrategy
-from crawl4ai import LLMConfig
+from cr4wlr import JsonCssExtractionStrategy
+from cr4wlr import LLMConfig
 
 # Generate a schema (one-time cost)
 html = "<div class='product'><h2>Gaming Laptop</h2><span class='price'>$999.99</span></div>"
@@ -156,8 +156,8 @@ Here's a basic extraction example:
 ```python
 import asyncio
 import json
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def main():
     schema = {
@@ -211,8 +211,8 @@ import os
 import json
 import asyncio
 from pydantic import BaseModel, Field
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
-from crawl4ai import LLMExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
+from cr4wlr import LLMExtractionStrategy
 
 class OpenAIModelFee(BaseModel):
     model_name: str = Field(..., description="Name of the OpenAI model.")
@@ -278,7 +278,7 @@ Crawl4AI now includes intelligent adaptive crawling that automatically determine
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, AdaptiveCrawler
+from cr4wlr import AsyncWebCrawler, AdaptiveCrawler
 
 async def adaptive_example():
     async with AsyncWebCrawler() as crawler:
@@ -314,7 +314,7 @@ If you need to crawl multiple URLs in **parallel**, you can use `arun_many()`. B
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def quick_parallel_example():
     urls = [
@@ -363,8 +363,8 @@ Some sites require multiple “page clicks” or dynamic JavaScript updates. Bel
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def extract_structured_data_using_css_extractor():
     print("\n--- Using JsonCssExtractionStrategy for Fast Structured Output ---")

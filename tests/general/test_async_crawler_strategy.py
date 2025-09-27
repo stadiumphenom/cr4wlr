@@ -5,12 +5,12 @@ from typing import Dict, Any
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 import os
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
-from crawl4ai.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
-from crawl4ai.models import AsyncCrawlResponse
-from crawl4ai.async_logger import AsyncLogger, LogLevel
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
+from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from cr4wlr.models import AsyncCrawlResponse
+from cr4wlr.async_logger import AsyncLogger, LogLevel
 
-CRAWL4AI_HOME_DIR = Path(os.path.expanduser("~")).joinpath(".crawl4ai")
+CRAWL4AI_HOME_DIR = Path(os.path.expanduser("~")).joinpath(".cr4wlr")
 
 if not CRAWL4AI_HOME_DIR.joinpath("profiles", "test_profile").exists():
     CRAWL4AI_HOME_DIR.joinpath("profiles", "test_profile").mkdir(parents=True)

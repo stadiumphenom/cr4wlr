@@ -80,7 +80,7 @@ Virtual scroll detected! Content is being replaced. This is where our new magic 
 Here's how Crawl4AI solves this puzzle:
 
 ```python
-from crawl4ai import AsyncWebCrawler, VirtualScrollConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, VirtualScrollConfig, CrawlerRunConfig
 
 # Configure virtual scroll handling
 virtual_config = VirtualScrollConfig(
@@ -304,7 +304,7 @@ Ready to capture what others miss? Here's a complete example to get you started:
 ```python
 # Save this as virtual_scroll_demo.py
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig
 
 async def main():
     # Configure virtual scroll
@@ -347,9 +347,9 @@ Welcome to the future of web scraping. Welcome to a world where virtual scroll i
 
 ## Learn More
 
-- 📖 [Virtual Scroll Documentation](https://docs.crawl4ai.com/advanced/virtual-scroll) - Complete API reference and configuration options
-- 💻 [Interactive Examples](https://docs.crawl4ai.com/examples/virtual_scroll_example.py) - Try it yourself with our test server
-- 🚀 [Get Started with Crawl4AI](https://docs.crawl4ai.com/core/quickstart) - Full installation and setup guide
-- 🤝 [Join our Community](https://github.com/unclecode/crawl4ai) - Share your experiences and get help
+- 📖 [Virtual Scroll Documentation](https://docs.cr4wlr.com/advanced/virtual-scroll) - Complete API reference and configuration options
+- 💻 [Interactive Examples](https://docs.cr4wlr.com/examples/virtual_scroll_example.py) - Try it yourself with our test server
+- 🚀 [Get Started with Crawl4AI](https://docs.cr4wlr.com/core/quickstart) - Full installation and setup guide
+- 🤝 [Join our Community](https://github.com/unclecode/cr4wlr) - Share your experiences and get help
 
-*Have you encountered virtual scroll challenges? How did you solve them? Share your story in our [GitHub discussions](https://github.com/unclecode/crawl4ai/discussions)!*
+*Have you encountered virtual scroll challenges? How did you solve them? Share your story in our [GitHub discussions](https://github.com/unclecode/cr4wlr/discussions)!*

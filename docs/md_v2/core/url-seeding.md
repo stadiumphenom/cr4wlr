@@ -14,8 +14,8 @@ Deep crawling is perfect when you need:
 ```python
 # Deep crawling example: Explore a website dynamically
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.deep_crawling import BFSDeepCrawlStrategy
 
 async def deep_crawl_example():
     # Configure a 2-level deep crawl
@@ -48,7 +48,7 @@ URL seeding shines when you want:
 
 ```python
 # URL seeding example: Analyze all documentation
-from crawl4ai import AsyncUrlSeeder, SeedingConfig
+from cr4wlr import AsyncUrlSeeder, SeedingConfig
 
 seeder = AsyncUrlSeeder()
 config = SeedingConfig(
@@ -94,7 +94,7 @@ Let's see the magic in action. We'll discover blog posts about Python, filter fo
 
 ```python
 import asyncio
-from crawl4ai import AsyncUrlSeeder, AsyncWebCrawler, SeedingConfig, CrawlerRunConfig
+from cr4wlr import AsyncUrlSeeder, AsyncWebCrawler, SeedingConfig, CrawlerRunConfig
 
 async def smart_blog_crawler():
     # Step 1: Create our URL discoverer
@@ -171,7 +171,7 @@ Now that you've seen the magic, let's understand how it works.
 Creating a URL seeder is simple:
 
 ```python
-from crawl4ai import AsyncUrlSeeder
+from cr4wlr import AsyncUrlSeeder
 
 # Method 1: Manual cleanup
 seeder = AsyncUrlSeeder()
@@ -760,7 +760,7 @@ Here's a complete example that discovers, scores, filters, and crawls intelligen
 ```python
 import asyncio
 from datetime import datetime
-from crawl4ai import AsyncUrlSeeder, AsyncWebCrawler, SeedingConfig, CrawlerRunConfig
+from cr4wlr import AsyncUrlSeeder, AsyncWebCrawler, SeedingConfig, CrawlerRunConfig
 
 class ResearchAssistant:
     def __init__(self):
@@ -965,8 +965,8 @@ config = SeedingConfig(
 
 The seeder automatically caches results to speed up repeated operations:
 
-- **Common Crawl cache**: `~/.crawl4ai/seeder_cache/[index]_[domain]_[hash].jsonl`
-- **Sitemap cache**: `~/.crawl4ai/seeder_cache/sitemap_[domain]_[hash].jsonl`
+- **Common Crawl cache**: `~/.cr4wlr/seeder_cache/[index]_[domain]_[hash].jsonl`
+- **Sitemap cache**: `~/.cr4wlr/seeder_cache/sitemap_[domain]_[hash].jsonl`
 - **HEAD data cache**: `~/.cache/url_seeder/head/[hash].json`
 
 Cache expires after 7 days by default. Use `force=True` to refresh.

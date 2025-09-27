@@ -1,5 +1,5 @@
-from crawl4ai.llmtxt import AsyncLLMTextManager  # Changed to AsyncLLMTextManager
-from crawl4ai.async_logger import AsyncLogger
+from cr4wlr.llmtxt import AsyncLLMTextManager  # Changed to AsyncLLMTextManager
+from cr4wlr.async_logger import AsyncLogger
 from pathlib import Path
 import asyncio
 

@@ -3,7 +3,7 @@ from click.testing import CliRunner
 from pathlib import Path
 import json
 import yaml
-from crawl4ai.cli import cli, load_config_file, parse_key_values
+from cr4wlr.cli import cli, load_config_file, parse_key_values
 import tempfile
 import os
 import click

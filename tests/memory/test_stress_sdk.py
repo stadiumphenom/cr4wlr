@@ -21,7 +21,7 @@ import shutil
 from rich.console import Console
 
 # Crawl4AI components
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     BrowserConfig,

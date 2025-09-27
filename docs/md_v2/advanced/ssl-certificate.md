@@ -4,7 +4,7 @@ The **`SSLCertificate`** class encapsulates an SSL certificate’s data and allo
 
 ## 1. Overview
 
-**Location**: `crawl4ai/ssl_certificate.py`
+**Location**: `cr4wlr/ssl_certificate.py`
 
 ```python
 class SSLCertificate:
@@ -129,7 +129,7 @@ Below is a minimal sample showing how the crawler obtains an SSL cert from a sit
 ```python
 import asyncio
 import os
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     tmp_dir = "tmp"

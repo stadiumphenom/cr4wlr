@@ -17,7 +17,7 @@ Crawl4AI has simplified its content scraping architecture. The BeautifulSoup-bas
 
 ```python
 # This still works perfectly
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, WebScrapingStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, WebScrapingStrategy
 
 config = CrawlerRunConfig(
     scraping_strategy=WebScrapingStrategy()  # Works as before
@@ -36,11 +36,11 @@ For clarity, you can update your imports:
 
 ```python
 # Old (still works)
-from crawl4ai import WebScrapingStrategy
+from cr4wlr import WebScrapingStrategy
 strategy = WebScrapingStrategy()
 
 # New (more explicit)
-from crawl4ai import LXMLWebScrapingStrategy
+from cr4wlr import LXMLWebScrapingStrategy
 strategy = LXMLWebScrapingStrategy()
 ```
 
@@ -57,7 +57,7 @@ config = CrawlerRunConfig()
 If you use type hints, both work:
 
 ```python
-from crawl4ai import WebScrapingStrategy, LXMLWebScrapingStrategy
+from cr4wlr import WebScrapingStrategy, LXMLWebScrapingStrategy
 
 def process_with_strategy(strategy: WebScrapingStrategy) -> None:
     # Works with both WebScrapingStrategy and LXMLWebScrapingStrategy

@@ -64,10 +64,10 @@ Our latest release is `0.7.3`. Images are built with multi-arch manifests, so Do
 
 ```bash
 # Pull the latest version
-docker pull unclecode/crawl4ai:0.7.3
+docker pull unclecode/cr4wlr:0.7.3
 
 # Or pull using the latest tag
-docker pull unclecode/crawl4ai:latest
+docker pull unclecode/cr4wlr:latest
 ```
 
 #### 2. Setup Environment (API Keys)
@@ -99,9 +99,9 @@ EOL
     ```bash
     docker run -d \
       -p 11235:11235 \
-      --name crawl4ai \
+      --name cr4wlr \
       --shm-size=1g \
-      unclecode/crawl4ai:latest
+      unclecode/cr4wlr:latest
     ```
 
 *   **With LLM support:**
@@ -109,10 +109,10 @@ EOL
     # Make sure .llm.env is in the current directory
     docker run -d \
       -p 11235:11235 \
-      --name crawl4ai \
+      --name cr4wlr \
       --env-file .llm.env \
       --shm-size=1g \
-      unclecode/crawl4ai:latest
+      unclecode/cr4wlr:latest
     ```
 
 > The server will be available at `http://localhost:11235`. Visit `/playground` to access the interactive testing interface.
@@ -120,14 +120,14 @@ EOL
 #### 4. Stopping the Container
 
 ```bash
-docker stop crawl4ai && docker rm crawl4ai
+docker stop cr4wlr && docker rm cr4wlr
 ```
 
 #### Docker Hub Versioning Explained
 
-*   **Image Name:** `unclecode/crawl4ai`
+*   **Image Name:** `unclecode/cr4wlr`
 *   **Tag Format:** `LIBRARY_VERSION[-SUFFIX]` (e.g., `0.7.3`)
-    *   `LIBRARY_VERSION`: The semantic version of the core `crawl4ai` Python library
+    *   `LIBRARY_VERSION`: The semantic version of the core `cr4wlr` Python library
     *   `SUFFIX`: Optional tag for release candidates (``) and revisions (`r1`)
 *   **`latest` Tag:** Points to the most recent stable version
 *   **Multi-Architecture Support:** All images support both `linux/amd64` and `linux/arm64` architectures through a single tag
@@ -139,8 +139,8 @@ Docker Compose simplifies building and running the service, especially for local
 #### 1. Clone Repository
 
 ```bash
-git clone https://github.com/unclecode/crawl4ai.git
-cd crawl4ai
+git clone https://github.com/unclecode/cr4wlr.git
+cd cr4wlr
 ```
 
 #### 2. Environment Setup (API Keys)
@@ -148,7 +148,7 @@ cd crawl4ai
 If you plan to use LLMs, copy the example environment file and add your API keys. This file should be in the **project root directory**.
 
 ```bash
-# Make sure you are in the 'crawl4ai' root directory
+# Make sure you are in the 'cr4wlr' root directory
 cp deploy/docker/.llm.env.example .llm.env
 
 # Now edit .llm.env and add your API keys
@@ -186,7 +186,7 @@ The `docker-compose.yml` file in the project root provides a simplified approach
     ```bash
     # Pulls and runs the release candidate from Docker Hub
     # Automatically selects the correct architecture
-    IMAGE=unclecode/crawl4ai:latest docker compose up -d
+    IMAGE=unclecode/cr4wlr:latest docker compose up -d
     ```
 
 *   **Build and Run Locally:**
@@ -220,25 +220,25 @@ If you prefer not to use Docker Compose for direct control over the build and ru
 
 #### 1. Clone Repository & Setup Environment
 
-Follow steps 1 and 2 from the Docker Compose section above (clone repo, `cd crawl4ai`, create `.llm.env` in the root).
+Follow steps 1 and 2 from the Docker Compose section above (clone repo, `cd cr4wlr`, create `.llm.env` in the root).
 
 #### 2. Build the Image (Multi-Arch)
 
 Use `docker buildx` to build the image. Crawl4AI now uses buildx to handle multi-architecture builds automatically.
 
 ```bash
-# Make sure you are in the 'crawl4ai' root directory
+# Make sure you are in the 'cr4wlr' root directory
 # Build for the current architecture and load it into Docker
-docker buildx build -t crawl4ai-local:latest --load .
+docker buildx build -t cr4wlr-local:latest --load .
 
 # Or build for multiple architectures (useful for publishing)
-docker buildx build --platform linux/amd64,linux/arm64 -t crawl4ai-local:latest --load .
+docker buildx build --platform linux/amd64,linux/arm64 -t cr4wlr-local:latest --load .
 
 # Build with additional options
 docker buildx build \
   --build-arg INSTALL_TYPE=all \
   --build-arg ENABLE_GPU=false \
-  -t crawl4ai-local:latest --load .
+  -t cr4wlr-local:latest --load .
 ```
 
 #### 3. Run the Container
@@ -247,9 +247,9 @@ docker buildx build \
     ```bash
     docker run -d \
       -p 11235:11235 \
-      --name crawl4ai-standalone \
+      --name cr4wlr-standalone \
       --shm-size=1g \
-      crawl4ai-local:latest
+      cr4wlr-local:latest
     ```
 
 *   **With LLM support:**
@@ -257,10 +257,10 @@ docker buildx build \
     # Make sure .llm.env is in the current directory (project root)
     docker run -d \
       -p 11235:11235 \
-      --name crawl4ai-standalone \
+      --name cr4wlr-standalone \
       --env-file .llm.env \
       --shm-size=1g \
-      crawl4ai-local:latest
+      cr4wlr-local:latest
     ```
 
 > The server will be available at `http://localhost:11235`.
@@ -268,7 +268,7 @@ docker buildx build \
 #### 4. Stopping the Manual Container
 
 ```bash
-docker stop crawl4ai-standalone && docker rm crawl4ai-standalone
+docker stop cr4wlr-standalone && docker rm cr4wlr-standalone
 ```
 
 ---
@@ -414,7 +414,7 @@ You can customize the image build process using build arguments (`--build-arg`).
 docker buildx build \
   --platform linux/amd64,linux/arm64 \
   --build-arg INSTALL_TYPE=all \
-  -t yourname/crawl4ai-all:latest \
+  -t yourname/cr4wlr-all:latest \
   --load \
   . # Build from root context
 ```
@@ -461,12 +461,12 @@ This is the easiest way to translate Python configuration to JSON requests when 
 
 ### Python SDK
 
-Install the SDK: `pip install crawl4ai`
+Install the SDK: `pip install cr4wlr`
 
 ```python
 import asyncio
-from crawl4ai.docker_client import Crawl4aiDockerClient
-from crawl4ai import BrowserConfig, CrawlerRunConfig, CacheMode # Assuming you have crawl4ai installed
+from cr4wlr.docker_client import Crawl4aiDockerClient
+from cr4wlr import BrowserConfig, CrawlerRunConfig, CacheMode # Assuming you have cr4wlr installed
 
 async def main():
     # Point to the correct server port
@@ -768,18 +768,18 @@ You can override the default `config.yml`.
         ```bash
         # Assumes my-custom-config.yml is in the current directory
         docker run -d -p 11235:11235 \
-          --name crawl4ai-custom-config \
+          --name cr4wlr-custom-config \
           --env-file .llm.env \
           --shm-size=1g \
           -v $(pwd)/my-custom-config.yml:/app/config.yml \
-          unclecode/crawl4ai:latest # Or your specific tag
+          unclecode/cr4wlr:latest # Or your specific tag
         ```
 
     *   **Using `docker-compose.yml`:** Add a `volumes` section to the service definition:
         ```yaml
         services:
-          crawl4ai-hub-amd64: # Or your chosen service
-            image: unclecode/crawl4ai:latest
+          cr4wlr-hub-amd64: # Or your chosen service
+            image: unclecode/cr4wlr:latest
             profiles: ["hub-amd64"]
             <<: *base-config
             volumes:
@@ -819,9 +819,9 @@ You can override the default `config.yml`.
 
 We're here to help you succeed with Crawl4AI! Here's how to get support:
 
-- 📖 Check our [full documentation](https://docs.crawl4ai.com)
-- 🐛 Found a bug? [Open an issue](https://github.com/unclecode/crawl4ai/issues)
-- 💬 Join our [Discord community](https://discord.gg/crawl4ai)
+- 📖 Check our [full documentation](https://docs.cr4wlr.com)
+- 🐛 Found a bug? [Open an issue](https://github.com/unclecode/cr4wlr/issues)
+- 💬 Join our [Discord community](https://discord.gg/cr4wlr)
 - ⭐ Star us on GitHub to show support!
 
 ## Summary

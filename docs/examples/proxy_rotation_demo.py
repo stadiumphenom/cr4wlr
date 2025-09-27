@@ -1,7 +1,7 @@
 import os
 import re
 from typing import List, Dict
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,
@@ -147,7 +147,7 @@ async def demo_proxy_rotation_batch():
 
 if __name__ == "__main__":
     import asyncio
-    from crawl4ai import (
+    from cr4wlr import (
         CrawlerMonitor, 
         DisplayMode,
         MemoryAdaptiveDispatcher,

@@ -97,7 +97,7 @@ If `rate_limit_codes = [429, 503, 504]`, the crawler will back off on these thre
 Here’s an example of initializing and using a `RateLimiter` in your project:
 
 ```python
-from crawl4ai import RateLimiter
+from cr4wlr import RateLimiter
 
 # Create a RateLimiter with custom settings
 rate_limiter = RateLimiter(
@@ -119,7 +119,7 @@ The `RateLimiter` integrates seamlessly with dispatchers like `MemoryAdaptiveDis
 The CrawlerMonitor provides real-time visibility into crawling operations:
 
 ```python
-from crawl4ai import CrawlerMonitor, DisplayMode
+from cr4wlr import CrawlerMonitor, DisplayMode
 monitor = CrawlerMonitor(
     # Maximum rows in live display
     max_visible_rows=15,          
@@ -143,7 +143,7 @@ monitor = CrawlerMonitor(
 Automatically manages concurrency based on system memory usage:
 
 ```python
-from crawl4ai.async_dispatcher import MemoryAdaptiveDispatcher
+from cr4wlr.async_dispatcher import MemoryAdaptiveDispatcher
 
 dispatcher = MemoryAdaptiveDispatcher(
     memory_threshold_percent=90.0,  # Pause if memory exceeds this
@@ -188,7 +188,7 @@ dispatcher = MemoryAdaptiveDispatcher(
 Provides simple concurrency control with a fixed limit:
 
 ```python
-from crawl4ai.async_dispatcher import SemaphoreDispatcher
+from cr4wlr.async_dispatcher import SemaphoreDispatcher
 
 dispatcher = SemaphoreDispatcher(
     max_session_permit=20,         # Maximum concurrent tasks
@@ -342,7 +342,7 @@ async def crawl_with_semaphore(urls):
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     urls = [
@@ -415,11 +415,11 @@ When crawling diverse content types, you often need different configurations for
 ### 6.1 Basic URL Pattern Matching
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, MatchMode
-from crawl4ai.processors.pdf import PDFContentScrapingStrategy
-from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
-from crawl4ai.content_filter_strategy import PruningContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, MatchMode
+from cr4wlr.processors.pdf import PDFContentScrapingStrategy
+from cr4wlr.extraction_strategy import JsonCssExtractionStrategy
+from cr4wlr.content_filter_strategy import PruningContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 async def crawl_mixed_content():
     # Configure different strategies for different content

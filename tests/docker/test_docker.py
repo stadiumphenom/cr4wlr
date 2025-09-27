@@ -3,12 +3,12 @@ import time
 import httpx
 import asyncio
 from typing import Dict, Any
-from crawl4ai import (
+from cr4wlr import (
     BrowserConfig, CrawlerRunConfig, DefaultMarkdownGenerator,
     PruningContentFilter, JsonCssExtractionStrategy, LLMContentFilter, CacheMode
 )
-from crawl4ai import LLMConfig
-from crawl4ai.docker_client import Crawl4aiDockerClient
+from cr4wlr import LLMConfig
+from cr4wlr.docker_client import Crawl4aiDockerClient
 
 class Crawl4AiTester:
     def __init__(self, base_url: str = "http://localhost:11235"):

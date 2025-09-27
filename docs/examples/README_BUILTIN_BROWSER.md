@@ -20,7 +20,7 @@ Benefits include:
 Using the builtin browser in your code is simple:
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 # Create browser config with builtin mode
 browser_config = BrowserConfig(

@@ -10,10 +10,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-# Optional: Import crawl4ai classes directly for reference/easier payload creation aid
+# Optional: Import cr4wlr classes directly for reference/easier payload creation aid
 # You don't strictly NEED these imports for the tests to run against the server,
 # but they help in understanding the structure you are mimicking in JSON.
-from crawl4ai import (
+from cr4wlr import (
     BrowserConfig,
     CrawlerRunConfig,
     CacheMode,

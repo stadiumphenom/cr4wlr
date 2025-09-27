@@ -12,8 +12,8 @@ __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file
 
 
 
-from crawl4ai import AsyncWebCrawler
-from crawl4ai.async_configs import CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler
+from cr4wlr.async_configs import CrawlerRunConfig
 
 async def test_max_scroll_steps():
     """

@@ -196,7 +196,7 @@ debug_browser = base_browser.clone(
 **Minimal Example**:
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig
 
 browser_conf = BrowserConfig(
     browser_type="firefox",
@@ -353,8 +353,8 @@ In a typical scenario, you define **one** `BrowserConfig` for your crawler sessi
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
+from cr4wlr import JsonCssExtractionStrategy
 
 async def main():
     # 1) Browser config: headless, bigger viewport, no proxy
@@ -484,7 +484,7 @@ The new system uses a single `CacheMode` enum:
 ### Old Code (Deprecated)
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async def use_proxy():
     async with AsyncWebCrawler(verbose=True) as crawler:
@@ -504,8 +504,8 @@ if __name__ == "__main__":
 ### New Code (Recommended)
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CacheMode
-from crawl4ai.async_configs import CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CacheMode
+from cr4wlr.async_configs import CrawlerRunConfig
 
 async def use_proxy():
     # Use CacheMode in CrawlerRunConfig
@@ -720,7 +720,7 @@ crwl https://example.com \
 
 First-time setup:
 - Prompts for LLM provider and API token
-- Saves configuration in `~/.crawl4ai/global.yml`
+- Saves configuration in `~/.cr4wlr/global.yml`
 - Supports various providers (openai/gpt-4, anthropic/claude-3-sonnet, etc.)
 - For case of `ollama` you do not need to provide API token.
 - See [LiteLLM Providers](https://docs.litellm.ai/docs/providers) for full list
@@ -816,7 +816,7 @@ crwl https://example.com -q "Summarize the conclusions"
 1. **Configuration Management**:
    - Keep common configurations in YAML files
    - Use CLI parameters for quick overrides
-   - Store sensitive data (API tokens) in `~/.crawl4ai/global.yml`
+   - Store sensitive data (API tokens) in `~/.cr4wlr/global.yml`
 
 2. **Performance Optimization**:
    - Use `--bypass-cache` for fresh content
@@ -867,7 +867,7 @@ A straightforward way to **limit** your crawl results to a certain region of the
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     config = CrawlerRunConfig(
@@ -893,7 +893,7 @@ The `target_elements` parameter provides more flexibility by allowing you to tar
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     config = CrawlerRunConfig(
@@ -972,7 +972,7 @@ By default in case you set `exclude_social_media_links=True`, the following soci
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     config = CrawlerRunConfig(
@@ -1012,7 +1012,7 @@ config = CrawlerRunConfig(
 **Usage**:
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     config = CrawlerRunConfig(
@@ -1041,8 +1041,8 @@ You can combine content selection with a more advanced extraction strategy. For 
 ```python
 import asyncio
 import json
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def main():
     # Minimal schema for repeated items
@@ -1093,8 +1093,8 @@ if __name__ == "__main__":
 import asyncio
 import json
 from pydantic import BaseModel, Field
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
-from crawl4ai import LLMExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
+from cr4wlr import LLMExtractionStrategy
 
 class ArticleData(BaseModel):
     headline: str
@@ -1138,8 +1138,8 @@ Below is a short function that unifies **CSS selection**, **exclusion** logic, a
 ```python
 import asyncio
 import json
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def extract_main_articles(url: str):
     schema = {
@@ -1204,7 +1204,7 @@ if __name__ == "__main__":
 Crawl4AI provides two different scraping strategies for HTML content processing: `WebScrapingStrategy` (BeautifulSoup-based, default) and `LXMLWebScrapingStrategy` (LXML-based). The LXML strategy offers significantly better performance, especially for large HTML documents.
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, LXMLWebScrapingStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LXMLWebScrapingStrategy
 
 async def main():
     config = CrawlerRunConfig(
@@ -1220,7 +1220,7 @@ async def main():
 You can also create your own custom scraping strategy by inheriting from `ContentScrapingStrategy`. The strategy must return a `ScrapingResult` object with the following structure:
 
 ```python
-from crawl4ai import ContentScrapingStrategy, ScrapingResult, MediaItem, Media, Link, Links
+from cr4wlr import ContentScrapingStrategy, ScrapingResult, MediaItem, Media, Link, Links
 
 class CustomScrapingStrategy(ContentScrapingStrategy):
     def scrap(self, url: str, html: str, **kwargs) -> ScrapingResult:
@@ -1272,7 +1272,7 @@ The LXML strategy can be up to 10-20x faster than BeautifulSoup strategy, partic
 
 1. LXML strategy is currently experimental
 2. In some edge cases, the parsing results might differ slightly from BeautifulSoup
-3. If you encounter any inconsistencies between LXML and BeautifulSoup results, please [raise an issue](https://github.com/codeium/crawl4ai/issues) with a reproducible example
+3. If you encounter any inconsistencies between LXML and BeautifulSoup results, please [raise an issue](https://github.com/codeium/cr4wlr/issues) with a reproducible example
 
 Choose LXML strategy when:
 - Processing large HTML documents (recommended for >100KB)
@@ -1292,7 +1292,7 @@ You can combine `css_selector` and `target_elements` in powerful ways to achieve
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     # Target specific content but preserve page context
@@ -1458,8 +1458,8 @@ print(result.cleaned_html)  # Freed of forms, header, footer, data-* attributes
 ### 3.2 Basic Example with a Markdown Generator
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 config = CrawlerRunConfig(
     markdown_generator=DefaultMarkdownGenerator(
@@ -1487,8 +1487,8 @@ If you run a JSON-based extraction strategy (CSS, XPath, LLM, etc.), the structu
 ```python
 import asyncio
 import json
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def main():
     schema = {
@@ -1635,9 +1635,9 @@ Here's a minimal code snippet that implements a basic deep crawl using the **BFS
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
-from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.deep_crawling import BFSDeepCrawlStrategy
+from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
 
 async def main():
     # Configure a 2-level deep crawl
@@ -1680,7 +1680,7 @@ if __name__ == "__main__":
 The **BFSDeepCrawlStrategy** uses a breadth-first approach, exploring all links at one depth before moving deeper:
 
 ```python
-from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
+from cr4wlr.deep_crawling import BFSDeepCrawlStrategy
 
 # Basic configuration
 strategy = BFSDeepCrawlStrategy(
@@ -1704,7 +1704,7 @@ strategy = BFSDeepCrawlStrategy(
 The **DFSDeepCrawlStrategy** uses a depth-first approach, explores as far down a branch as possible before backtracking.
 
 ```python
-from crawl4ai.deep_crawling import DFSDeepCrawlStrategy
+from cr4wlr.deep_crawling import DFSDeepCrawlStrategy
 
 # Basic configuration
 strategy = DFSDeepCrawlStrategy(
@@ -1728,8 +1728,8 @@ strategy = DFSDeepCrawlStrategy(
 For more intelligent crawling, use **BestFirstCrawlingStrategy** with scorers to prioritize the most relevant pages:
 
 ```python
-from crawl4ai.deep_crawling import BestFirstCrawlingStrategy
-from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer
+from cr4wlr.deep_crawling import BestFirstCrawlingStrategy
+from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer
 
 # Create a scorer
 scorer = KeywordRelevanceScorer(
@@ -1810,7 +1810,7 @@ Filters help you narrow down which pages to crawl. Combine multiple filters usin
 ### 4.1 Basic URL Pattern Filter
 
 ```python
-from crawl4ai.deep_crawling.filters import FilterChain, URLPatternFilter
+from cr4wlr.deep_crawling.filters import FilterChain, URLPatternFilter
 
 # Only follow URLs containing "blog" or "docs"
 url_filter = URLPatternFilter(patterns=["*blog*", "*docs*"])
@@ -1826,7 +1826,7 @@ config = CrawlerRunConfig(
 ### 4.2 Combining Multiple Filters
 
 ```python
-from crawl4ai.deep_crawling.filters import (
+from cr4wlr.deep_crawling.filters import (
     FilterChain,
     URLPatternFilter,
     DomainFilter,
@@ -1875,8 +1875,8 @@ Scorers assign priority values to discovered URLs, helping the crawler focus on 
 ### 5.1 KeywordRelevanceScorer
 
 ```python
-from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer
-from crawl4ai.deep_crawling import BestFirstCrawlingStrategy
+from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer
+from cr4wlr.deep_crawling import BestFirstCrawlingStrategy
 
 # Create a keyword relevance scorer
 keyword_scorer = KeywordRelevanceScorer(
@@ -1913,7 +1913,7 @@ async with AsyncWebCrawler() as crawler:
 The **SEOFilter** helps you identify pages with strong SEO characteristics:
 
 ```python
-from crawl4ai.deep_crawling.filters import FilterChain, SEOFilter
+from cr4wlr.deep_crawling.filters import FilterChain, SEOFilter
 
 # Create an SEO filter that looks for specific keywords in page metadata
 seo_filter = SEOFilter(
@@ -1934,7 +1934,7 @@ config = CrawlerRunConfig(
 The **ContentRelevanceFilter** analyzes the actual content of pages:
 
 ```python
-from crawl4ai.deep_crawling.filters import FilterChain, ContentRelevanceFilter
+from cr4wlr.deep_crawling.filters import FilterChain, ContentRelevanceFilter
 
 # Create a content relevance filter
 relevance_filter = ContentRelevanceFilter(
@@ -1962,16 +1962,16 @@ This example combines multiple techniques for a sophisticated crawl:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
-from crawl4ai.deep_crawling import BestFirstCrawlingStrategy
-from crawl4ai.deep_crawling.filters import (
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
+from cr4wlr.deep_crawling import BestFirstCrawlingStrategy
+from cr4wlr.deep_crawling.filters import (
     FilterChain,
     DomainFilter,
     URLPatternFilter,
     ContentTypeFilter
 )
-from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer
+from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer
 
 async def run_advanced_crawler():
     # Create a sophisticated filter chain
@@ -2145,14 +2145,14 @@ First, clone the repository and build the Docker image:
 
 ```bash
 # Clone the repository
-git clone https://github.com/unclecode/crawl4ai.git
-cd crawl4ai/deploy
+git clone https://github.com/unclecode/cr4wlr.git
+cd cr4wlr/deploy
 
 # Build the Docker image
-docker build --platform=linux/amd64 --no-cache -t crawl4ai .
+docker build --platform=linux/amd64 --no-cache -t cr4wlr .
 
 # Or build for arm64
-docker build --platform=linux/arm64 --no-cache -t crawl4ai .
+docker build --platform=linux/arm64 --no-cache -t cr4wlr .
 ```
 
 #### 2. Environment Setup
@@ -2180,15 +2180,15 @@ You have several options for running the container:
 
 Basic run (no LLM support):
 ```bash
-docker run -d -p 8000:8000 --name crawl4ai crawl4ai
+docker run -d -p 8000:8000 --name cr4wlr cr4wlr
 ```
 
 With LLM support:
 ```bash
 docker run -d -p 8000:8000 \
   --env-file .llm.env \
-  --name crawl4ai \
-  crawl4ai
+  --name cr4wlr \
+  cr4wlr
 ```
 
 Using host environment variables (Not a good practice, but works for local testing):
@@ -2196,8 +2196,8 @@ Using host environment variables (Not a good practice, but works for local testi
 docker run -d -p 8000:8000 \
   --env-file .llm.env \
   --env "$(env)" \
-  --name crawl4ai \
-  crawl4ai
+  --name cr4wlr \
+  cr4wlr
 ```
 
 #### Multi-Platform Build
@@ -2210,7 +2210,7 @@ docker buildx create --use
 # Build for multiple platforms
 docker buildx build \
   --platform linux/amd64,linux/arm64 \
-  -t crawl4ai \
+  -t cr4wlr \
   --push \
   .
 ```
@@ -2221,7 +2221,7 @@ docker buildx build \
 For development, you might want to enable all features:
 
 ```bash
-docker build -t crawl4ai
+docker build -t cr4wlr
   --build-arg INSTALL_TYPE=all \
   --build-arg PYTHON_VERSION=3.10 \
   --build-arg ENABLE_GPU=true \
@@ -2232,7 +2232,7 @@ docker build -t crawl4ai
 If you plan to use GPU acceleration:
 
 ```bash
-docker build -t crawl4ai
+docker build -t cr4wlr
   --build-arg ENABLE_GPU=true \
   deploy/docker/
 ```
@@ -2264,7 +2264,7 @@ docker build -t crawl4ai
 
 ### Docker Hub
 
-> 🚧 Coming soon! The image will be available at `crawl4ai`. Stay tuned!
+> 🚧 Coming soon! The image will be available at `cr4wlr`. Stay tuned!
 
 ## Using the API
 
@@ -2275,8 +2275,8 @@ In the following sections, we discuss two ways to communicate with the Docker se
 The SDK makes things easier! Here's how to use it:
 
 ```python
-from crawl4ai.docker_client import Crawl4aiDockerClient
-from crawl4ai import BrowserConfig, CrawlerRunConfig
+from cr4wlr.docker_client import Crawl4aiDockerClient
+from cr4wlr import BrowserConfig, CrawlerRunConfig
 
 async def main():
     async with Crawl4aiDockerClient(base_url="http://localhost:8000", verbose=True) as client:
@@ -2330,7 +2330,7 @@ Let's dive deep into how configurations work in Crawl4AI. Every configuration ob
 
 Try this in Python to understand the structure:
 ```python
-from crawl4ai import BrowserConfig
+from cr4wlr import BrowserConfig
 
 # Create a config and see its structure
 config = BrowserConfig(headless=True)
@@ -2457,7 +2457,7 @@ The easiest way to get the correct structure is to:
 
 Example:
 ```python
-from crawl4ai import CrawlerRunConfig, PruningContentFilter
+from cr4wlr import CrawlerRunConfig, PruningContentFilter
 
 config = CrawlerRunConfig(
     markdown_generator=DefaultMarkdownGenerator(
@@ -2706,8 +2706,8 @@ curl http://localhost:8000/health
 ## Complete Examples
 
 Check out the `examples` folder in our repository for full working examples! Here are two to get you started:
-[Using Client SDK](https://github.com/unclecode/crawl4ai/blob/main/docs/examples/docker_python_sdk.py)
-[Using REST API](https://github.com/unclecode/crawl4ai/blob/main/docs/examples/docker_python_rest_api.py)
+[Using Client SDK](https://github.com/unclecode/cr4wlr/blob/main/docs/examples/docker_python_sdk.py)
+[Using REST API](https://github.com/unclecode/cr4wlr/blob/main/docs/examples/docker_python_rest_api.py)
 
 ## Server Configuration
 
@@ -2802,7 +2802,7 @@ curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGci..." http://localhost:800
 
 Using the Python SDK:
 ```python
-from crawl4ai.docker_client import Crawl4aiDockerClient
+from cr4wlr.docker_client import Crawl4aiDockerClient
 
 async with Crawl4aiDockerClient() as client:
     # Authenticate first
@@ -2864,11 +2864,11 @@ The default implementation uses a simple email verification. For production use,
 
 ```bash
 # Copy and modify config before building
-cd crawl4ai/deploy
+cd cr4wlr/deploy
 vim custom-config.yml # Or use any editor
 
 # Build with custom config
-docker build --platform=linux/amd64 --no-cache -t crawl4ai:latest .
+docker build --platform=linux/amd64 --no-cache -t cr4wlr:latest .
 ```
 
 #### Method 2: Build-time Configuration
@@ -2879,7 +2879,7 @@ Use a custom config during build:
 # Build with custom config
 docker build --platform=linux/amd64 --no-cache \
   --build-arg CONFIG_PATH=/path/to/custom-config.yml \ 
-  -t crawl4ai:latest .
+  -t cr4wlr:latest .
 ```
 
 #### Method 3: Runtime Configuration
@@ -2887,7 +2887,7 @@ docker build --platform=linux/amd64 --no-cache \
 # Mount custom config at runtime
 docker run -d -p 8000:8000 \
   -v $(pwd)/custom-config.yml:/app/config.yml \
-  crawl4ai-server:prod
+  cr4wlr-server:prod
 ```
 
 > 💡 Note: When using Method 2, `/path/to/custom-config.yml` is relative to deploy directory.
@@ -2920,9 +2920,9 @@ docker run -d -p 8000:8000 \
 
 We're here to help you succeed with Crawl4AI! Here's how to get support:
 
-- 📖 Check our [full documentation](https://docs.crawl4ai.com)
-- 🐛 Found a bug? [Open an issue](https://github.com/unclecode/crawl4ai/issues)
-- 💬 Join our [Discord community](https://discord.gg/crawl4ai)
+- 📖 Check our [full documentation](https://docs.cr4wlr.com)
+- 🐛 Found a bug? [Open an issue](https://github.com/unclecode/cr4wlr/issues)
+- 💬 Join our [Discord community](https://discord.gg/cr4wlr)
 - ⭐ Star us on GitHub to show support!
 
 ## Summary
@@ -2977,9 +2977,9 @@ In **`CrawlerRunConfig`**, you can specify a **`content_filter`** to shape how c
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_filter_strategy import PruningContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_filter_strategy import PruningContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 async def main():
     # Step 1: Create a pruning filter
@@ -3042,9 +3042,9 @@ if __name__ == "__main__":
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_filter_strategy import BM25ContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_filter_strategy import BM25ContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 async def main():
     # 1) A BM25 filter with a user query
@@ -3156,7 +3156,7 @@ Thus, **multi-level** filtering occurs:
 If you need a different approach (like a specialized ML model or site-specific heuristics), you can create a new class inheriting from `RelevantContentFilter` and implement `filter_content(html)`. Then inject it into your **markdown generator**:
 
 ```python
-from crawl4ai.content_filter_strategy import RelevantContentFilter
+from cr4wlr.content_filter_strategy import RelevantContentFilter
 
 class MyCustomFilter(RelevantContentFilter):
     def filter_content(self, html, min_word_threshold=None):
@@ -3201,7 +3201,7 @@ With these tools, you can **zero in** on the text that truly matters, ignoring s
 ## 1. Basic Installation
 
 ```bash
-pip install crawl4ai
+pip install cr4wlr
 ```
 
 This installs the **core** Crawl4AI library along with essential dependencies. **No** advanced features (like transformers or PyTorch) are included yet.
@@ -3212,7 +3212,7 @@ This installs the **core** Crawl4AI library along with essential dependencies.�
 After installing, call:
 
 ```bash
-crawl4ai-setup
+cr4wlr-setup
 ```
 
 **What does it do?**
@@ -3224,7 +3224,7 @@ crawl4ai-setup
 Optionally, you can run **diagnostics** to confirm everything is functioning:
 
 ```bash
-crawl4ai-doctor
+cr4wlr-doctor
 ```
 
 This command attempts to:
@@ -3232,17 +3232,17 @@ This command attempts to:
 - Verify Playwright installation
 - Inspect environment variables or library conflicts
 
-If any issues arise, follow its suggestions (e.g., installing additional system packages) and re-run `crawl4ai-setup`.
+If any issues arise, follow its suggestions (e.g., installing additional system packages) and re-run `cr4wlr-setup`.
 
 ---
 
-## 3. Verifying Installation: A Simple Crawl (Skip this step if you already run `crawl4ai-doctor`)
+## 3. Verifying Installation: A Simple Crawl (Skip this step if you already run `cr4wlr-doctor`)
 
 Below is a minimal Python script demonstrating a **basic** crawl. It uses our new **`BrowserConfig`** and **`CrawlerRunConfig`** for clarity, though no custom settings are passed in this example:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     async with AsyncWebCrawler() as crawler:
@@ -3258,7 +3258,7 @@ if __name__ == "__main__":
 **Expected** outcome:
 - A headless browser session loads `example.com`
 - Crawl4AI returns ~300 characters of markdown.  
-If errors occur, rerun `crawl4ai-doctor` or manually ensure Playwright is installed correctly.
+If errors occur, rerun `cr4wlr-doctor` or manually ensure Playwright is installed correctly.
 
 ---
 
@@ -3270,27 +3270,27 @@ If errors occur, rerun `crawl4ai-doctor` or manually ensure Playwright is instal
 
 - **Text Clustering (Torch)**  
   ```bash
-  pip install crawl4ai[torch]
-  crawl4ai-setup
+  pip install cr4wlr[torch]
+  cr4wlr-setup
   ```
   Installs PyTorch-based features (e.g., cosine similarity or advanced semantic chunking).
 
 - **Transformers**  
   ```bash
-  pip install crawl4ai[transformer]
-  crawl4ai-setup
+  pip install cr4wlr[transformer]
+  cr4wlr-setup
   ```
   Adds Hugging Face-based summarization or generation strategies.
 
 - **All Features**  
   ```bash
-  pip install crawl4ai[all]
-  crawl4ai-setup
+  pip install cr4wlr[all]
+  cr4wlr-setup
   ```
 
 #### (Optional) Pre-Fetching Models
 ```bash
-crawl4ai-download-models
+cr4wlr-download-models
 ```
 This step caches large models locally (if needed). **Only do this** if your workflow requires them.
 
@@ -3301,8 +3301,8 @@ This step caches large models locally (if needed). **Only do this** if your wo
 We provide a **temporary** Docker approach for testing. **It’s not stable and may break** with future releases. We plan a major Docker revamp in a future stable version, 2025 Q1. If you still want to try:
 
 ```bash
-docker pull unclecode/crawl4ai:basic
-docker run -p 11235:11235 unclecode/crawl4ai:basic
+docker pull unclecode/cr4wlr:basic
+docker run -p 11235:11235 unclecode/cr4wlr:basic
 ```
 
 You can then make POST requests to `http://localhost:11235/crawl` to perform crawls. **Production usage** is discouraged until our new Docker approach is ready (planned in Jan or Feb 2025).
@@ -3317,14 +3317,14 @@ Some older docs mention running Crawl4AI as a local server. This approach has be
 
 ## Summary
 
-1. **Install** with `pip install crawl4ai` and run `crawl4ai-setup`.
-2. **Diagnose** with `crawl4ai-doctor` if you see errors.
+1. **Install** with `pip install cr4wlr` and run `cr4wlr-setup`.
+2. **Diagnose** with `cr4wlr-doctor` if you see errors.
 3. **Verify** by crawling `example.com` with minimal `BrowserConfig` + `CrawlerRunConfig`.
 4. **Advanced** features (Torch, Transformers) are **optional**—avoid them if you don’t need them (they significantly increase resource usage).
 5. **Docker** is **experimental**—use at your own risk until the stable version is released.
 6. **Local server** references in older docs are largely deprecated; a new solution is in progress.
 
-**Got questions?** Check [GitHub issues](https://github.com/unclecode/crawl4ai/issues) for updates or ask the community!
+**Got questions?** Check [GitHub issues](https://github.com/unclecode/cr4wlr/issues) for updates or ask the community!
 ```
 
 
@@ -3387,7 +3387,7 @@ When you call `arun()` or `arun_many()` on a URL, Crawl4AI automatically extract
 **Basic Example**:
 
 ```python
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async with AsyncWebCrawler() as crawler:
     result = await crawler.arun("https://www.example.com")
@@ -3451,7 +3451,7 @@ Some websites contain hundreds of third-party or affiliate links. You can filter
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     crawler_cfg = CrawlerRunConfig(
@@ -3639,7 +3639,7 @@ Each extracted table contains:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     crawler_cfg = CrawlerRunConfig(
@@ -3675,7 +3675,7 @@ Here’s a combined example demonstrating how to filter out external links, skip
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     # Suppose we want to keep only internal links, remove certain domains, 
@@ -3760,8 +3760,8 @@ To crawl a live web page, provide the URL starting with `http://` or `https://`,
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CacheMode
-from crawl4ai.async_configs import CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CacheMode
+from cr4wlr.async_configs import CrawlerRunConfig
 
 async def crawl_web():
     config = CrawlerRunConfig(cache_mode=CacheMode.BYPASS)
@@ -3785,8 +3785,8 @@ To crawl a local HTML file, prefix the file path with `file://`.
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CacheMode
-from crawl4ai.async_configs import CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CacheMode
+from cr4wlr.async_configs import CrawlerRunConfig
 
 async def crawl_local_file():
     local_file_path = "/path/to/apple.html"  # Replace with your file path
@@ -3810,8 +3810,8 @@ To crawl raw HTML content, prefix the HTML string with `raw:`.
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CacheMode
-from crawl4ai.async_configs import CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CacheMode
+from cr4wlr.async_configs import CrawlerRunConfig
 
 async def crawl_raw_html():
     raw_html = "<html><body><h1>Hello, World!</h1></body></html>"
@@ -3845,8 +3845,8 @@ import os
 import sys
 import asyncio
 from pathlib import Path
-from crawl4ai import AsyncWebCrawler, CacheMode
-from crawl4ai.async_configs import CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CacheMode
+from cr4wlr.async_configs import CrawlerRunConfig
 
 async def main():
     wikipedia_url = "https://en.wikipedia.org/wiki/apple"
@@ -3939,8 +3939,8 @@ Here’s a minimal code snippet that uses the **DefaultMarkdownGenerator** with 
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 async def main():
     config = CrawlerRunConfig(
@@ -3992,8 +3992,8 @@ Before or after the HTML-to-Markdown step, you can apply a **content filter** (l
 You can tweak the output by passing an `options` dict to `DefaultMarkdownGenerator`. For example:
 
 ```python
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Example: ignore all links, don't escape HTML, and wrap text at 80 characters
@@ -4035,8 +4035,8 @@ Some commonly used `options`:
 The `content_source` parameter allows you to control which HTML content is used as input for markdown generation. This gives you flexibility in how the HTML is processed before conversion to markdown.
 
 ```python
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Option 1: Use the raw HTML directly from the webpage (before any processing)
@@ -4099,9 +4099,9 @@ if __name__ == "__main__":
 If you have a **search query**, BM25 is a good choice:
 
 ```python
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
-from crawl4ai.content_filter_strategy import BM25ContentFilter
-from crawl4ai import CrawlerRunConfig
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr.content_filter_strategy import BM25ContentFilter
+from cr4wlr import CrawlerRunConfig
 
 bm25_filter = BM25ContentFilter(
     user_query="machine learning",
@@ -4128,7 +4128,7 @@ config = CrawlerRunConfig(markdown_generator=md_generator)
 If you **don’t** have a specific query, or if you just want a robust “junk remover,” use `PruningContentFilter`. It analyzes text density, link density, HTML structure, and known patterns (like “nav,” “footer”) to systematically prune extraneous or repetitive sections.
 
 ```python
-from crawl4ai.content_filter_strategy import PruningContentFilter
+from cr4wlr.content_filter_strategy import PruningContentFilter
 
 prune_filter = PruningContentFilter(
     threshold=0.5,
@@ -4152,8 +4152,8 @@ prune_filter = PruningContentFilter(
 For intelligent content filtering and high-quality markdown generation, you can use the **LLMContentFilter**. This filter leverages LLMs to generate relevant markdown while preserving the original content's meaning and structure:
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, LLMConfig, DefaultMarkdownGenerator
-from crawl4ai.content_filter_strategy import LLMContentFilter
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, LLMConfig, DefaultMarkdownGenerator
+from cr4wlr.content_filter_strategy import LLMContentFilter
 
 async def main():
     # Initialize LLM filter with specific instruction
@@ -4238,9 +4238,9 @@ When a content filter is active, the library produces two forms of markdown insi
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
-from crawl4ai.content_filter_strategy import PruningContentFilter
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr.content_filter_strategy import PruningContentFilter
 
 async def main():
     config = CrawlerRunConfig(
@@ -4308,8 +4308,8 @@ You might want to **prune out** noisy boilerplate first (with `PruningContentFil
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_filter_strategy import PruningContentFilter, BM25ContentFilter
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_filter_strategy import PruningContentFilter, BM25ContentFilter
 from bs4 import BeautifulSoup
 
 async def main():
@@ -4451,7 +4451,7 @@ Below is a quick overview of how to do it.
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Single JS command
@@ -4500,7 +4500,7 @@ Sometimes, you just want to wait for a specific element to appear. For example:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     config = CrawlerRunConfig(
@@ -4548,7 +4548,7 @@ Many modern sites require **multiple steps**: scrolling, clicking “Load More,�
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Step 1: Load initial Hacker News page
@@ -4642,7 +4642,7 @@ Below is a simplified script that does multiple “Load More” clicks on GitHub
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def multi_page_commits():
     browser_cfg = BrowserConfig(
@@ -4727,7 +4727,7 @@ if __name__ == "__main__":
 Once dynamic content is loaded, you can attach an **`extraction_strategy`** (like `JsonCssExtractionStrategy` or `LLMExtractionStrategy`). For example:
 
 ```python
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import JsonCssExtractionStrategy
 
 schema = {
     "name": "Commits",
@@ -4809,7 +4809,7 @@ Here’s a minimal Python script that creates an **`AsyncWebCrawler`**, fetches 
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async def main():
     async with AsyncWebCrawler() as crawler:
@@ -4840,7 +4840,7 @@ Below is an example with minimal usage:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def main():
     browser_conf = BrowserConfig(headless=True)  # or False to see the browser
@@ -4877,9 +4877,9 @@ By default, Crawl4AI automatically generates Markdown from each crawled page. Ho
 ### Example: Using a Filter with `DefaultMarkdownGenerator`
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_filter_strategy import PruningContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_filter_strategy import PruningContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 md_generator = DefaultMarkdownGenerator(
     content_filter=PruningContentFilter(threshold=0.4, threshold_type="fixed")
@@ -4907,8 +4907,8 @@ Crawl4AI can also extract structured data (JSON) using CSS or XPath selectors. B
 > **New!** Crawl4AI now provides a powerful utility to automatically generate extraction schemas using LLM. This is a one-time cost that gives you a reusable schema for fast, LLM-free extractions:
 
 ```python
-from crawl4ai import JsonCssExtractionStrategy
-from crawl4ai import LLMConfig
+from cr4wlr import JsonCssExtractionStrategy
+from cr4wlr import LLMConfig
 
 # Generate a schema (one-time cost)
 html = "<div class='product'><h2>Gaming Laptop</h2><span class='price'>$999.99</span></div>"
@@ -4936,8 +4936,8 @@ Here's a basic extraction example:
 ```python
 import asyncio
 import json
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def main():
     schema = {
@@ -4991,8 +4991,8 @@ import os
 import json
 import asyncio
 from pydantic import BaseModel, Field
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
-from crawl4ai import LLMExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
+from cr4wlr import LLMExtractionStrategy
 
 class OpenAIModelFee(BaseModel):
     model_name: str = Field(..., description="Name of the OpenAI model.")
@@ -5058,7 +5058,7 @@ If you need to crawl multiple URLs in **parallel**, you can use `arun_many()`. B
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def quick_parallel_example():
     urls = [
@@ -5107,8 +5107,8 @@ Some sites require multiple “page clicks” or dynamic JavaScript updates. Bel
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def extract_structured_data_using_css_extractor():
     print("\n--- Using JsonCssExtractionStrategy for Fast Structured Output ---")
@@ -5223,8 +5223,8 @@ Set up a simple crawl using `BrowserConfig` and `CrawlerRunConfig`:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
 
 async def main():
     browser_config = BrowserConfig()  # Default browser configuration
@@ -5315,8 +5315,8 @@ Here's a more comprehensive example demonstrating common usage patterns:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def main():
     browser_config = BrowserConfig(verbose=True)
@@ -5389,7 +5389,7 @@ If you need to route your crawl traffic through a proxy—whether for IP rotatio
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     browser_cfg = BrowserConfig(
@@ -5433,7 +5433,7 @@ Sometimes you need a visual record of a page or a PDF “printout.” Crawl4AI c
 ```python
 import os, asyncio
 from base64 import b64decode
-from crawl4ai import AsyncWebCrawler, CacheMode, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CacheMode, CrawlerRunConfig
 
 async def main():
     run_config = CrawlerRunConfig(
@@ -5489,7 +5489,7 @@ If you need to verify or export a site’s SSL certificate—for compliance, deb
 
 ```python
 import asyncio, os
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     tmp_dir = os.path.join(os.getcwd(), "tmp")
@@ -5535,7 +5535,7 @@ Sometimes you need to set custom headers (e.g., language preferences, authentica
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async def main():
     # Option 1: Set headers at the crawler strategy level
@@ -5576,7 +5576,7 @@ Crawl4AI can preserve cookies and localStorage so you can continue where you lef
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async def main():
     storage_dict = {
@@ -5634,7 +5634,7 @@ Crawl4AI supports respecting robots.txt rules with efficient caching:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Enable robots.txt checking in config
@@ -5657,7 +5657,7 @@ if __name__ == "__main__":
 
 **Key Points**
 - Robots.txt files are cached locally for efficiency
-- Cache is stored in `~/.crawl4ai/robots/robots_cache.db`
+- Cache is stored in `~/.cr4wlr/robots/robots_cache.db`
 - Cache has a default TTL of 7 days
 - If robots.txt can't be fetched, crawling is allowed
 - Returns 403 status code if URL is disallowed
@@ -5671,7 +5671,7 @@ Here’s a snippet that combines multiple “advanced” features (proxy, PDF, s
 ```python
 import os, asyncio
 from base64 import b64decode
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def main():
     # 1. Browser config with proxy + headless
@@ -5772,7 +5772,7 @@ This guide explains how to use Crawl4AI to handle file downloads during crawling
 To enable downloads, set the `accept_downloads` parameter in the `BrowserConfig` object and pass it to the crawler.
 
 ```python
-from crawl4ai.async_configs import BrowserConfig, AsyncWebCrawler
+from cr4wlr.async_configs import BrowserConfig, AsyncWebCrawler
 
 async def main():
     config = BrowserConfig(accept_downloads=True)  # Enable downloads globally
@@ -5784,10 +5784,10 @@ asyncio.run(main())
 
 ## Specifying Download Location
 
-Specify the download directory using the `downloads_path` attribute in the `BrowserConfig` object. If not provided, Crawl4AI defaults to creating a "downloads" directory inside the `.crawl4ai` folder in your home directory.
+Specify the download directory using the `downloads_path` attribute in the `BrowserConfig` object. If not provided, Crawl4AI defaults to creating a "downloads" directory inside the `.cr4wlr` folder in your home directory.
 
 ```python
-from crawl4ai.async_configs import BrowserConfig
+from cr4wlr.async_configs import BrowserConfig
 import os
 
 downloads_path = os.path.join(os.getcwd(), "my_downloads")  # Custom download path
@@ -5806,7 +5806,7 @@ async def main():
 Downloads are typically triggered by user interactions on a web page, such as clicking a download button. Use `js_code` in `CrawlerRunConfig` to simulate these actions and `wait_for` to allow sufficient time for downloads to start.
 
 ```python
-from crawl4ai.async_configs import CrawlerRunConfig
+from cr4wlr.async_configs import CrawlerRunConfig
 
 config = CrawlerRunConfig(
     js_code="""
@@ -5839,7 +5839,7 @@ else:
 ## Example: Downloading Multiple Files
 
 ```python
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
 import os
 from pathlib import Path
 
@@ -5867,7 +5867,7 @@ async def download_multiple_files(url: str, download_path: str):
             print("No files downloaded.")
 
 # Usage
-download_path = os.path.join(Path.home(), ".crawl4ai", "downloads")
+download_path = os.path.join(Path.home(), ".cr4wlr", "downloads")
 os.makedirs(download_path, exist_ok=True)
 
 asyncio.run(download_multiple_files("https://www.python.org/downloads/windows/", download_path))
@@ -5921,7 +5921,7 @@ Below is an example demonstration.
 ```python
 import asyncio
 import json
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 from playwright.async_api import Page, BrowserContext
 
 async def main():
@@ -6219,7 +6219,7 @@ If you installed Crawl4AI (which installs Playwright under the hood), you alread
 
 3. **Use** that folder in **`BrowserConfig.user_data_dir`**:
    ```python
-   from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+   from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
    browser_config = BrowserConfig(
        headless=True,
@@ -6238,7 +6238,7 @@ Once you have a data directory with your session data, pass it to **`BrowserConf
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     # 1) Reference your persistent data directory
@@ -6280,7 +6280,7 @@ if __name__ == "__main__":
 If you **don’t** need a persistent profile or identity-based approach, **Magic Mode** offers a quick way to simulate human-like browsing without storing long-term data.
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async with AsyncWebCrawler() as crawler:
     result = await crawler.arun(
@@ -6327,7 +6327,7 @@ The `BrowserProfiler` class offers a comprehensive API for browser profile manag
 
 ```python
 import asyncio
-from crawl4ai import BrowserProfiler
+from cr4wlr import BrowserProfiler
 
 async def manage_profiles():
     # Create a profiler instance
@@ -6371,7 +6371,7 @@ The `BrowserProfiler` also offers an interactive management console that guides 
 
 ```python
 import asyncio
-from crawl4ai import BrowserProfiler, AsyncWebCrawler, BrowserConfig
+from cr4wlr import BrowserProfiler, AsyncWebCrawler, BrowserConfig
 
 # Define a function to use a profile for crawling
 async def crawl_with_profile(profile_path, url):
@@ -6401,7 +6401,7 @@ asyncio.run(main())
 For backward compatibility, the previous methods on `ManagedBrowser` are still available, but they delegate to the new `BrowserProfiler` class:
 
 ```python
-from crawl4ai.browser_manager import ManagedBrowser
+from cr4wlr.browser_manager import ManagedBrowser
 
 # These methods still work but use BrowserProfiler internally
 profiles = ManagedBrowser.list_profiles()
@@ -6449,8 +6449,8 @@ Many websites now load images **lazily** as you scroll. If you need to ensure th
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig
-from crawl4ai.async_configs import CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig
+from cr4wlr.async_configs import CacheMode
 
 async def main():
     config = CrawlerRunConfig(
@@ -6644,7 +6644,7 @@ If `rate_limit_codes = [429, 503, 504]`, the crawler will back off on these thre
 Here’s an example of initializing and using a `RateLimiter` in your project:
 
 ```python
-from crawl4ai import RateLimiter
+from cr4wlr import RateLimiter
 
 # Create a RateLimiter with custom settings
 rate_limiter = RateLimiter(
@@ -6666,7 +6666,7 @@ The `RateLimiter` integrates seamlessly with dispatchers like `MemoryAdaptiveDis
 The CrawlerMonitor provides real-time visibility into crawling operations:
 
 ```python
-from crawl4ai import CrawlerMonitor, DisplayMode
+from cr4wlr import CrawlerMonitor, DisplayMode
 monitor = CrawlerMonitor(
     # Maximum rows in live display
     max_visible_rows=15,          
@@ -6690,7 +6690,7 @@ monitor = CrawlerMonitor(
 Automatically manages concurrency based on system memory usage:
 
 ```python
-from crawl4ai.async_dispatcher import MemoryAdaptiveDispatcher
+from cr4wlr.async_dispatcher import MemoryAdaptiveDispatcher
 
 dispatcher = MemoryAdaptiveDispatcher(
     memory_threshold_percent=90.0,  # Pause if memory exceeds this
@@ -6735,7 +6735,7 @@ dispatcher = MemoryAdaptiveDispatcher(
 Provides simple concurrency control with a fixed limit:
 
 ```python
-from crawl4ai.async_dispatcher import SemaphoreDispatcher
+from cr4wlr.async_dispatcher import SemaphoreDispatcher
 
 dispatcher = SemaphoreDispatcher(
     max_session_permit=20,         # Maximum concurrent tasks
@@ -6889,7 +6889,7 @@ async def crawl_with_semaphore(urls):
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     urls = [
@@ -6990,7 +6990,7 @@ Crawl4AI can capture all network requests and browser console messages during a 
 To enable network and console capturing, use these configuration options:
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 # Enable both network request capture and console message capture
 config = CrawlerRunConfig(
@@ -7004,7 +7004,7 @@ config = CrawlerRunConfig(
 ```python
 import asyncio
 import json
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Enable both network request capture and console message capture
@@ -7199,7 +7199,7 @@ This capability is especially valuable for complex sites with heavy JavaScript, 
 Simple proxy configuration with `BrowserConfig`:
 
 ```python
-from crawl4ai.async_configs import BrowserConfig
+from cr4wlr.async_configs import BrowserConfig
 
 # Using proxy URL
 browser_config = BrowserConfig(proxy="http://proxy.example.com:8080")
@@ -7217,7 +7217,7 @@ async with AsyncWebCrawler(config=browser_config) as crawler:
 Use an authenticated proxy with `BrowserConfig`:
 
 ```python
-from crawl4ai.async_configs import BrowserConfig
+from cr4wlr.async_configs import BrowserConfig
 
 proxy_config = {
     "server": "http://proxy.example.com:8080",
@@ -7237,7 +7237,7 @@ Here's the corrected documentation:
 Example using a proxy rotation service dynamically:
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def get_next_proxy():
     # Your proxy rotation logic here
@@ -7283,7 +7283,7 @@ Session management in Crawl4AI is a powerful feature that allows you to maintain
 Use `BrowserConfig` and `CrawlerRunConfig` to maintain state with a `session_id`:
 
 ```python
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
 
 async with AsyncWebCrawler() as crawler:
     session_id = "my_session"
@@ -7313,9 +7313,9 @@ async with AsyncWebCrawler() as crawler:
 Here's an example of crawling GitHub commits across multiple pages while preserving session state:
 
 ```python
-from crawl4ai.async_configs import CrawlerRunConfig
-from crawl4ai import JsonCssExtractionStrategy
-from crawl4ai.cache_context import CacheMode
+from cr4wlr.async_configs import CrawlerRunConfig
+from cr4wlr import JsonCssExtractionStrategy
+from cr4wlr.cache_context import CacheMode
 
 async def crawl_dynamic_content():
     async with AsyncWebCrawler() as crawler:
@@ -7368,8 +7368,8 @@ A simple example using session-based crawling:
 
 ```python
 import asyncio
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
-from crawl4ai.cache_context import CacheMode
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
+from cr4wlr.cache_context import CacheMode
 
 async def basic_session_crawl():
     async with AsyncWebCrawler() as crawler:
@@ -7518,7 +7518,7 @@ The **`SSLCertificate`** class encapsulates an SSL certificate’s data and allo
 
 ## 1. Overview
 
-**Location**: `crawl4ai/ssl_certificate.py`
+**Location**: `cr4wlr/ssl_certificate.py`
 
 ```python
 class SSLCertificate:
@@ -7643,7 +7643,7 @@ Below is a minimal sample showing how the crawler obtains an SSL cert from a sit
 ```python
 import asyncio
 import os
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     tmp_dir = "tmp"
@@ -7864,7 +7864,7 @@ The Cosine Strategy:
 ## Basic Usage
 
 ```python
-from crawl4ai import CosineStrategy
+from cr4wlr import CosineStrategy
 
 strategy = CosineStrategy(
     semantic_filter="product reviews",    # Target content type
@@ -8174,8 +8174,8 @@ import asyncio
 import json
 from pydantic import BaseModel, Field
 from typing import List
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
-from crawl4ai import LLMExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
+from cr4wlr import LLMExtractionStrategy
 
 class Product(BaseModel):
     name: str
@@ -8291,8 +8291,8 @@ import json
 import asyncio
 from typing import List
 from pydantic import BaseModel, Field
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from crawl4ai import LLMExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import LLMExtractionStrategy
 
 class Entity(BaseModel):
     name: str
@@ -8436,8 +8436,8 @@ Let’s begin with a **simple** schema-based extraction using the `JsonCssExtrac
 ```python
 import json
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def extract_crypto_prices():
     # 1. Define a simple extraction schema
@@ -8506,8 +8506,8 @@ Below is a short example demonstrating **XPath** extraction plus the **`raw://`*
 ```python
 import json
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai import JsonXPathExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import JsonXPathExtractionStrategy
 
 async def extract_crypto_prices_xpath():
     # 1. Minimal dummy HTML with some repeating rows
@@ -8707,8 +8707,8 @@ Key Takeaways:
 ```python
 import json
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import JsonCssExtractionStrategy
 
 ecommerce_schema = {
     # ... the advanced schema from above ...
@@ -8818,8 +8818,8 @@ While manually crafting schemas is powerful and precise, Crawl4AI now offers a c
 The schema generator is available as a static method on both `JsonCssExtractionStrategy` and `JsonXPathExtractionStrategy`. You can choose between OpenAI's GPT-4 or the open-source Ollama for schema generation:
 
 ```python
-from crawl4ai import JsonCssExtractionStrategy, JsonXPathExtractionStrategy
-from crawl4ai import LLMConfig
+from cr4wlr import JsonCssExtractionStrategy, JsonXPathExtractionStrategy
+from cr4wlr import LLMConfig
 
 # Sample HTML with product information
 html = """

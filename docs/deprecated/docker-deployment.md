@@ -12,36 +12,36 @@ Choose the appropriate image based on your platform and needs:
 ### For AMD64 (Regular Linux/Windows):
 ```bash
 # Basic version (recommended)
-docker pull unclecode/crawl4ai:basic-amd64
-docker run -p 11235:11235 unclecode/crawl4ai:basic-amd64
+docker pull unclecode/cr4wlr:basic-amd64
+docker run -p 11235:11235 unclecode/cr4wlr:basic-amd64
 
 # Full ML/LLM support
-docker pull unclecode/crawl4ai:all-amd64
-docker run -p 11235:11235 unclecode/crawl4ai:all-amd64
+docker pull unclecode/cr4wlr:all-amd64
+docker run -p 11235:11235 unclecode/cr4wlr:all-amd64
 
 # With GPU support
-docker pull unclecode/crawl4ai:gpu-amd64
-docker run -p 11235:11235 unclecode/crawl4ai:gpu-amd64
+docker pull unclecode/cr4wlr:gpu-amd64
+docker run -p 11235:11235 unclecode/cr4wlr:gpu-amd64
 ```
 
 ### For ARM64 (M1/M2 Macs, ARM servers):
 ```bash
 # Basic version (recommended)
-docker pull unclecode/crawl4ai:basic-arm64
-docker run -p 11235:11235 unclecode/crawl4ai:basic-arm64
+docker pull unclecode/cr4wlr:basic-arm64
+docker run -p 11235:11235 unclecode/cr4wlr:basic-arm64
 
 # Full ML/LLM support
-docker pull unclecode/crawl4ai:all-arm64
-docker run -p 11235:11235 unclecode/crawl4ai:all-arm64
+docker pull unclecode/cr4wlr:all-arm64
+docker run -p 11235:11235 unclecode/cr4wlr:all-arm64
 
 # With GPU support
-docker pull unclecode/crawl4ai:gpu-arm64
-docker run -p 11235:11235 unclecode/crawl4ai:gpu-arm64
+docker pull unclecode/cr4wlr:gpu-arm64
+docker run -p 11235:11235 unclecode/cr4wlr:gpu-arm64
 ```
 
 Need more memory? Add `--shm-size`:
 ```bash
-docker run --shm-size=2gb -p 11235:11235 unclecode/crawl4ai:basic-amd64
+docker run --shm-size=2gb -p 11235:11235 unclecode/cr4wlr:basic-amd64
 ```
 
 Test the installation:
@@ -52,11 +52,11 @@ curl http://localhost:11235/health
 ### For Raspberry Pi (32-bit) (coming soon):
 ```bash
 # Pull and run basic version (recommended for Raspberry Pi)
-docker pull unclecode/crawl4ai:basic-armv7
-docker run -p 11235:11235 unclecode/crawl4ai:basic-armv7
+docker pull unclecode/cr4wlr:basic-armv7
+docker run -p 11235:11235 unclecode/cr4wlr:basic-armv7
 
 # With increased shared memory if needed
-docker run --shm-size=2gb -p 11235:11235 unclecode/crawl4ai:basic-armv7
+docker run --shm-size=2gb -p 11235:11235 unclecode/cr4wlr:basic-armv7
 ```
 
 Note: Due to hardware constraints, only the basic version is recommended for Raspberry Pi.
@@ -70,18 +70,18 @@ Build the image locally based on your platform:
 
 ```bash
 # Clone the repository
-git clone https://github.com/unclecode/crawl4ai.git
-cd crawl4ai
+git clone https://github.com/unclecode/cr4wlr.git
+cd cr4wlr
 
 # For AMD64 (Regular Linux/Windows)
 docker build --platform linux/amd64 \
-  --tag crawl4ai:local \
+  --tag cr4wlr:local \
   --build-arg INSTALL_TYPE=basic \
   .
 
 # For ARM64 (M1/M2 Macs, ARM servers)
 docker build --platform linux/arm64 \
-  --tag crawl4ai:local \
+  --tag cr4wlr:local \
   --build-arg INSTALL_TYPE=basic \
   .
 ```
@@ -94,7 +94,7 @@ Build options:
 Example with all options:
 ```bash
 docker build --platform linux/amd64 \
-  --tag crawl4ai:local \
+  --tag cr4wlr:local \
   --build-arg INSTALL_TYPE=all \
   --build-arg ENABLE_GPU=true \
   .
@@ -103,10 +103,10 @@ docker build --platform linux/amd64 \
 Run your local build:
 ```bash
 # Regular run
-docker run -p 11235:11235 crawl4ai:local
+docker run -p 11235:11235 cr4wlr:local
 
 # With increased shared memory
-docker run --shm-size=2gb -p 11235:11235 crawl4ai:local
+docker run --shm-size=2gb -p 11235:11235 cr4wlr:local
 ```
 
 Test the installation:
@@ -123,8 +123,8 @@ Docker Compose provides a more structured way to run Crawl4AI, especially when d
 
 ```bash
 # Clone the repository
-git clone https://github.com/unclecode/crawl4ai.git
-cd crawl4ai
+git clone https://github.com/unclecode/cr4wlr.git
+cd cr4wlr
 ```
 
 ### For AMD64 (Regular Linux/Windows):
@@ -176,7 +176,7 @@ curl http://localhost:11235/health
 
 Deploy your own instance of Crawl4AI with one click:
 
-[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?repo=https://github.com/unclecode/crawl4ai/tree/0.3.74&refcode=a0780f1bdb3d&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?repo=https://github.com/unclecode/cr4wlr/tree/0.3.74&refcode=a0780f1bdb3d&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
 > 💡 **Recommended specs**: 4GB RAM minimum. Select "professional-xs" or higher when deploying for stable operation.
 

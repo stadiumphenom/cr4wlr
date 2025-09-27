@@ -5,7 +5,7 @@ data = {
     "screenshot": True,
 }
 
-response = requests.post("https://crawl4ai.com/crawl", json=data)
+response = requests.post("https://cr4wlr.com/crawl", json=data)
 result = response.json()["results"][0]
 print(result.keys())
 # dict_keys(['url', 'html', 'success', 'cleaned_html', 'media',

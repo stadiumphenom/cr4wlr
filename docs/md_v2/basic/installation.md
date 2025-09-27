@@ -11,7 +11,7 @@ Crawl4AI is now available on PyPI, making installation easier than ever. Choose 
 For basic web crawling and scraping tasks:
 
 ```bash
-pip install crawl4ai
+pip install cr4wlr
 playwright install # Install Playwright dependencies
 ```
 
@@ -20,7 +20,7 @@ playwright install # Install Playwright dependencies
 For advanced text clustering (includes CosineSimilarity cluster strategy):
 
 ```bash
-pip install crawl4ai[torch]
+pip install cr4wlr[torch]
 ```
 
 ### Installation with Transformers
@@ -28,7 +28,7 @@ pip install crawl4ai[torch]
 For text summarization and Hugging Face models:
 
 ```bash
-pip install crawl4ai[transformer]
+pip install cr4wlr[transformer]
 ```
 
 ### Full Installation
@@ -36,7 +36,7 @@ pip install crawl4ai[transformer]
 For all features:
 
 ```bash
-pip install crawl4ai[all]
+pip install cr4wlr[all]
 ```
 
 ### Development Installation
@@ -44,8 +44,8 @@ pip install crawl4ai[all]
 For contributors who plan to modify the source code:
 
 ```bash
-git clone https://github.com/unclecode/crawl4ai.git
-cd crawl4ai
+git clone https://github.com/unclecode/cr4wlr.git
+cd cr4wlr
 pip install -e ".[all]"
 playwright install # Install Playwright dependencies
 ```
@@ -53,7 +53,7 @@ playwright install # Install Playwright dependencies
 💡 After installation with "torch", "transformer", or "all" options, it's recommended to run the following CLI command to load the required models:
 
 ```bash
-crawl4ai-download-models
+cr4wlr-download-models
 ```
 
 This is optional but will boost the performance and speed of the crawler. You only need to do this once after installation.
@@ -117,7 +117,7 @@ After installation, you can verify that Crawl4AI is working correctly by running
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async def main():
     async with AsyncWebCrawler(verbose=True) as crawler:
@@ -132,6 +132,6 @@ This script should successfully crawl the example website and print the first 50
 
 ## Getting Help
 
-If you encounter any issues during installation or usage, please check the [documentation](https://docs.crawl4ai.com/) or raise an issue on the [GitHub repository](https://github.com/unclecode/crawl4ai/issues).
+If you encounter any issues during installation or usage, please check the [documentation](https://docs.cr4wlr.com/) or raise an issue on the [GitHub repository](https://github.com/unclecode/cr4wlr/issues).
 
 Happy crawling! 🕷️🤖

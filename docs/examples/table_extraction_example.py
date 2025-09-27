@@ -7,7 +7,7 @@ to extract tables from web pages.
 
 import asyncio
 import pandas as pd
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     CacheMode,
@@ -204,7 +204,7 @@ async def example_combined_extraction():
     print("Example 5: Combined Extraction Strategies")
     print("="*50)
     
-    from crawl4ai import LLMExtractionStrategy, LLMConfig
+    from cr4wlr import LLMExtractionStrategy, LLMConfig
     
     async with AsyncWebCrawler() as crawler:
         # Define schema for structured extraction

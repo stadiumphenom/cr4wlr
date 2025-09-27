@@ -50,7 +50,7 @@ class AsyncWebCrawler:
 ### Typical Initialization
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig
 
 browser_cfg = BrowserConfig(
     browser_type="chromium",
@@ -113,7 +113,7 @@ You pass a `CrawlerRunConfig` object that sets up everything about a crawl—con
 
 ```python
 import asyncio
-from crawl4ai import CrawlerRunConfig, CacheMode
+from cr4wlr import CrawlerRunConfig, CacheMode
 
 run_cfg = CrawlerRunConfig(
     cache_mode=CacheMode.BYPASS,
@@ -216,8 +216,8 @@ Below is an example hooking it all together:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 import json
 
 async def main():

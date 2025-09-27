@@ -37,8 +37,8 @@ Let's begin with a **simple** schema-based extraction using the `JsonCssExtracti
 ```python
 import json
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def extract_crypto_prices():
     # 1. Define a simple extraction schema
@@ -107,8 +107,8 @@ Below is a short example demonstrating **XPath** extraction plus the **`raw://`*
 ```python
 import json
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai import JsonXPathExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import JsonXPathExtractionStrategy
 
 async def extract_crypto_prices_xpath():
     # 1. Minimal dummy HTML with some repeating rows
@@ -308,8 +308,8 @@ Key Takeaways:
 ```python
 import json
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import JsonCssExtractionStrategy
 
 ecommerce_schema = {
     # ... the advanced schema from above ...
@@ -361,7 +361,7 @@ The easiest way to start is by using the built-in pattern catalog:
 ```python
 import json
 import asyncio
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     RegexExtractionStrategy
@@ -441,7 +441,7 @@ For more targeted extraction, you can provide custom patterns:
 ```python
 import json
 import asyncio
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     RegexExtractionStrategy
@@ -477,7 +477,7 @@ For complex or site-specific patterns, you can use an LLM once to generate an op
 import json
 import asyncio
 from pathlib import Path
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     RegexExtractionStrategy,
@@ -649,8 +649,8 @@ While manually crafting schemas is powerful and precise, Crawl4AI now offers a c
 The schema generator is available as a static method on both `JsonCssExtractionStrategy` and `JsonXPathExtractionStrategy`. You can choose between OpenAI's GPT-4 or the open-source Ollama for schema generation:
 
 ```python
-from crawl4ai import JsonCssExtractionStrategy, JsonXPathExtractionStrategy
-from crawl4ai import LLMConfig
+from cr4wlr import JsonCssExtractionStrategy, JsonXPathExtractionStrategy
+from cr4wlr import LLMConfig
 
 # Sample HTML with product information
 html = """

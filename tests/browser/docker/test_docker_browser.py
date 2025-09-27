@@ -14,12 +14,12 @@ import uuid
 if __name__ == "__main__":
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
 
-from crawl4ai.browser import BrowserManager
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
-from crawl4ai.async_logger import AsyncLogger
-from crawl4ai.browser import DockerConfig
-from crawl4ai.browser import DockerRegistry
-from crawl4ai.browser import DockerUtils
+from cr4wlr.browser import BrowserManager
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
+from cr4wlr.async_logger import AsyncLogger
+from cr4wlr.browser import DockerConfig
+from cr4wlr.browser import DockerRegistry
+from cr4wlr.browser import DockerUtils
 
 # Create a logger for clear terminal output
 logger = AsyncLogger(verbose=True, log_file=None)
@@ -107,7 +107,7 @@ async def test_docker_components():
         container_id = await docker_utils.create_container(
             image_name=launch_image,
             host_port=available_port,
-            container_name="crawl4ai-test-container"
+            container_name="cr4wlr-test-container"
         )
         
         if not container_id:

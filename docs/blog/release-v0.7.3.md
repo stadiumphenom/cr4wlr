@@ -26,7 +26,7 @@ Today I'm releasing Crawl4AI v0.7.3—the Multi-Config Intelligence Update. This
 ### Technical Implementation
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, MatchMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, MatchMode
 
 # Define specialized configs for different content types
 configs = [
@@ -91,7 +91,7 @@ async with AsyncWebCrawler() as crawler:
 ### Technical Implementation
 
 ```python
-from crawl4ai import AsyncWebCrawler, BrowserConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig
 
 # Enable undetected mode for stealth crawling
 browser_config = BrowserConfig(
@@ -117,7 +117,7 @@ async with AsyncWebCrawler(config=browser_config) as crawler:
 
 ```python
 # Combine multiple stealth techniques
-from crawl4ai import CrawlerRunConfig
+from cr4wlr import CrawlerRunConfig
 
 config = CrawlerRunConfig(
     # Random user agents and headers
@@ -170,7 +170,7 @@ result = await crawler.arun("https://bot-protected-site.com", config=config)
 ### Memory Tracking Implementation
 
 ```python
-from crawl4ai.memory_utils import MemoryMonitor, get_memory_info
+from cr4wlr.memory_utils import MemoryMonitor, get_memory_info
 
 # Monitor memory during crawling
 monitor = MemoryMonitor()
@@ -272,7 +272,7 @@ docker run -d \
   -e LLM_PROVIDER="groq/llama-3.2-3b-preview" \
   -e GROQ_API_KEY="your-key" \
   -p 11235:11235 \
-  unclecode/crawl4ai:latest
+  unclecode/cr4wlr:latest
 
 # Option 2: Using .llm.env file (recommended for production)
 # Create .llm.env file:
@@ -283,7 +283,7 @@ docker run -d \
 docker run -d \
   --env-file .llm.env \
   -p 11235:11235 \
-  unclecode/crawl4ai:latest
+  unclecode/cr4wlr:latest
 ```
 
 Override per request when needed:
@@ -336,10 +336,10 @@ Thanks to our contributors and the entire community for feedback and bug reports
 
 ## 📚 Resources
 
-- [Full Documentation](https://docs.crawl4ai.com)
-- [GitHub Repository](https://github.com/unclecode/crawl4ai)
-- [Discord Community](https://discord.gg/crawl4ai)
-- [Feature Demo](https://github.com/unclecode/crawl4ai/blob/main/docs/releases_review/demo_v0.7.3.py)
+- [Full Documentation](https://docs.cr4wlr.com)
+- [GitHub Repository](https://github.com/unclecode/cr4wlr)
+- [Discord Community](https://discord.gg/cr4wlr)
+- [Feature Demo](https://github.com/unclecode/cr4wlr/blob/main/docs/releases_review/demo_v0.7.3.py)
 
 ---
 

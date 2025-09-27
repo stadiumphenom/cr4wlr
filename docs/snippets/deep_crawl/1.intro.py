@@ -1,7 +1,7 @@
 import asyncio
 from typing import List
 
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     BFSDeepCrawlStrategy,
@@ -11,15 +11,15 @@ from crawl4ai import (
     URLPatternFilter,
 )
 
-# Import necessary classes from crawl4ai library:
+# Import necessary classes from cr4wlr library:
 # - AsyncWebCrawler: The main class for web crawling.
 # - CrawlerRunConfig: Configuration class for crawler behavior.
 # - BFSDeepCrawlStrategy: Breadth-First Search deep crawling strategy.
 # - CrawlResult: Data model for individual crawl results.
 # - FilterChain: Used to chain multiple URL filters.
 # - URLPatternFilter: Filter URLs based on patterns.
-# You had from crawl4ai.deep_crawling.filters import FilterChain, URLPatternFilter, which is also correct,
-# but for simplicity and consistency, we will use the direct import from crawl4ai in this example, as it is re-exported in __init__.py
+# You had from cr4wlr.deep_crawling.filters import FilterChain, URLPatternFilter, which is also correct,
+# but for simplicity and consistency, we will use the direct import from cr4wlr in this example, as it is re-exported in __init__.py
 
 async def basic_deep_crawl():
     """
@@ -61,7 +61,7 @@ async def basic_deep_crawl():
     # Use AsyncWebCrawler as a context manager for automatic start and close.
     async with AsyncWebCrawler() as crawler:
         results: List[CrawlResult] = await crawler.arun(
-            # url="https://docs.crawl4ai.com", # Uncomment to use crawl4ai documentation as start URL
+            # url="https://docs.cr4wlr.com", # Uncomment to use cr4wlr documentation as start URL
             url="https://console.groq.com/docs", # Set the start URL for deep crawling to Groq documentation
             config=config, # Pass the configured CrawlerRunConfig to arun method
         )

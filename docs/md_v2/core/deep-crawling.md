@@ -22,9 +22,9 @@ Here's a minimal code snippet that implements a basic deep crawl using the **BFS
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
-from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.deep_crawling import BFSDeepCrawlStrategy
+from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
 
 async def main():
     # Configure a 2-level deep crawl
@@ -67,7 +67,7 @@ if __name__ == "__main__":
 The **BFSDeepCrawlStrategy** uses a breadth-first approach, exploring all links at one depth before moving deeper:
 
 ```python
-from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
+from cr4wlr.deep_crawling import BFSDeepCrawlStrategy
 
 # Basic configuration
 strategy = BFSDeepCrawlStrategy(
@@ -91,7 +91,7 @@ strategy = BFSDeepCrawlStrategy(
 The **DFSDeepCrawlStrategy** uses a depth-first approach, explores as far down a branch as possible before backtracking.
 
 ```python
-from crawl4ai.deep_crawling import DFSDeepCrawlStrategy
+from cr4wlr.deep_crawling import DFSDeepCrawlStrategy
 
 # Basic configuration
 strategy = DFSDeepCrawlStrategy(
@@ -115,8 +115,8 @@ strategy = DFSDeepCrawlStrategy(
 For more intelligent crawling, use **BestFirstCrawlingStrategy** with scorers to prioritize the most relevant pages:
 
 ```python
-from crawl4ai.deep_crawling import BestFirstCrawlingStrategy
-from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer
+from cr4wlr.deep_crawling import BestFirstCrawlingStrategy
+from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer
 
 # Create a scorer
 scorer = KeywordRelevanceScorer(
@@ -197,7 +197,7 @@ Filters help you narrow down which pages to crawl. Combine multiple filters usin
 ### 4.1 Basic URL Pattern Filter
 
 ```python
-from crawl4ai.deep_crawling.filters import FilterChain, URLPatternFilter
+from cr4wlr.deep_crawling.filters import FilterChain, URLPatternFilter
 
 # Only follow URLs containing "blog" or "docs"
 url_filter = URLPatternFilter(patterns=["*blog*", "*docs*"])
@@ -213,7 +213,7 @@ config = CrawlerRunConfig(
 ### 4.2 Combining Multiple Filters
 
 ```python
-from crawl4ai.deep_crawling.filters import (
+from cr4wlr.deep_crawling.filters import (
     FilterChain,
     URLPatternFilter,
     DomainFilter,
@@ -262,8 +262,8 @@ Scorers assign priority values to discovered URLs, helping the crawler focus on 
 ### 5.1 KeywordRelevanceScorer
 
 ```python
-from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer
-from crawl4ai.deep_crawling import BestFirstCrawlingStrategy
+from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer
+from cr4wlr.deep_crawling import BestFirstCrawlingStrategy
 
 # Create a keyword relevance scorer
 keyword_scorer = KeywordRelevanceScorer(
@@ -300,7 +300,7 @@ async with AsyncWebCrawler() as crawler:
 The **SEOFilter** helps you identify pages with strong SEO characteristics:
 
 ```python
-from crawl4ai.deep_crawling.filters import FilterChain, SEOFilter
+from cr4wlr.deep_crawling.filters import FilterChain, SEOFilter
 
 # Create an SEO filter that looks for specific keywords in page metadata
 seo_filter = SEOFilter(
@@ -321,7 +321,7 @@ config = CrawlerRunConfig(
 The **ContentRelevanceFilter** analyzes the actual content of pages:
 
 ```python
-from crawl4ai.deep_crawling.filters import FilterChain, ContentRelevanceFilter
+from cr4wlr.deep_crawling.filters import FilterChain, ContentRelevanceFilter
 
 # Create a content relevance filter
 relevance_filter = ContentRelevanceFilter(
@@ -349,16 +349,16 @@ This example combines multiple techniques for a sophisticated crawl:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
-from crawl4ai.deep_crawling import BestFirstCrawlingStrategy
-from crawl4ai.deep_crawling.filters import (
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
+from cr4wlr.deep_crawling import BestFirstCrawlingStrategy
+from cr4wlr.deep_crawling.filters import (
     FilterChain,
     DomainFilter,
     URLPatternFilter,
     ContentTypeFilter
 )
-from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer
+from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer
 
 async def run_advanced_crawler():
     # Create a sophisticated filter chain

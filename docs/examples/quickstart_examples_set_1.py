@@ -4,16 +4,16 @@ import json
 import base64
 from pathlib import Path
 from typing import List
-from crawl4ai import ProxyConfig
+from cr4wlr import ProxyConfig
 
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode, CrawlResult
-from crawl4ai import RoundRobinProxyStrategy
-from crawl4ai import JsonCssExtractionStrategy, LLMExtractionStrategy
-from crawl4ai import LLMConfig
-from crawl4ai import PruningContentFilter, BM25ContentFilter
-from crawl4ai import DefaultMarkdownGenerator
-from crawl4ai import BFSDeepCrawlStrategy, DomainFilter, FilterChain
-from crawl4ai import BrowserConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode, CrawlResult
+from cr4wlr import RoundRobinProxyStrategy
+from cr4wlr import JsonCssExtractionStrategy, LLMExtractionStrategy
+from cr4wlr import LLMConfig
+from cr4wlr import PruningContentFilter, BM25ContentFilter
+from cr4wlr import DefaultMarkdownGenerator
+from cr4wlr import BFSDeepCrawlStrategy, DomainFilter, FilterChain
+from cr4wlr import BrowserConfig
 
 __cur_dir__ = Path(__file__).parent
 
@@ -181,7 +181,7 @@ async def demo_deep_crawl():
     """Deep crawling with BFS strategy"""
     print("\n=== 6. Deep Crawling ===")
 
-    filter_chain = FilterChain([DomainFilter(allowed_domains=["crawl4ai.com"])])
+    filter_chain = FilterChain([DomainFilter(allowed_domains=["cr4wlr.com"])])
 
     deep_crawl_strategy = BFSDeepCrawlStrategy(
         max_depth=1, max_pages=5, filter_chain=filter_chain
@@ -189,7 +189,7 @@ async def demo_deep_crawl():
 
     async with AsyncWebCrawler() as crawler:
         results: List[CrawlResult] = await crawler.arun(
-            url="https://docs.crawl4ai.com",
+            url="https://docs.cr4wlr.com",
             config=CrawlerRunConfig(deep_crawl_strategy=deep_crawl_strategy),
         )
 

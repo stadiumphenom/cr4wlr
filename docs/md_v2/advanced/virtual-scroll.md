@@ -38,7 +38,7 @@ Only scenario 3 requires special handling, which Virtual Scroll automates.
 ## Basic Usage
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig
 
 # Configure virtual scroll
 virtual_config = VirtualScrollConfig(
@@ -80,7 +80,7 @@ async with AsyncWebCrawler() as crawler:
 ### Twitter-like Timeline
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig, BrowserConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig, BrowserConfig
 
 async def crawl_twitter_timeline():
     # Twitter replaces tweets as you scroll
@@ -199,7 +199,7 @@ Use **scan_full_page** when:
 Virtual Scroll works seamlessly with extraction strategies:
 
 ```python
-from crawl4ai import LLMExtractionStrategy, LLMConfig
+from cr4wlr import LLMExtractionStrategy, LLMConfig
 
 # Define extraction schema
 schema = {

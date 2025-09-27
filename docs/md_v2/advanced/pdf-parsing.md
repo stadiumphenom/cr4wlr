@@ -16,7 +16,7 @@ Use `PDFCrawlerStrategy` when you need to:
 ### Key Methods and Their Behavior
 -   **`__init__(self, logger: AsyncLogger = None)`**:
     -   Initializes the strategy.
-    -   `logger`: An optional `AsyncLogger` instance (from `crawl4ai.async_logger`) for logging purposes.
+    -   `logger`: An optional `AsyncLogger` instance (from `cr4wlr.async_logger`) for logging purposes.
 -   **`async crawl(self, url: str, **kwargs) -> AsyncCrawlResponse`**:
     -   This method is called by the `AsyncWebCrawler` during the `arun` process.
     -   It takes the `url` (which should point to a PDF) and creates a minimal `AsyncCrawlResponse`.
@@ -30,8 +30,8 @@ Use `PDFCrawlerStrategy` when you need to:
 ### Example Usage
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.processors.pdf import PDFCrawlerStrategy, PDFContentScrapingStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.processors.pdf import PDFCrawlerStrategy, PDFContentScrapingStrategy
 
 async def main():
     # Initialize the PDF crawler strategy
@@ -119,8 +119,8 @@ When initializing `PDFContentScrapingStrategy`, you can configure its behavior u
 ### Example Usage
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.processors.pdf import PDFCrawlerStrategy, PDFContentScrapingStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.processors.pdf import PDFCrawlerStrategy, PDFContentScrapingStrategy
 import os # For creating image directory
 
 async def main():

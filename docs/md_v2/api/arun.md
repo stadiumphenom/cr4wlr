@@ -16,7 +16,7 @@ Below is an organized look at the parameters that can go inside `CrawlerRunConfi
 ## 1. Core Usage
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     run_config = CrawlerRunConfig(
@@ -214,8 +214,8 @@ Below is a snippet combining many parameters:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
 
 async def main():
     # Example schema

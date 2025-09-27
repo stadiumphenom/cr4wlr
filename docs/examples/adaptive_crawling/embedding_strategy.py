@@ -7,7 +7,7 @@ for semantic understanding and intelligent crawling.
 
 import asyncio
 import os
-from crawl4ai import AsyncWebCrawler, AdaptiveCrawler, AdaptiveConfig
+from cr4wlr import AsyncWebCrawler, AdaptiveCrawler, AdaptiveConfig
 
 
 async def main():

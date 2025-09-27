@@ -1,8 +1,8 @@
 import asyncio
 import time
-from crawl4ai.async_webcrawler import AsyncWebCrawler, CacheMode
-from crawl4ai.async_configs import CrawlerRunConfig
-from crawl4ai.async_dispatcher import MemoryAdaptiveDispatcher, RateLimiter
+from cr4wlr.async_webcrawler import AsyncWebCrawler, CacheMode
+from cr4wlr.async_configs import CrawlerRunConfig
+from cr4wlr.async_dispatcher import MemoryAdaptiveDispatcher, RateLimiter
 
 VERBOSE = False
 

@@ -19,9 +19,9 @@ import os
 from pathlib import Path
 from typing import List, Dict, Any
 
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from crawl4ai import JsonCssExtractionStrategy
-from crawl4ai.script.c4a_compile import C4ACompiler
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import JsonCssExtractionStrategy
+from cr4wlr.script.c4a_compile import C4ACompiler
 
 
 class GitHubSearchScraper:

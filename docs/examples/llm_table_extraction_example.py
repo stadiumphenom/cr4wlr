@@ -17,7 +17,7 @@ __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file
 
 
 import asyncio
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     LLMConfig,
@@ -215,7 +215,7 @@ async def compare_strategies():
     
     async with AsyncWebCrawler() as crawler:
         # Test with default extraction
-        from crawl4ai import DefaultTableExtraction
+        from cr4wlr import DefaultTableExtraction
         
         default_strategy = DefaultTableExtraction(
             table_score_threshold=3,

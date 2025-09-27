@@ -2,7 +2,7 @@ import os
 import re
 import shutil
 
-OLD = "crawl4ai"
+OLD = "cr4wlr"
 NEW = "cr4wlr"
 ROOT = "."  # path to your repo root
 

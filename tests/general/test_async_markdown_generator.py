@@ -1,7 +1,7 @@
 import asyncio
 from typing import Dict
-from crawl4ai.content_filter_strategy import BM25ContentFilter, PruningContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr.content_filter_strategy import BM25ContentFilter, PruningContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 import time
 
 # Test HTML samples

@@ -13,9 +13,9 @@ Crawl4AI simplifies asynchronous web crawling and data extraction, making it acc
 - Advanced anti-detection capabilities
 
 **Quick Links:**
-- [GitHub Repository](https://github.com/unclecode/crawl4ai)
-- [Documentation](https://docs.crawl4ai.com)
-- [Examples](https://github.com/unclecode/crawl4ai/tree/main/docs/examples)
+- [GitHub Repository](https://github.com/unclecode/cr4wlr)
+- [Documentation](https://docs.cr4wlr.com)
+- [Examples](https://github.com/unclecode/cr4wlr/tree/main/docs/examples)
 
 ---
 
@@ -35,22 +35,22 @@ flowchart TD
     B -->|Research/Testing| E[Google Colab]
     B -->|CI/CD Pipeline| F[Automated Setup]
     
-    C --> C1[pip install crawl4ai]
-    C1 --> C2[crawl4ai-setup]
+    C --> C1[pip install cr4wlr]
+    C1 --> C2[cr4wlr-setup]
     C2 --> C3{Need Advanced Features?}
     
     C3 -->|No| C4[Basic Installation Complete]
-    C3 -->|Text Clustering| C5[pip install crawl4ai with torch]
-    C3 -->|Transformers| C6[pip install crawl4ai with transformer]
-    C3 -->|All Features| C7[pip install crawl4ai with all]
+    C3 -->|Text Clustering| C5[pip install cr4wlr with torch]
+    C3 -->|Transformers| C6[pip install cr4wlr with transformer]
+    C3 -->|All Features| C7[pip install cr4wlr with all]
     
-    C5 --> C8[crawl4ai-download-models]
+    C5 --> C8[cr4wlr-download-models]
     C6 --> C8
     C7 --> C8
     C8 --> C9[Advanced Installation Complete]
     
     D --> D1{Deployment Method?}
-    D1 -->|Pre-built Image| D2[docker pull unclecode/crawl4ai]
+    D1 -->|Pre-built Image| D2[docker pull unclecode/cr4wlr]
     D1 -->|Docker Compose| D3[Clone repo + docker compose]
     D1 -->|Custom Build| D4[docker buildx build]
     
@@ -69,7 +69,7 @@ flowchart TD
     F1 --> F2[Automated setup scripts]
     F2 --> F3[CI/CD Integration Complete]
     
-    C4 --> G[Verify with crawl4ai-doctor]
+    C4 --> G[Verify with cr4wlr-doctor]
     C9 --> G
     D7 --> H[Health check via API]
     E4 --> I[Run test crawl]
@@ -98,15 +98,15 @@ sequenceDiagram
     participant Playwright
     participant Crawler
     
-    User->>PyPI: pip install crawl4ai
+    User->>PyPI: pip install cr4wlr
     PyPI-->>User: Package downloaded
     
-    User->>System: crawl4ai-setup
+    User->>System: cr4wlr-setup
     System->>Playwright: Install browser binaries
     Playwright-->>System: Chromium, Firefox installed
     System-->>User: Setup complete
     
-    User->>System: crawl4ai-doctor
+    User->>System: cr4wlr-doctor
     System->>System: Check Python version
     System->>System: Verify Playwright installation
     System->>System: Test browser launch
@@ -170,25 +170,25 @@ graph TB
 stateDiagram-v2
     [*] --> BasicInstall
     
-    BasicInstall --> FeatureChoice: crawl4ai installed
+    BasicInstall --> FeatureChoice: cr4wlr installed
     
     FeatureChoice --> TorchInstall: Need text clustering
     FeatureChoice --> TransformerInstall: Need HuggingFace models
     FeatureChoice --> AllInstall: Need everything
     FeatureChoice --> Complete: Basic features sufficient
     
-    TorchInstall --> TorchSetup: pip install crawl4ai with torch
-    TransformerInstall --> TransformerSetup: pip install crawl4ai with transformer  
-    AllInstall --> AllSetup: pip install crawl4ai with all
+    TorchInstall --> TorchSetup: pip install cr4wlr with torch
+    TransformerInstall --> TransformerSetup: pip install cr4wlr with transformer  
+    AllInstall --> AllSetup: pip install cr4wlr with all
     
-    TorchSetup --> ModelDownload: crawl4ai-setup
-    TransformerSetup --> ModelDownload: crawl4ai-setup
-    AllSetup --> ModelDownload: crawl4ai-setup
+    TorchSetup --> ModelDownload: cr4wlr-setup
+    TransformerSetup --> ModelDownload: cr4wlr-setup
+    AllSetup --> ModelDownload: cr4wlr-setup
     
-    ModelDownload --> PreDownload: crawl4ai-download-models
+    ModelDownload --> PreDownload: cr4wlr-download-models
     PreDownload --> Complete: All models cached
     
-    Complete --> Verification: crawl4ai-doctor
+    Complete --> Verification: cr4wlr-doctor
     Verification --> [*]: Installation verified
     
     note right of TorchInstall : PyTorch for semantic operations
@@ -299,7 +299,7 @@ sequenceDiagram
     Docker->>Registry: Push multi-arch manifest
     Registry-->>Docker: Build complete
     
-    User->>Registry: docker pull unclecode/crawl4ai
+    User->>Registry: docker pull unclecode/cr4wlr
     Registry-->>User: Download appropriate architecture
     
     User->>Docker: docker run with configuration
@@ -313,7 +313,7 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-    A[Installation Complete] --> B[Run crawl4ai-doctor]
+    A[Installation Complete] --> B[Run cr4wlr-doctor]
     
     B --> C{Python Version Check}
     C -->|✓ 3.10+| D{Playwright Check}
@@ -321,7 +321,7 @@ flowchart TD
     C1 --> D
     
     D -->|✓ Installed| E{Browser Binaries}
-    D -->|✗ Missing| D1[Run crawl4ai-setup]
+    D -->|✗ Missing| D1[Run cr4wlr-setup]
     D1 --> E
     
     E -->|✓ Available| F{Test Browser Launch}
@@ -387,7 +387,7 @@ graph TD
     style D1 fill:#e3f2fd
 ```
 
-**📖 Learn more:** [Installation Guide](https://docs.crawl4ai.com/core/installation/), [Docker Deployment](https://docs.crawl4ai.com/core/docker-deployment/), [System Requirements](https://docs.crawl4ai.com/core/installation/#prerequisites)
+**📖 Learn more:** [Installation Guide](https://docs.cr4wlr.com/core/installation/), [Docker Deployment](https://docs.cr4wlr.com/core/docker-deployment/), [System Requirements](https://docs.cr4wlr.com/core/installation/#prerequisites)
 ---
 
 
@@ -801,7 +801,7 @@ flowchart TD
     style I fill:#c8e6c9
 ```
 
-**📖 Learn more:** [Simple Crawling Guide](https://docs.crawl4ai.com/core/simple-crawling/), [Configuration Options](https://docs.crawl4ai.com/core/browser-crawler-config/), [Result Processing](https://docs.crawl4ai.com/core/crawler-result/), [Table Extraction](https://docs.crawl4ai.com/extraction/no-llm-strategies/)
+**📖 Learn more:** [Simple Crawling Guide](https://docs.cr4wlr.com/core/simple-crawling/), [Configuration Options](https://docs.cr4wlr.com/core/browser-crawler-config/), [Result Processing](https://docs.cr4wlr.com/core/crawler-result/), [Table Extraction](https://docs.cr4wlr.com/extraction/no-llm-strategies/)
 ---
 
 
@@ -1616,7 +1616,7 @@ sequenceDiagram
 ```mermaid
 graph LR
     subgraph "Main Package Imports"
-        A[crawl4ai] --> A1[AsyncWebCrawler]
+        A[cr4wlr] --> A1[AsyncWebCrawler]
         A --> A2[BrowserConfig]
         A --> A3[CrawlerRunConfig]
         A --> A4[LLMConfig]
@@ -2221,11 +2221,11 @@ flowchart TD
     style E fill:#f3e5f5
 ```
 
-**📖 Learn more:** [Advanced Features Guide](https://docs.crawl4ai.com/advanced/advanced-features/), [Session Management](https://docs.crawl4ai.com/advanced/session-management/), [Hooks System](https://docs.crawl4ai.com/advanced/hooks-auth/), [Performance Optimization](https://docs.crawl4ai.com/advanced/performance/)
+**📖 Learn more:** [Advanced Features Guide](https://docs.cr4wlr.com/advanced/advanced-features/), [Session Management](https://docs.cr4wlr.com/advanced/session-management/), [Hooks System](https://docs.cr4wlr.com/advanced/hooks-auth/), [Performance Optimization](https://docs.cr4wlr.com/advanced/performance/)
 
-**📖 Learn more:** [Identity-Based Crawling](https://docs.crawl4ai.com/advanced/identity-based-crawling/), [Session Management](https://docs.crawl4ai.com/advanced/session-management/), [Proxy & Security](https://docs.crawl4ai.com/advanced/proxy-security/), [Content Selection](https://docs.crawl4ai.com/core/content-selection/)
+**📖 Learn more:** [Identity-Based Crawling](https://docs.cr4wlr.com/advanced/identity-based-crawling/), [Session Management](https://docs.cr4wlr.com/advanced/session-management/), [Proxy & Security](https://docs.cr4wlr.com/advanced/proxy-security/), [Content Selection](https://docs.cr4wlr.com/core/content-selection/)
 
-**📖 Learn more:** [Configuration Reference](https://docs.crawl4ai.com/api/parameters/), [Best Practices](https://docs.crawl4ai.com/core/browser-crawler-config/), [Advanced Configuration](https://docs.crawl4ai.com/advanced/advanced-features/)
+**📖 Learn more:** [Configuration Reference](https://docs.cr4wlr.com/api/parameters/), [Best Practices](https://docs.cr4wlr.com/core/browser-crawler-config/), [Advanced Configuration](https://docs.cr4wlr.com/advanced/advanced-features/)
 ---
 
 
@@ -2706,7 +2706,7 @@ flowchart TD
     style F fill:#f3e5f5
 ```
 
-**📖 Learn more:** [LLM Strategies](https://docs.crawl4ai.com/extraction/llm-strategies/), [Schema-Based Extraction](https://docs.crawl4ai.com/extraction/no-llm-strategies/), [Pattern Matching](https://docs.crawl4ai.com/extraction/no-llm-strategies/#regexextractionstrategy), [Performance Optimization](https://docs.crawl4ai.com/advanced/multi-url-crawling/)
+**📖 Learn more:** [LLM Strategies](https://docs.cr4wlr.com/extraction/llm-strategies/), [Schema-Based Extraction](https://docs.cr4wlr.com/extraction/no-llm-strategies/), [Pattern Matching](https://docs.cr4wlr.com/extraction/no-llm-strategies/#regexextractionstrategy), [Performance Optimization](https://docs.cr4wlr.com/advanced/multi-url-crawling/)
 ---
 
 
@@ -3101,7 +3101,7 @@ graph TD
     style R fill:#ffcdd2
 ```
 
-**📖 Learn more:** [Multi-URL Crawling Guide](https://docs.crawl4ai.com/advanced/multi-url-crawling/), [Dispatcher Configuration](https://docs.crawl4ai.com/advanced/crawl-dispatcher/), [Performance Optimization](https://docs.crawl4ai.com/advanced/multi-url-crawling/#performance-optimization)
+**📖 Learn more:** [Multi-URL Crawling Guide](https://docs.cr4wlr.com/advanced/multi-url-crawling/), [Dispatcher Configuration](https://docs.cr4wlr.com/advanced/crawl-dispatcher/), [Performance Optimization](https://docs.cr4wlr.com/advanced/multi-url-crawling/#performance-optimization)
 ---
 
 
@@ -3532,7 +3532,7 @@ sequenceDiagram
     end
 ```
 
-**📖 Learn more:** [Deep Crawling Strategies](https://docs.crawl4ai.com/core/deep-crawling/), [Content Filtering](https://docs.crawl4ai.com/core/content-selection/), [Advanced Crawling Patterns](https://docs.crawl4ai.com/advanced/advanced-features/)
+**📖 Learn more:** [Deep Crawling Strategies](https://docs.cr4wlr.com/core/deep-crawling/), [Content Filtering](https://docs.cr4wlr.com/core/content-selection/), [Advanced Crawling Patterns](https://docs.cr4wlr.com/advanced/advanced-features/)
 ---
 
 
@@ -3551,7 +3551,7 @@ flowchart TD
     B -->|Custom Build| E[Manual Build]
     B -->|Production| F[Production Setup]
     
-    C --> C1[docker pull unclecode/crawl4ai]
+    C --> C1[docker pull unclecode/cr4wlr]
     C1 --> C2{Need LLM Support?}
     C2 -->|Yes| C3[Setup .llm.env]
     C2 -->|No| C4[Basic run]
@@ -4138,7 +4138,7 @@ graph TD
     style Y fill:#fff3e0
 ```
 
-**📖 Learn more:** [Docker Deployment Guide](https://docs.crawl4ai.com/core/docker-deployment/), [API Reference](https://docs.crawl4ai.com/api/), [MCP Integration](https://docs.crawl4ai.com/core/docker-deployment/#mcp-model-context-protocol-support), [Production Configuration](https://docs.crawl4ai.com/core/docker-deployment/#production-deployment)
+**📖 Learn more:** [Docker Deployment Guide](https://docs.cr4wlr.com/core/docker-deployment/), [API Reference](https://docs.cr4wlr.com/api/), [MCP Integration](https://docs.cr4wlr.com/core/docker-deployment/#mcp-model-context-protocol-support), [Production Configuration](https://docs.cr4wlr.com/core/docker-deployment/#production-deployment)
 ---
 
 
@@ -4379,7 +4379,7 @@ graph TB
 ```mermaid
 graph TD
     subgraph "Global Configuration"
-        A[~/.crawl4ai/config.yml] --> B[Default Settings]
+        A[~/.cr4wlr/config.yml] --> B[Default Settings]
         B --> C[LLM Providers]
         B --> D[Browser Defaults]
         B --> E[Output Preferences]
@@ -4486,8 +4486,8 @@ timeline
     title CLI Workflow Evolution
     
     section Setup Phase
-        Installation : pip install crawl4ai
-                    : crawl4ai-setup
+        Installation : pip install cr4wlr
+                    : cr4wlr-setup
         Basic Test   : crwl https://example.com
         Config Setup : crwl config set defaults
     
@@ -4566,7 +4566,7 @@ graph LR
     style D1 fill:#fff3e0
 ```
 
-**📖 Learn more:** [CLI Reference](https://docs.crawl4ai.com/core/cli/), [Identity-Based Crawling](https://docs.crawl4ai.com/advanced/identity-based-crawling/), [Profile Management](https://docs.crawl4ai.com/advanced/session-management/), [Authentication Strategies](https://docs.crawl4ai.com/advanced/hooks-auth/)
+**📖 Learn more:** [CLI Reference](https://docs.cr4wlr.com/core/cli/), [Identity-Based Crawling](https://docs.cr4wlr.com/advanced/identity-based-crawling/), [Profile Management](https://docs.cr4wlr.com/advanced/session-management/), [Authentication Strategies](https://docs.cr4wlr.com/advanced/hooks-auth/)
 ---
 
 
@@ -5041,7 +5041,7 @@ graph LR
     style Q fill:#c8e6c9
 ```
 
-**📖 Learn more:** [HTTP vs Browser Strategies](https://docs.crawl4ai.com/core/browser-crawler-config/), [Performance Optimization](https://docs.crawl4ai.com/advanced/multi-url-crawling/), [Error Handling](https://docs.crawl4ai.com/api/async-webcrawler/)
+**📖 Learn more:** [HTTP vs Browser Strategies](https://docs.cr4wlr.com/core/browser-crawler-config/), [Performance Optimization](https://docs.cr4wlr.com/advanced/multi-url-crawling/), [Error Handling](https://docs.cr4wlr.com/api/async-webcrawler/)
 ---
 
 
@@ -5485,7 +5485,7 @@ graph TB
     style CB3 fill:#f3e5f5
 ```
 
-**📖 Learn more:** [URL Seeding Guide](https://docs.crawl4ai.com/core/url-seeding/), [Performance Optimization](https://docs.crawl4ai.com/advanced/optimization/), [Multi-URL Crawling](https://docs.crawl4ai.com/advanced/multi-url-crawling/)
+**📖 Learn more:** [URL Seeding Guide](https://docs.cr4wlr.com/core/url-seeding/), [Performance Optimization](https://docs.cr4wlr.com/advanced/optimization/), [Multi-URL Crawling](https://docs.cr4wlr.com/advanced/multi-url-crawling/)
 ---
 
 
@@ -5889,7 +5889,7 @@ flowchart TD
     style T fill:#e8f5e8
 ```
 
-**📖 Learn more:** [Deep Crawling Strategy](https://docs.crawl4ai.com/core/deep-crawling/), [Performance Optimization](https://docs.crawl4ai.com/advanced/performance-tuning/), [Custom Implementations](https://docs.crawl4ai.com/advanced/custom-filters/)
+**📖 Learn more:** [Deep Crawling Strategy](https://docs.cr4wlr.com/core/deep-crawling/), [Performance Optimization](https://docs.cr4wlr.com/advanced/performance-tuning/), [Custom Implementations](https://docs.cr4wlr.com/advanced/custom-filters/)
 ---
 
 
@@ -5905,8 +5905,8 @@ Crawl4AI provides a comprehensive solution for web crawling and data extraction 
 - Implement advanced features like deep crawling and custom filters as needed
 
 **Next Steps:**
-- Explore the [GitHub repository](https://github.com/unclecode/crawl4ai) for latest updates
+- Explore the [GitHub repository](https://github.com/unclecode/cr4wlr) for latest updates
 - Join the [Discord community](https://discord.gg/jP8KfhDhyN) for support
-- Check out [example projects](https://github.com/unclecode/crawl4ai/tree/main/docs/examples) for inspiration
+- Check out [example projects](https://github.com/unclecode/cr4wlr/tree/main/docs/examples) for inspiration
 
 Happy crawling! 🕷️

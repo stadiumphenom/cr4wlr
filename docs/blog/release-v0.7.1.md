@@ -8,7 +8,7 @@ A small maintenance release that removes unused code and improves documentation.
 
 ## 🎯 What's Changed
 
-- **Removed unused StealthConfig** from `crawl4ai/browser_manager.py`
+- **Removed unused StealthConfig** from `cr4wlr/browser_manager.py`
 - **Updated documentation** with better examples and parameter explanations
 - **Fixed virtual scroll configuration** examples in docs
 
@@ -31,7 +31,7 @@ stealth_config = StealthConfig(...)  # This was never used
 ## 🚀 Installation
 
 ```bash
-pip install crawl4ai==0.7.1
+pip install cr4wlr==0.7.1
 ```
 
 No breaking changes - upgrade directly from v0.7.0.
@@ -39,5 +39,5 @@ No breaking changes - upgrade directly from v0.7.0.
 ---
 
 Questions? Issues? 
-- GitHub: [github.com/unclecode/crawl4ai](https://github.com/unclecode/crawl4ai)
-- Discord: [discord.gg/crawl4ai](https://discord.gg/jP8KfhDhyN)
+- GitHub: [github.com/unclecode/cr4wlr](https://github.com/unclecode/cr4wlr)
+- Discord: [discord.gg/cr4wlr](https://discord.gg/jP8KfhDhyN)

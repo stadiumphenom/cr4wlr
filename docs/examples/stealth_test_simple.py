@@ -3,7 +3,7 @@ Simple test to verify stealth mode is working
 """
 
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 
 async def test_stealth():

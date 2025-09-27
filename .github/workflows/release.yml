@@ -34,14 +34,14 @@ jobs:
       - name: Check version consistency
         run: |
           TAG_VERSION=${{ steps.get_version.outputs.VERSION }}
-          PACKAGE_VERSION=$(python -c "from crawl4ai.__version__ import __version__; print(__version__)")
+          PACKAGE_VERSION=$(python -c "from cr4wlr.__version__ import __version__; print(__version__)")
           
           echo "Tag version: $TAG_VERSION"
           echo "Package version: $PACKAGE_VERSION"
           
           if [ "$TAG_VERSION" != "$PACKAGE_VERSION" ]; then
             echo "❌ Version mismatch! Tag: $TAG_VERSION, Package: $PACKAGE_VERSION"
-            echo "Please update crawl4ai/__version__.py to match the tag version"
+            echo "Please update cr4wlr/__version__.py to match the tag version"
             exit 1
           fi
           echo "✅ Version check passed: $TAG_VERSION"
@@ -64,7 +64,7 @@ jobs:
         run: |
           echo "📦 Uploading to PyPI..."
           twine upload dist/*
-          echo "✅ Package uploaded to https://pypi.org/project/crawl4ai/"
+          echo "✅ Package uploaded to https://pypi.org/project/cr4wlr/"
       
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -90,10 +90,10 @@ jobs:
           context: .
           push: true
           tags: |
-            unclecode/crawl4ai:${{ steps.get_version.outputs.VERSION }}
-            unclecode/crawl4ai:${{ steps.versions.outputs.MINOR }}
-            unclecode/crawl4ai:${{ steps.versions.outputs.MAJOR }}
-            unclecode/crawl4ai:latest
+            unclecode/cr4wlr:${{ steps.get_version.outputs.VERSION }}
+            unclecode/cr4wlr:${{ steps.versions.outputs.MINOR }}
+            unclecode/cr4wlr:${{ steps.versions.outputs.MAJOR }}
+            unclecode/cr4wlr:latest
           platforms: linux/amd64,linux/arm64
       
       - name: Create GitHub Release
@@ -108,13 +108,13 @@ jobs:
             
             **PyPI:**
             ```bash
-            pip install crawl4ai==${{ steps.get_version.outputs.VERSION }}
+            pip install cr4wlr==${{ steps.get_version.outputs.VERSION }}
             ```
             
             **Docker:**
             ```bash
-            docker pull unclecode/crawl4ai:${{ steps.get_version.outputs.VERSION }}
-            docker pull unclecode/crawl4ai:latest
+            docker pull unclecode/cr4wlr:${{ steps.get_version.outputs.VERSION }}
+            docker pull unclecode/cr4wlr:latest
             ```
             
             ### 📝 What's Changed
@@ -129,14 +129,14 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📦 PyPI Package" >> $GITHUB_STEP_SUMMARY
           echo "- Version: ${{ steps.get_version.outputs.VERSION }}" >> $GITHUB_STEP_SUMMARY
-          echo "- URL: https://pypi.org/project/crawl4ai/" >> $GITHUB_STEP_SUMMARY
-          echo "- Install: \`pip install crawl4ai==${{ steps.get_version.outputs.VERSION }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- URL: https://pypi.org/project/cr4wlr/" >> $GITHUB_STEP_SUMMARY
+          echo "- Install: \`pip install cr4wlr==${{ steps.get_version.outputs.VERSION }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 🐳 Docker Images" >> $GITHUB_STEP_SUMMARY
-          echo "- \`unclecode/crawl4ai:${{ steps.get_version.outputs.VERSION }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \`unclecode/crawl4ai:${{ steps.versions.outputs.MINOR }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \`unclecode/crawl4ai:${{ steps.versions.outputs.MAJOR }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \`unclecode/crawl4ai:latest\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`unclecode/cr4wlr:${{ steps.get_version.outputs.VERSION }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`unclecode/cr4wlr:${{ steps.versions.outputs.MINOR }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`unclecode/cr4wlr:${{ steps.versions.outputs.MAJOR }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`unclecode/cr4wlr:latest\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📋 GitHub Release" >> $GITHUB_STEP_SUMMARY
           echo "https://github.com/${{ github.repository }}/releases/tag/v${{ steps.get_version.outputs.VERSION }}" >> $GITHUB_STEP_SUMMARY

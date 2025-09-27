@@ -2,7 +2,7 @@
 Example showing how to use the content_source parameter to control HTML input for markdown generation.
 """
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, DefaultMarkdownGenerator
 
 async def demo_content_source():
     """Demonstrates different content_source options for markdown generation."""

@@ -18,7 +18,7 @@ import os, json, asyncio
 from pathlib import Path
 from typing import List
 
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     CrawlResult,

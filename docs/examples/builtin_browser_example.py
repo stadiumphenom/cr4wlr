@@ -16,7 +16,7 @@ call start() method on the crawler.
 """
 
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 import time
 
 async def crawl_with_builtin_browser():
@@ -52,7 +52,7 @@ async def crawl_with_builtin_browser():
     print("\n➡️ Crawling first URL...")
     t0 = time.time()
     result1 = await crawler.arun(
-        url="https://crawl4ai.com",
+        url="https://cr4wlr.com",
         config=crawler_config
     )
     t1 = time.time()

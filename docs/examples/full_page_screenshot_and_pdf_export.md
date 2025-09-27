@@ -15,7 +15,7 @@ We’ve introduced a new feature that effortlessly handles even the biggest page
 import os
 import sys
 import asyncio
-from crawl4ai import AsyncWebCrawler, CacheMode, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CacheMode, CrawlerRunConfig
 
 # Adjust paths as needed
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

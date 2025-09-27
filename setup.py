@@ -6,11 +6,11 @@ import shutil
 # Note: Most configuration is now in pyproject.toml
 # This setup.py is kept for backwards compatibility
 
-# Create the .crawl4ai folder in the user's home directory if it doesn't exist
+# Create the .cr4wlr folder in the user's home directory if it doesn't exist
 # If the folder already exists, remove the cache folder
 base_dir = os.getenv("CRAWL4_AI_BASE_DIRECTORY")
 crawl4ai_folder = Path(base_dir) if base_dir else Path.home()
-crawl4ai_folder = crawl4ai_folder / ".crawl4ai"
+crawl4ai_folder = crawl4ai_folder / ".cr4wlr"
 cache_folder = crawl4ai_folder / "cache"
 content_folders = [
     "html_content",
@@ -32,7 +32,7 @@ for folder in content_folders:
 
 version = "0.0.0"  # This will be overridden by pyproject.toml's dynamic version
 try:
-    with open("crawl4ai/__version__.py") as f:
+    with open("cr4wlr/__version__.py") as f:
         for line in f:
             if line.startswith("__version__"):
                 version = line.split("=")[1].strip().strip('"')
@@ -46,12 +46,12 @@ setup(
     description="🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & scraper",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/unclecode/crawl4ai",
+    url="https://github.com/unclecode/cr4wlr",
     author="Unclecode",
     author_email="unclecode@kidocode.com",
     license="Apache-2.0",
     packages=find_packages(),
-    package_data={"crawl4ai": ["js_snippet/*.js"]},
+    package_data={"cr4wlr": ["js_snippet/*.js"]},
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",

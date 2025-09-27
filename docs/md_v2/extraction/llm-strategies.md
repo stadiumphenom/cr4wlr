@@ -101,8 +101,8 @@ import asyncio
 import json
 from pydantic import BaseModel, Field
 from typing import List
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
-from crawl4ai import LLMExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
+from cr4wlr import LLMExtractionStrategy
 
 class Product(BaseModel):
     name: str
@@ -218,8 +218,8 @@ import json
 import asyncio
 from typing import List
 from pydantic import BaseModel, Field
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
-from crawl4ai import LLMExtractionStrategy
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
+from cr4wlr import LLMExtractionStrategy
 
 class Entity(BaseModel):
     name: str

@@ -19,7 +19,7 @@ from rich import print as rprint
 import sys
 sys.path.append(str(Path(__file__).parent.parent))
 
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     AdaptiveCrawler,
     AdaptiveConfig,

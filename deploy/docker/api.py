@@ -15,7 +15,7 @@ from fastapi.background import BackgroundTasks
 from fastapi.responses import JSONResponse
 from redis import asyncio as aioredis
 
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     LLMExtractionStrategy,
@@ -25,14 +25,14 @@ from crawl4ai import (
     RateLimiter, 
     LLMConfig
 )
-from crawl4ai.utils import perform_completion_with_backoff
-from crawl4ai.content_filter_strategy import (
+from cr4wlr.utils import perform_completion_with_backoff
+from cr4wlr.content_filter_strategy import (
     PruningContentFilter,
     BM25ContentFilter,
     LLMContentFilter
 )
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
-from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
 
 from utils import (
     TaskStatus,

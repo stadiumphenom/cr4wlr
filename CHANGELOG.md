@@ -193,7 +193,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Closed issues: #701, #733, #756, #774, #804, #822, #839, #841, #842, #843, #867, #902, #911  
 
 ### Removed
-- Obsolete modules under `crawl4ai/browser/*` superseded by the new pooled browser layer  
+- Obsolete modules under `cr4wlr/browser/*` superseded by the new pooled browser layer  
 
 ### Deprecated
 - Old markdown generator names now alias `DefaultMarkdownGenerator` and emit warnings  
@@ -201,7 +201,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 #### Upgrade notes
-1. Update any direct imports from `crawl4ai/browser/*` to the new pooled browser modules  
+1. Update any direct imports from `cr4wlr/browser/*` to the new pooled browser modules  
 2. If you override `AsyncPlaywrightCrawlerStrategy.get_page`, adopt the new signature  
 3. Rebuild Docker images to pull the new Chromium layer  
 4. Switch to `DefaultMarkdownGenerator` (or silence the deprecation warning)  
@@ -509,24 +509,24 @@ This release introduces several powerful new features, including robots.txt comp
 ### 0.4.247 (2025-01-06)
 
 #### Added
-- **Windows Event Loop Configuration**: Introduced a utility function `configure_windows_event_loop` to resolve `NotImplementedError` for asyncio subprocesses on Windows. ([#utils.py](crawl4ai/utils.py), [#tutorials/async-webcrawler-basics.md](docs/md_v3/tutorials/async-webcrawler-basics.md))
-- **`page_need_scroll` Method**: Added a method to determine if a page requires scrolling before taking actions in `AsyncPlaywrightCrawlerStrategy`. ([#async_crawler_strategy.py](crawl4ai/async_crawler_strategy.py))
+- **Windows Event Loop Configuration**: Introduced a utility function `configure_windows_event_loop` to resolve `NotImplementedError` for asyncio subprocesses on Windows. ([#utils.py](cr4wlr/utils.py), [#tutorials/async-webcrawler-basics.md](docs/md_v3/tutorials/async-webcrawler-basics.md))
+- **`page_need_scroll` Method**: Added a method to determine if a page requires scrolling before taking actions in `AsyncPlaywrightCrawlerStrategy`. ([#async_crawler_strategy.py](cr4wlr/async_crawler_strategy.py))
 
 #### Changed
-- **Version Bump**: Updated the version from `0.4.246` to `0.4.247`. ([#__version__.py](crawl4ai/__version__.py))
-- **Improved Scrolling Logic**: Enhanced scrolling methods in `AsyncPlaywrightCrawlerStrategy` by adding a `scroll_delay` parameter for better control. ([#async_crawler_strategy.py](crawl4ai/async_crawler_strategy.py))
+- **Version Bump**: Updated the version from `0.4.246` to `0.4.247`. ([#__version__.py](cr4wlr/__version__.py))
+- **Improved Scrolling Logic**: Enhanced scrolling methods in `AsyncPlaywrightCrawlerStrategy` by adding a `scroll_delay` parameter for better control. ([#async_crawler_strategy.py](cr4wlr/async_crawler_strategy.py))
 - **Markdown Generation Example**: Updated the `hello_world.py` example to reflect the latest API changes and better illustrate features. ([#examples/hello_world.py](docs/examples/hello_world.py))
 - **Documentation Update**: 
   - Added Windows-specific instructions for handling asyncio event loops. ([#async-webcrawler-basics.md](docs/md_v3/tutorials/async-webcrawler-basics.md))
 
 #### Removed
-- **Legacy Markdown Generation Code**: Removed outdated and unused code for markdown generation in `content_scraping_strategy.py`. ([#content_scraping_strategy.py](crawl4ai/content_scraping_strategy.py))
+- **Legacy Markdown Generation Code**: Removed outdated and unused code for markdown generation in `content_scraping_strategy.py`. ([#content_scraping_strategy.py](cr4wlr/content_scraping_strategy.py))
 
 #### Fixed
 - **Page Closing to Prevent Memory Leaks**:
   - **Description**: Added a `finally` block to ensure pages are closed when no `session_id` is provided.
   - **Impact**: Prevents memory leaks caused by lingering pages after a crawl.
-  - **File**: [`async_crawler_strategy.py`](crawl4ai/async_crawler_strategy.py)
+  - **File**: [`async_crawler_strategy.py`](cr4wlr/async_crawler_strategy.py)
   - **Code**:
     ```python
     finally:
@@ -534,14 +534,14 @@ This release introduces several powerful new features, including robots.txt comp
         if not config.session_id:
             await page.close()
     ```
-- **Multiple Element Selection**: Modified `_get_elements` in `JsonCssExtractionStrategy` to return all matching elements instead of just the first one, ensuring comprehensive extraction. ([#extraction_strategy.py](crawl4ai/extraction_strategy.py))
-- **Error Handling in Scrolling**: Added robust error handling to ensure scrolling proceeds safely even if a configuration is missing. ([#async_crawler_strategy.py](crawl4ai/async_crawler_strategy.py))
+- **Multiple Element Selection**: Modified `_get_elements` in `JsonCssExtractionStrategy` to return all matching elements instead of just the first one, ensuring comprehensive extraction. ([#extraction_strategy.py](cr4wlr/extraction_strategy.py))
+- **Error Handling in Scrolling**: Added robust error handling to ensure scrolling proceeds safely even if a configuration is missing. ([#async_crawler_strategy.py](cr4wlr/async_crawler_strategy.py))
 
 ## [0.4.267] - 2025 - 01 - 06
 
 ### Added
-- **Windows Event Loop Configuration**: Introduced a utility function `configure_windows_event_loop` to resolve `NotImplementedError` for asyncio subprocesses on Windows. ([#utils.py](crawl4ai/utils.py), [#tutorials/async-webcrawler-basics.md](docs/md_v3/tutorials/async-webcrawler-basics.md))
-- **`page_need_scroll` Method**: Added a method to determine if a page requires scrolling before taking actions in `AsyncPlaywrightCrawlerStrategy`. ([#async_crawler_strategy.py](crawl4ai/async_crawler_strategy.py))
+- **Windows Event Loop Configuration**: Introduced a utility function `configure_windows_event_loop` to resolve `NotImplementedError` for asyncio subprocesses on Windows. ([#utils.py](cr4wlr/utils.py), [#tutorials/async-webcrawler-basics.md](docs/md_v3/tutorials/async-webcrawler-basics.md))
+- **`page_need_scroll` Method**: Added a method to determine if a page requires scrolling before taking actions in `AsyncPlaywrightCrawlerStrategy`. ([#async_crawler_strategy.py](cr4wlr/async_crawler_strategy.py))
 
 ## [0.4.24] - 2024-12-31
 
@@ -607,7 +607,7 @@ This release introduces several powerful new features, including robots.txt comp
 
 ## [0.4.1] - 2024-12-08
 
-### **File: `crawl4ai/async_crawler_strategy.py`**
+### **File: `cr4wlr/async_crawler_strategy.py`**
 
 #### **New Parameters and Attributes Added**
 - **`text_mode` (boolean)**: Enables text-only mode, disables images, JavaScript, and GPU-related features for faster, minimal rendering.
@@ -693,7 +693,7 @@ This release introduces several powerful new features, including robots.txt comp
 A new content filtering strategy that removes less relevant nodes based on metrics like text and link density.
 
 **Affected Files:**
-- `crawl4ai/content_filter_strategy.py`: Enhancement of content filtering capabilities.
+- `cr4wlr/content_filter_strategy.py`: Enhancement of content filtering capabilities.
 ```diff
 Implemented effective pruning algorithm with comprehensive scoring.
 ```
@@ -750,15 +750,15 @@ Altered examples in documentation to promote the use of PruningContentFilter alo
 - Added installation instructions for Playwright setup in README.
 - Created and updated examples in `docs/examples/quickstart_async.py` to be more useful and user-friendly.
 - Updated `requirements.txt` with a new `pydantic` dependency.
-- Bumped version number in `crawl4ai/__version__.py` to 0.3.746.
+- Bumped version number in `cr4wlr/__version__.py` to 0.3.746.
 
 ### Breaking Changes
 - Streamlined application structure:
   - Removed static pages and related code from `main.py` which might affect existing deployments relying on static content.
 
 ### Development Updates
-- Developed `post_install` method in `crawl4ai/install.py` to streamline post-installation setup tasks.
-- Refined migration processes in `crawl4ai/migrations.py` with enhanced logging for better error visibility.
+- Developed `post_install` method in `cr4wlr/install.py` to streamline post-installation setup tasks.
+- Refined migration processes in `cr4wlr/migrations.py` with enhanced logging for better error visibility.
 - Updated `docker-compose.yml` to support local and hub services for different architectures, enhancing build and deploy capabilities.
 - Refactored example test cases in `docs/examples/docker_example.py` to facilitate comprehensive testing.
 
@@ -766,11 +766,11 @@ Altered examples in documentation to promote the use of PruningContentFilter alo
 Updated README with new docker commands and setup instructions.
 Enhanced installation instructions and guidance.
 
-### crawl4ai/install.py
+### cr4wlr/install.py
 Added post-install script functionality.
 Introduced `post_install` method for automation of post-installation tasks.
 
-### crawl4ai/migrations.py
+### cr4wlr/migrations.py
 Improved migration logging.
 Refined migration processes and added better logging.
 
@@ -810,27 +810,27 @@ Enhance features and documentation
 Added new contributors and pull request details.
 Updated community contributions and acknowledged pull requests.
 
-### crawl4ai/__version__.py
+### cr4wlr/__version__.py
 Version update.
 Bumped version to 0.3.743.
 
-### crawl4ai/async_crawler_strategy.py
+### cr4wlr/async_crawler_strategy.py
 Improved ManagedBrowser configuration.
 Enhanced browser initialization with configurable host and debugging port; improved hook execution.
 
-### crawl4ai/async_webcrawler.py
+### cr4wlr/async_webcrawler.py
 Optimized HTML processing.
 Implemented 'fast_format_html' for optimized HTML formatting; applied it when 'prettiify' is enabled.
 
-### crawl4ai/content_scraping_strategy.py
+### cr4wlr/content_scraping_strategy.py
 Enhanced markdown generation strategy.
 Updated to use DefaultMarkdownGenerator and improved markdown generation with filters option.
 
-### crawl4ai/markdown_generation_strategy.py
+### cr4wlr/markdown_generation_strategy.py
 Refactored markdown generation class.
 Renamed DefaultMarkdownGenerationStrategy to DefaultMarkdownGenerator; added content filter handling.
 
-### crawl4ai/utils.py
+### cr4wlr/utils.py
 Enhanced utility functions.
 Improved input sanitization and enhanced HTML formatting method.
 
@@ -848,7 +848,7 @@ This changelog details the updates and changes introduced in Crawl4AI version 0.
 
 ### 1. File Download Processing
 
-- Users can now specify download folders using the `downloads_path` parameter in the `AsyncWebCrawler` constructor or the `arun` method. If not specified, downloads are saved to a "downloads" folder within the `.crawl4ai` directory.
+- Users can now specify download folders using the `downloads_path` parameter in the `AsyncWebCrawler` constructor or the `arun` method. If not specified, downloads are saved to a "downloads" folder within the `.cr4wlr` directory.
 - File download tracking is integrated into the `CrawlResult` object.  Successfully downloaded files are listed in the `downloaded_files` attribute, providing their paths.
 - Added `accept_downloads` parameter to the crawler strategies (defaults to `False`). If set to True you can add JS code and `wait_for` parameter for file download.
 
@@ -858,10 +858,10 @@ This changelog details the updates and changes introduced in Crawl4AI version 0.
 import asyncio
 import os
 from pathlib import Path
-from crawl4ai import AsyncWebCrawler
+from cr4wlr import AsyncWebCrawler
 
 async def download_example():
-    downloads_path = os.path.join(Path.home(), ".crawl4ai", "downloads")
+    downloads_path = os.path.join(Path.home(), ".cr4wlr", "downloads")
     os.makedirs(downloads_path, exist_ok=True)
 
     async with AsyncWebCrawler(
@@ -895,8 +895,8 @@ asyncio.run(download_example())
 **Example:**
 
 ```python
-from crawl4ai import AsyncWebCrawler
-from crawl4ai.content_filter_strategy import BM25ContentFilter
+from cr4wlr import AsyncWebCrawler
+from cr4wlr.content_filter_strategy import BM25ContentFilter
 
 async def filter_content(url, query):
     async with AsyncWebCrawler() as crawler:
@@ -950,7 +950,7 @@ asyncio.run(main())
 **Example:**
 ```python
 async def browser_management_demo():
-    user_data_dir = os.path.join(Path.home(), ".crawl4ai", "user-data-dir")
+    user_data_dir = os.path.join(Path.home(), ".cr4wlr", "user-data-dir")
     os.makedirs(user_data_dir, exist_ok=True)  # Ensure directory exists
     async with AsyncWebCrawler(
         use_managed_browser=True,
@@ -981,18 +981,18 @@ asyncio.run(browser_management_demo())
 
 ### 🗑️ Removals
 
-- Removed deprecated: `crawl4ai/content_cleaning_strategy.py`.
+- Removed deprecated: `cr4wlr/content_cleaning_strategy.py`.
 - Removed internal class ContentCleaningStrategy
 - Removed legacy cache control flags:  `bypass_cache`,  `disable_cache`,  `no_cache_read`,  `no_cache_write`, and `always_by_pass_cache`.  These have been superseded by  `cache_mode`.
 
 
 ### ⚙️ Other Changes
 
-- Moved version file to `crawl4ai/__version__.py`.
-- Added `crawl4ai/cache_context.py`.
-- Added `crawl4ai/version_manager.py`.
-- Added `crawl4ai/migrations.py`.
-- Added `crawl4ai-migrate` entry point.
+- Moved version file to `cr4wlr/__version__.py`.
+- Added `cr4wlr/cache_context.py`.
+- Added `cr4wlr/version_manager.py`.
+- Added `cr4wlr/migrations.py`.
+- Added `cr4wlr-migrate` entry point.
 - Added config `NEED_MIGRATION` and `SHOW_DEPRECATION_WARNINGS`.
 - API server now requires an API token for authentication, configurable with the `CRAWL4AI_API_TOKEN` environment variable.  This enhances API security.
 - Added synchronous crawl endpoint `/crawl_sync` for immediate result retrieval, and direct crawl endpoint `/crawl_direct` bypassing the task queue.
@@ -1000,7 +1000,7 @@ asyncio.run(browser_management_demo())
 
 ### ⚠️ Deprecation Notices
 
-- The synchronous version of `WebCrawler` is being phased out.  While still available via `crawl4ai[sync]`, it will eventually be removed. Transition to `AsyncWebCrawler` is strongly recommended. Boolean cache control flags in `arun` are also deprecated, migrate to using the `cache_mode` parameter.  See examples in the "New Features" section above for correct usage.
+- The synchronous version of `WebCrawler` is being phased out.  While still available via `cr4wlr[sync]`, it will eventually be removed. Transition to `AsyncWebCrawler` is strongly recommended. Boolean cache control flags in `arun` are also deprecated, migrate to using the `cache_mode` parameter.  See examples in the "New Features" section above for correct usage.
 
 
 ### 🐛 Bug Fixes
@@ -1023,7 +1023,7 @@ result = await crawler.arun(url="https://example.com", bypass_cache=True)
 **New way:**
 
 ```python
-from crawl4ai import CacheMode
+from cr4wlr import CacheMode
 
 crawler = AsyncWebCrawler(always_bypass_cache=True)
 result = await crawler.arun(url="https://example.com", cache_mode=CacheMode.BYPASS)
@@ -1040,13 +1040,13 @@ result = await crawler.arun(url="https://example.com", cache_mode=CacheMode.BYPA
 2. **Content Filtering Improvements** (Nov 14, 2024)
    - Introduced Relevance Content Filter as an improvement over Fit Markdown
    - Implemented BM25 algorithm for content relevance matching
-   - Added new file: `crawl4ai/content_filter_strategy.py`
-   - Removed deprecated: `crawl4ai/content_cleaning_strategy.py`
+   - Added new file: `cr4wlr/content_filter_strategy.py`
+   - Removed deprecated: `cr4wlr/content_cleaning_strategy.py`
 
 3. **Local File and Raw HTML Support** (Nov 13, 2024)
    - Added support for processing local files
    - Implemented raw HTML input handling in AsyncWebCrawler
-   - Enhanced `crawl4ai/async_webcrawler.py` with significant performance improvements
+   - Enhanced `cr4wlr/async_webcrawler.py` with significant performance improvements
 
 4. **Browser Management Enhancements** (Nov 12, 2024)
    - Implemented new async crawler strategy using Playwright
@@ -1178,7 +1178,7 @@ When upgrading to v0.3.73, be aware of the following changes:
    - Update error handling to work with new retry logic
 
 4. Using the Doctor:
-   - Run doctor command for system diagnostics: `crawl4ai doctor`
+   - Run doctor command for system diagnostics: `cr4wlr doctor`
    - Review generated reports for potential issues
    - Follow recommended fixes for any identified problems
 
@@ -1204,7 +1204,7 @@ This commit introduces several key enhancements, including improved error handli
   - `is_external_url` function for better link classification
 - Custom base directory support for cache storage:
   - New `base_directory` parameter in AsyncWebCrawler
-  - Allows specifying alternative locations for `.crawl4ai` folder
+  - Allows specifying alternative locations for `.cr4wlr` folder
 
 ### Enhanced
 - Link handling improvements:
@@ -1292,7 +1292,7 @@ This commit introduces several key enhancements, including improved error handli
 - Enhanced error handling and logging in various components
 
 ### Developer Notes
-- The customized html2text library is now located within the crawl4ai package
+- The customized html2text library is now located within the cr4wlr package
 - New configuration options are available in the `config.py` file for external content handling
 - The `WebScrapingStrategy` class has been updated to accommodate new external content exclusion options
 
@@ -1318,7 +1318,7 @@ This commit introduces several key enhancements, including improved error handli
 - Removed hardcoded device setting in `CosineStrategy`, now using the automatically detected device.
 - Added a new example in `quickstart_async.py` for generating a knowledge graph from crawled content.
 
-These updates aim to provide more flexibility in text processing, improve performance, and enhance the overall capabilities of the crawl4ai library. The new chunking strategies, in particular, offer more options for handling large texts in various scenarios.
+These updates aim to provide more flexibility in text processing, improve performance, and enhance the overall capabilities of the cr4wlr library. The new chunking strategies, in particular, offer more options for handling large texts in various scenarios.
 
 ## [v0.3.71] - 2024-10-18
 
@@ -1470,7 +1470,7 @@ These updates aim to provide more flexibility in text processing, improve perfor
 - Enhanced type hinting throughout the codebase for improved development experience.
 - Expanded error handling for more robust operation.
 
-These updates significantly enhance the flexibility, accuracy, and robustness of crawl4ai, providing users with more control and options for their web crawling and content extraction tasks.
+These updates significantly enhance the flexibility, accuracy, and robustness of cr4wlr, providing users with more control and options for their web crawling and content extraction tasks.
 
 ## [v0.3.5] - 2024-09-02
 

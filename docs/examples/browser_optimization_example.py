@@ -7,8 +7,8 @@ This example demonstrates optimal browser usage patterns in Crawl4AI:
 
 import asyncio
 from typing import List
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 
 async def crawl_sequential(urls: List[str]):

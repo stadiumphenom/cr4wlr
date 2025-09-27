@@ -1,5 +1,5 @@
 import asyncio
-from crawl4ai import AsyncWebCrawler, AsyncPlaywrightCrawlerStrategy
+from cr4wlr import AsyncWebCrawler, AsyncPlaywrightCrawlerStrategy
 
 
 async def main():

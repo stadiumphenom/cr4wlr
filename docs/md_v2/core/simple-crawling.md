@@ -8,8 +8,8 @@ Set up a simple crawl using `BrowserConfig` and `CrawlerRunConfig`:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
 
 async def main():
     browser_config = BrowserConfig()  # Default browser configuration
@@ -107,8 +107,8 @@ Here's a more comprehensive example demonstrating common usage patterns:
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig, CacheMode
+from cr4wlr import AsyncWebCrawler
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def main():
     browser_config = BrowserConfig(verbose=True)

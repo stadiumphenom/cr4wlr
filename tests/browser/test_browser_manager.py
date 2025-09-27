@@ -13,9 +13,9 @@ from typing import List
 if __name__ == "__main__":
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-from crawl4ai.browser import BrowserManager
-from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
-from crawl4ai.async_logger import AsyncLogger
+from cr4wlr.browser import BrowserManager
+from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
+from cr4wlr.async_logger import AsyncLogger
 
 # Create a logger for clear terminal output
 logger = AsyncLogger(verbose=True, log_file=None)

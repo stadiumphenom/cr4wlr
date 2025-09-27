@@ -1,5 +1,5 @@
 # test.py
-from crawl4ai import CrawlerHub
+from cr4wlr import CrawlerHub
 import json
 
 async def amazon_example():
@@ -20,7 +20,7 @@ async def google_example():
     text_results = await crawler.run(
         query="apple inc", 
         search_type="text",  
-        schema_cache_path="/Users/unclecode/.crawl4ai"
+        schema_cache_path="/Users/unclecode/.cr4wlr"
     )
     print(json.dumps(json.loads(text_results), indent=4))
 

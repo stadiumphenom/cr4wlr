@@ -30,9 +30,9 @@ In **`CrawlerRunConfig`**, you can specify a **`content_filter`** to shape how c
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_filter_strategy import PruningContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_filter_strategy import PruningContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 async def main():
     # Step 1: Create a pruning filter
@@ -95,9 +95,9 @@ if __name__ == "__main__":
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.content_filter_strategy import BM25ContentFilter
-from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr.content_filter_strategy import BM25ContentFilter
+from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
 
 async def main():
     # 1) A BM25 filter with a user query
@@ -209,7 +209,7 @@ Thus, **multi-level** filtering occurs:
 If you need a different approach (like a specialized ML model or site-specific heuristics), you can create a new class inheriting from `RelevantContentFilter` and implement `filter_content(html)`. Then inject it into your **markdown generator**:
 
 ```python
-from crawl4ai.content_filter_strategy import RelevantContentFilter
+from cr4wlr.content_filter_strategy import RelevantContentFilter
 
 class MyCustomFilter(RelevantContentFilter):
     def filter_content(self, html, min_word_threshold=None):

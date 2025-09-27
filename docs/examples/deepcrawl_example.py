@@ -1,10 +1,10 @@
 import asyncio
 import time
 
-from crawl4ai import CrawlerRunConfig, AsyncWebCrawler, CacheMode
-from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
-from crawl4ai.deep_crawling import BFSDeepCrawlStrategy, BestFirstCrawlingStrategy
-from crawl4ai.deep_crawling.filters import (
+from cr4wlr import CrawlerRunConfig, AsyncWebCrawler, CacheMode
+from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
+from cr4wlr.deep_crawling import BFSDeepCrawlStrategy, BestFirstCrawlingStrategy
+from cr4wlr.deep_crawling.filters import (
     FilterChain,
     URLPatternFilter,
     DomainFilter,
@@ -12,7 +12,7 @@ from crawl4ai.deep_crawling.filters import (
     ContentRelevanceFilter,
     SEOFilter,
 )
-from crawl4ai.deep_crawling.scorers import (
+from cr4wlr.deep_crawling.scorers import (
     KeywordRelevanceScorer,
 )
 
@@ -40,7 +40,7 @@ async def basic_deep_crawl():
 
     async with AsyncWebCrawler() as crawler:
         start_time = time.perf_counter()
-        results = await crawler.arun(url="https://docs.crawl4ai.com", config=config)
+        results = await crawler.arun(url="https://docs.cr4wlr.com", config=config)
 
         # Group results by depth to visualize the crawl tree
         pages_by_depth = {}
@@ -92,7 +92,7 @@ async def stream_vs_nonstream():
 
         start_time = time.perf_counter()
         results = await crawler.arun(
-            url="https://docs.crawl4ai.com", config=non_stream_config
+            url="https://docs.cr4wlr.com", config=non_stream_config
         )
 
         print(f"  ✅ Received all {len(results)} results at once")
@@ -110,7 +110,7 @@ async def stream_vs_nonstream():
         first_result_time = None
 
         async for result in await crawler.arun(
-            url="https://docs.crawl4ai.com", config=stream_config
+            url="https://docs.cr4wlr.com", config=stream_config
         ):
             result_count += 1
             if result_count == 1:
@@ -157,7 +157,7 @@ async def filters_and_scorers():
             verbose=True,
         )
 
-        results = await crawler.arun(url="https://docs.crawl4ai.com", config=config)
+        results = await crawler.arun(url="https://docs.cr4wlr.com", config=config)
 
         print(f"  ✅ Crawled {len(results)} pages matching '*core*'")
         for result in results[:3]:  # Show first 3 results
@@ -225,7 +225,7 @@ async def filters_and_scorers():
 
         results = []
         async for result in await crawler.arun(
-            url="https://docs.crawl4ai.com", config=config
+            url="https://docs.cr4wlr.com", config=config
         ):
             results.append(result)
             score = result.metadata.get("score")
@@ -266,7 +266,7 @@ async def advanced_filters():
             cache_mode=CacheMode.BYPASS,
         )
 
-        results = await crawler.arun(url="https://docs.crawl4ai.com", config=config)
+        results = await crawler.arun(url="https://docs.cr4wlr.com", config=config)
 
         print(f"  ✅ Found {len(results)} pages with relevant keywords")
         for result in results:
@@ -290,7 +290,7 @@ async def advanced_filters():
             cache_mode=CacheMode.BYPASS,
         )
 
-        results = await crawler.arun(url="https://docs.crawl4ai.com", config=config)
+        results = await crawler.arun(url="https://docs.cr4wlr.com", config=config)
 
         print(f"  ✅ Found {len(results)} pages")
         for result in results:
@@ -309,7 +309,7 @@ async def max_pages_and_thresholds():
     """
     print("\n===== MAX PAGES AND SCORE THRESHOLDS =====")
     
-    from crawl4ai.deep_crawling import DFSDeepCrawlStrategy
+    from cr4wlr.deep_crawling import DFSDeepCrawlStrategy
     
     async with AsyncWebCrawler() as crawler:
         # Define a common keyword scorer for all examples
@@ -334,7 +334,7 @@ async def max_pages_and_thresholds():
             cache_mode=CacheMode.BYPASS,
         )
         
-        results = await crawler.arun(url="https://docs.crawl4ai.com", config=bfs_config)
+        results = await crawler.arun(url="https://docs.cr4wlr.com", config=bfs_config)
         
         print(f"  ✅ Crawled exactly {len(results)} pages as specified by max_pages")
         for result in results:
@@ -358,7 +358,7 @@ async def max_pages_and_thresholds():
             cache_mode=CacheMode.BYPASS,
         )
         
-        results = await crawler.arun(url="https://docs.crawl4ai.com", config=dfs_config)
+        results = await crawler.arun(url="https://docs.cr4wlr.com", config=dfs_config)
         
         print(f"  ✅ Crawled {len(results)} pages with scores above threshold")
         for result in results:
@@ -384,7 +384,7 @@ async def max_pages_and_thresholds():
         )
         
         results = []
-        async for result in await crawler.arun(url="https://docs.crawl4ai.com", config=bf_config):
+        async for result in await crawler.arun(url="https://docs.cr4wlr.com", config=bf_config):
             results.append(result)
             score = result.metadata.get("score", 0)
             depth = result.metadata.get("depth", 0)
@@ -410,8 +410,8 @@ async def wrap_up():
     filter_chain = FilterChain(
         [
             DomainFilter(
-                allowed_domains=["docs.crawl4ai.com"],
-                blocked_domains=["old.docs.crawl4ai.com"],
+                allowed_domains=["docs.cr4wlr.com"],
+                blocked_domains=["old.docs.cr4wlr.com"],
             ),
             URLPatternFilter(patterns=["*core*", "*advanced*", "*blog*"]),
             ContentTypeFilter(allowed_types=["text/html"]),
@@ -441,7 +441,7 @@ async def wrap_up():
 
     async with AsyncWebCrawler() as crawler:
         async for result in await crawler.arun(
-            url="https://docs.crawl4ai.com", config=config
+            url="https://docs.cr4wlr.com", config=config
         ):
             results.append(result)
             score = result.metadata.get("score", 0)
@@ -491,7 +491,7 @@ async def run_tutorial():
 
     print("\n🎉 TUTORIAL COMPLETE! 🎉")
     print("You now have a comprehensive understanding of deep crawling with Crawl4AI.")
-    print("For more information, check out https://docs.crawl4ai.com")
+    print("For more information, check out https://docs.cr4wlr.com")
 
 # Execute the tutorial when run directly
 if __name__ == "__main__":

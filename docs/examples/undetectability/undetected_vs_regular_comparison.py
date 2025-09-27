@@ -13,7 +13,7 @@ Based on tested anti-bot services:
 """
 
 import asyncio
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,
@@ -21,7 +21,7 @@ from crawl4ai import (
     UndetectedAdapter,
     CrawlResult
 )
-from crawl4ai.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 
 # Test URLs for various bot detection services

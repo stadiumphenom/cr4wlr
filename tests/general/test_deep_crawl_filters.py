@@ -1,4 +1,4 @@
-from crawl4ai.deep_crawling.filters import ContentRelevanceFilter, URLPatternFilter, DomainFilter, ContentTypeFilter, SEOFilter
+from cr4wlr.deep_crawling.filters import ContentRelevanceFilter, URLPatternFilter, DomainFilter, ContentTypeFilter, SEOFilter
 async def test_pattern_filter():
     # Test cases as list of tuples instead of dict for multiple patterns
     test_cases = [

@@ -6,7 +6,7 @@ Stealth mode helps bypass basic bot detection mechanisms.
 """
 
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 
 async def example_1_basic_stealth():

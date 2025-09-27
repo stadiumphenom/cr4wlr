@@ -1,7 +1,7 @@
 import pytest
 import asyncio
 import time
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig, CacheMode
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig, CacheMode
 
 
 @pytest.mark.asyncio

@@ -69,7 +69,7 @@ If you installed Crawl4AI (which installs Playwright under the hood), you alread
 
 3. **Use** that folder in **`BrowserConfig.user_data_dir`**:
    ```python
-   from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+   from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
    browser_config = BrowserConfig(
        headless=True,
@@ -88,7 +88,7 @@ Once you have a data directory with your session data, pass it to **`BrowserConf
 
 ```python
 import asyncio
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     # 1) Reference your persistent data directory
@@ -130,7 +130,7 @@ if __name__ == "__main__":
 If you **don’t** need a persistent profile or identity-based approach, **Magic Mode** offers a quick way to simulate human-like browsing without storing long-term data.
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async with AsyncWebCrawler() as crawler:
     result = await crawler.arun(
@@ -177,7 +177,7 @@ The `BrowserProfiler` class offers a comprehensive API for browser profile manag
 
 ```python
 import asyncio
-from crawl4ai import BrowserProfiler
+from cr4wlr import BrowserProfiler
 
 async def manage_profiles():
     # Create a profiler instance
@@ -221,7 +221,7 @@ The `BrowserProfiler` also offers an interactive management console that guides 
 
 ```python
 import asyncio
-from crawl4ai import BrowserProfiler, AsyncWebCrawler, BrowserConfig
+from cr4wlr import BrowserProfiler, AsyncWebCrawler, BrowserConfig
 
 # Define a function to use a profile for crawling
 async def crawl_with_profile(profile_path, url):
@@ -251,7 +251,7 @@ asyncio.run(main())
 For backward compatibility, the previous methods on `ManagedBrowser` are still available, but they delegate to the new `BrowserProfiler` class:
 
 ```python
-from crawl4ai.browser_manager import ManagedBrowser
+from cr4wlr.browser_manager import ManagedBrowser
 
 # These methods still work but use BrowserProfiler internally
 profiles = ManagedBrowser.list_profiles()
@@ -272,7 +272,7 @@ In addition to using persistent profiles, Crawl4AI supports customizing your bro
 You can set the browser's locale and timezone through `CrawlerRunConfig`:
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 async with AsyncWebCrawler() as crawler:
     result = await crawler.arun(
@@ -301,7 +301,7 @@ async with AsyncWebCrawler() as crawler:
 Control the GPS coordinates reported by the browser's geolocation API:
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, GeolocationConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, GeolocationConfig
 
 async with AsyncWebCrawler() as crawler:
     result = await crawler.arun(
@@ -331,7 +331,7 @@ async with AsyncWebCrawler() as crawler:
 These settings work perfectly with managed browsers for a complete identity solution:
 
 ```python
-from crawl4ai import (
+from cr4wlr import (
     AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, 
     GeolocationConfig
 )

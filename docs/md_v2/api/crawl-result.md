@@ -2,7 +2,7 @@
 
 The **`CrawlResult`** class encapsulates everything returned after a single crawl operation. It provides the **raw or processed content**, details on links and media, plus optional metadata (like screenshots, PDFs, or extracted JSON).
 
-**Location**: `crawl4ai/crawler/models.py` (for reference)
+**Location**: `cr4wlr/crawler/models.py` (for reference)
 
 ```python
 class CrawlResult(BaseModel):

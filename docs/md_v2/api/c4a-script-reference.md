@@ -965,7 +965,7 @@ WAIT `.confirmation` 10
 Use C4A-Script with Crawl4AI for dynamic content interaction:
 
 ```python
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
 
 # Define interaction script
 script = """
@@ -989,4 +989,4 @@ async with AsyncWebCrawler() as crawler:
     print(result.markdown)
 ```
 
-This reference covers all available C4A-Script commands and patterns. For interactive learning, try the [tutorial](../examples/c4a_script/tutorial/) or [live demo](https://docs.crawl4ai.com/c4a-script/demo).
+This reference covers all available C4A-Script commands and patterns. For interactive learning, try the [tutorial](../examples/c4a_script/tutorial/) or [live demo](https://docs.cr4wlr.com/c4a-script/demo).

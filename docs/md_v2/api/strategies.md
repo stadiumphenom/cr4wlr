@@ -169,8 +169,8 @@ OverlappingWindowChunking(
 
 ```python
 from pydantic import BaseModel
-from crawl4ai import LLMExtractionStrategy
-from crawl4ai import LLMConfig
+from cr4wlr import LLMExtractionStrategy
+from cr4wlr import LLMConfig
 
 # Define schema
 class Article(BaseModel):
@@ -199,7 +199,7 @@ data = json.loads(result.extracted_content)
 
 ```python
 import json
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, RegexExtractionStrategy
+from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, RegexExtractionStrategy
 
 # Method 1: Use built-in patterns
 strategy = RegexExtractionStrategy(
@@ -211,7 +211,7 @@ price_pattern = {"usd_price": r"\$\s?\d{1,3}(?:,\d{3})*(?:\.\d{2})?"}
 strategy = RegexExtractionStrategy(custom=price_pattern)
 
 # Method 3: Generate pattern with LLM assistance (one-time)
-from crawl4ai import LLMConfig
+from cr4wlr import LLMConfig
 
 async with AsyncWebCrawler() as crawler:
     # Get sample HTML first
@@ -247,7 +247,7 @@ async with AsyncWebCrawler() as crawler:
 ### CSS Extraction
 
 ```python
-from crawl4ai import JsonCssExtractionStrategy
+from cr4wlr import JsonCssExtractionStrategy
 
 # Define schema
 schema = {
@@ -285,8 +285,8 @@ result = await crawler.arun(
 ### Content Chunking
 
 ```python
-from crawl4ai.chunking_strategy import OverlappingWindowChunking
-from crawl4ai import LLMConfig
+from cr4wlr.chunking_strategy import OverlappingWindowChunking
+from cr4wlr import LLMConfig
 
 # Create chunking strategy
 chunker = OverlappingWindowChunking(
