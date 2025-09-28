@@ -10,10 +10,8 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = "Apache-2.0"
 authors = [
-    {name = "StadiumPhenom", email = "you@example.com"}
+    { name = "StadiumPhenom", email = "you@example.com" }
 ]
-[project]
-# ... existing stuff ...
 dependencies = [
     "aiofiles>=24.1.0",
     "aiohttp>=3.11.11",
@@ -55,7 +53,6 @@ dependencies = [
     "altair>=5.3.0"
 ]
 
-]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -68,4 +65,24 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
-pdf = ["]()
+pdf = ["PyPDF2"]
+torch = ["torch", "nltk", "scikit-learn"]
+transformer = ["transformers", "tokenizers", "sentence-transformers"]
+cosine = ["torch", "transformers", "nltk", "sentence-transformers"]
+sync = ["selenium"]
+ui = ["streamlit", "pandas", "altair"]
+
+# full bundle
+all = [
+    "PyPDF2",
+    "torch",
+    "nltk",
+    "scikit-learn",
+    "transformers",
+    "tokenizers",
+    "sentence-transformers",
+    "selenium",
+    "streamlit",
+    "pandas",
+    "altair"
+]
