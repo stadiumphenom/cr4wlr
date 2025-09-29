@@ -1,0 +1,20 @@
+name: Rename Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-krauler-mentions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Search for leftover 'krauler' mentions
+        run: |
+          grep -rIn --exclude-dir={.git,.venv,build,dist} 'krauler' . || true
+          if grep -rIn --exclude-dir={.git,.venv,build,dist} 'krauler' .; then
+            echo "Leftover 'krauler' mentions found!"
+            exit 1
+          fi
+        shell: bash

@@ -1,14 +1,14 @@
 # File: async_webcrawler_multiple_urls_example.py
 import os, sys
 
-# append 2 parent directories to sys.path to import cr4wlr
+# append 2 parent directories to sys.path to import krauler
 parent_dir = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 )
 sys.path.append(parent_dir)
 
 import asyncio
-from cr4wlr import AsyncWebCrawler
+from krauler import AsyncWebCrawler
 
 
 async def main():

@@ -12,8 +12,8 @@ A comprehensive web-based tutorial for learning and experimenting with C4A-Scrip
 
 1. **Clone and Navigate**
    ```bash
-   git clone https://github.com/unclecode/cr4wlr.git
-   cd cr4wlr/docs/examples/c4a_script/tutorial/
+   git clone https://github.com/unclecode/krauler.git
+   cd krauler/docs/examples/c4a_script/tutorial/
    ```
 
 2. **Install Dependencies**
@@ -31,7 +31,7 @@ A comprehensive web-based tutorial for learning and experimenting with C4A-Scrip
    http://localhost:8080
    ```
 
-**🌐 Try Online**: [Live Demo](https://docs.cr4wlr.com/c4a-script/demo)
+**🌐 Try Online**: [Live Demo](https://docs.krauler.com/c4a-script/demo)
 
 ### 2. Try Your First Script
 
@@ -242,7 +242,7 @@ handle_popups
 Once you've mastered C4A-Script in the tutorial, use it with Crawl4AI:
 
 ```python
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 config = CrawlerRunConfig(
     url="https://example.com",
@@ -365,7 +365,7 @@ Enable detailed logging by setting `DEBUG = True` in `assets/app.js`
 
 - **[C4A-Script Documentation](../../md_v2/core/c4a-script.md)** - Complete language guide
 - **[API Reference](../../md_v2/api/c4a-script-reference.md)** - Detailed command documentation
-- **[Live Demo](https://docs.cr4wlr.com/c4a-script/demo)** - Try without installation
+- **[Live Demo](https://docs.krauler.com/c4a-script/demo)** - Try without installation
 - **[Example Scripts](../)** - More automation examples
 
 ## 🤝 Contributing
@@ -393,4 +393,4 @@ Enable detailed logging by setting `DEBUG = True` in `assets/app.js`
 
 **Happy Automating!** 🎉
 
-Need help? Check our [documentation](https://docs.cr4wlr.com) or open an issue on [GitHub](https://github.com/unclecode/cr4wlr).
+Need help? Check our [documentation](https://docs.krauler.com) or open an issue on [GitHub](https://github.com/unclecode/krauler).

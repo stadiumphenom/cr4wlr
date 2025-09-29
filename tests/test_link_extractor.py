@@ -3,15 +3,15 @@
 Test script for Link Extractor functionality
 """
 
-from cr4wlr.models import Link
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
-from cr4wlr import LinkPreviewConfig
+from krauler.models import Link
+from krauler import AsyncWebCrawler, CrawlerRunConfig
+from krauler import LinkPreviewConfig
 import asyncio
 import sys
 import os
 
-# Add the cr4wlr directory to the path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'cr4wlr'))
+# Add the krauler directory to the path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'krauler'))
 
 
 async def test_link_extractor():
@@ -237,7 +237,7 @@ def test_config_examples():
             print(f"     {key}: {value}")
 
         print("   Usage:")
-        print("     from cr4wlr import LinkPreviewConfig")
+        print("     from krauler import LinkPreviewConfig")
         print("     config = CrawlerRunConfig(")
         print("         link_preview_config=LinkPreviewConfig(")
         for key, value in config_dict.items():

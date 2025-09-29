@@ -24,7 +24,7 @@ from rich.table import Table
 from rich.panel import Panel
 from rich import box
 
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler, 
     CrawlerRunConfig, 
     BrowserConfig,
@@ -36,8 +36,8 @@ from cr4wlr import (
     c4a_compile,
     CompilationResult
 )
-from cr4wlr.async_configs import VirtualScrollConfig, LinkPreviewConfig
-from cr4wlr.extraction_strategy import JsonCssExtractionStrategy
+from krauler.async_configs import VirtualScrollConfig, LinkPreviewConfig
+from krauler.extraction_strategy import JsonCssExtractionStrategy
 
 console = Console()
 
@@ -398,7 +398,7 @@ async def main():
         "[bold green]Demo Complete![/bold green]\n\n"
         "Thank you for trying Crawl4AI v0.7.0!\n"
         "For more examples and documentation, visit:\n"
-        "https://github.com/unclecode/cr4wlr",
+        "https://github.com/unclecode/krauler",
         title="Complete",
         border_style="green"
     ))

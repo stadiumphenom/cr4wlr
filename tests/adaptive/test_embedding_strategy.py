@@ -16,7 +16,7 @@ import sys
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     AdaptiveCrawler,
     AdaptiveConfig,

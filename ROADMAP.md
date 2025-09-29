@@ -65,8 +65,8 @@ Key Features:
 - Cross-source validation
 
 ```python
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.discovery import QuestionBasedDiscovery
+from krauler import AsyncWebCrawler
+from krauler.discovery import QuestionBasedDiscovery
 
 async with AsyncWebCrawler() as crawler:
     discovery = QuestionBasedDiscovery(crawler)
@@ -91,8 +91,8 @@ Key Features:
 - Objective-driven crawling paths
 
 ```python
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.optimization import KnowledgeOptimizer
+from krauler import AsyncWebCrawler
+from krauler.optimization import KnowledgeOptimizer
 
 async with AsyncWebCrawler() as crawler:
     optimizer = KnowledgeOptimizer(
@@ -132,8 +132,8 @@ Key Features:
 - Automatic error recovery
 
 ```python
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.agents import CrawlerAgent
+from krauler import AsyncWebCrawler
+from krauler.agents import CrawlerAgent
 
 async with AsyncWebCrawler() as crawler:
     agent = CrawlerAgent(crawler)
@@ -177,8 +177,8 @@ Key Features:
 - Chrome extension for visual schema building
 
 ```python
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.schema import SchemaGenerator
+from krauler import AsyncWebCrawler
+from krauler.schema import SchemaGenerator
 
 # Generate schema from natural language description
 generator = SchemaGenerator()
@@ -231,8 +231,8 @@ Key Features:
 - Documentation site handling
 
 ```python
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.extractors import AcademicExtractor, EcommerceExtractor
+from krauler import AsyncWebCrawler
+from krauler.extractors import AcademicExtractor, EcommerceExtractor
 
 async with AsyncWebCrawler() as crawler:
     # Academic paper extraction
@@ -271,8 +271,8 @@ Key Features:
 - Semantic search capabilities
 
 ```python
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.indexing import WebIndex
+from krauler import AsyncWebCrawler
+from krauler.indexing import WebIndex
 
 # Initialize and build index
 index = WebIndex(model="efficient-mini")
@@ -363,8 +363,8 @@ Key Features:
 - Customizable alerting system
 
 ```python
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.monitor import CrawlMonitor
+from krauler import AsyncWebCrawler
+from krauler.monitor import CrawlMonitor
 
 # Initialize monitoring
 monitor = CrawlMonitor()
@@ -411,8 +411,8 @@ Key Features:
 - Monitoring integration
 
 ```python
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.deploy import CloudDeployer
+from krauler import AsyncWebCrawler
+from krauler.deploy import CloudDeployer
 
 # Initialize deployer
 deployer = CloudDeployer()

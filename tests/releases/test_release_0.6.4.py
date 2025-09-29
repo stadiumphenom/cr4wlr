@@ -1,7 +1,7 @@
 import pytest
 import asyncio
 import time
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig, CacheMode
+from krauler import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig, CacheMode
 
 
 @pytest.mark.asyncio

@@ -438,4 +438,4 @@ graph TB
     style CB3 fill:#f3e5f5
 ```
 
-**📖 Learn more:** [URL Seeding Guide](https://docs.cr4wlr.com/core/url-seeding/), [Performance Optimization](https://docs.cr4wlr.com/advanced/optimization/), [Multi-URL Crawling](https://docs.cr4wlr.com/advanced/multi-url-crawling/)
+**📖 Learn more:** [URL Seeding Guide](https://docs.krauler.com/core/url-seeding/), [Performance Optimization](https://docs.krauler.com/advanced/optimization/), [Multi-URL Crawling](https://docs.krauler.com/advanced/multi-url-crawling/)

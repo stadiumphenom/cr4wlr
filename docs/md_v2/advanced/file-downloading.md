@@ -7,7 +7,7 @@ This guide explains how to use Crawl4AI to handle file downloads during crawling
 To enable downloads, set the `accept_downloads` parameter in the `BrowserConfig` object and pass it to the crawler.
 
 ```python
-from cr4wlr.async_configs import BrowserConfig, AsyncWebCrawler
+from krauler.async_configs import BrowserConfig, AsyncWebCrawler
 
 async def main():
     config = BrowserConfig(accept_downloads=True)  # Enable downloads globally
@@ -19,10 +19,10 @@ asyncio.run(main())
 
 ## Specifying Download Location
 
-Specify the download directory using the `downloads_path` attribute in the `BrowserConfig` object. If not provided, Crawl4AI defaults to creating a "downloads" directory inside the `.cr4wlr` folder in your home directory.
+Specify the download directory using the `downloads_path` attribute in the `BrowserConfig` object. If not provided, Crawl4AI defaults to creating a "downloads" directory inside the `.krauler` folder in your home directory.
 
 ```python
-from cr4wlr.async_configs import BrowserConfig
+from krauler.async_configs import BrowserConfig
 import os
 
 downloads_path = os.path.join(os.getcwd(), "my_downloads")  # Custom download path
@@ -41,7 +41,7 @@ async def main():
 Downloads are typically triggered by user interactions on a web page, such as clicking a download button. Use `js_code` in `CrawlerRunConfig` to simulate these actions and `wait_for` to allow sufficient time for downloads to start.
 
 ```python
-from cr4wlr.async_configs import CrawlerRunConfig
+from krauler.async_configs import CrawlerRunConfig
 
 config = CrawlerRunConfig(
     js_code="""
@@ -74,7 +74,7 @@ else:
 ## Example: Downloading Multiple Files
 
 ```python
-from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
+from krauler.async_configs import BrowserConfig, CrawlerRunConfig
 import os
 from pathlib import Path
 
@@ -102,7 +102,7 @@ async def download_multiple_files(url: str, download_path: str):
             print("No files downloaded.")
 
 # Usage
-download_path = os.path.join(Path.home(), ".cr4wlr", "downloads")
+download_path = os.path.join(Path.home(), ".krauler", "downloads")
 os.makedirs(download_path, exist_ok=True)
 
 asyncio.run(download_multiple_files("https://www.python.org/downloads/windows/", download_path))

@@ -8,7 +8,7 @@ strategies for adaptive crawling, showing when to use each approach.
 import asyncio
 import time
 import os
-from cr4wlr import AsyncWebCrawler, AdaptiveCrawler, AdaptiveConfig
+from krauler import AsyncWebCrawler, AdaptiveCrawler, AdaptiveConfig
 
 
 async def crawl_with_strategy(url: str, query: str, strategy: str, **kwargs):

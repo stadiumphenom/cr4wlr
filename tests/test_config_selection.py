@@ -9,8 +9,8 @@ from unittest.mock import AsyncMock, MagicMock
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from cr4wlr.async_configs import CrawlerRunConfig, MatchMode
-from cr4wlr.async_dispatcher import BaseDispatcher, MemoryAdaptiveDispatcher
+from krauler.async_configs import CrawlerRunConfig, MatchMode
+from krauler.async_dispatcher import BaseDispatcher, MemoryAdaptiveDispatcher
 
 class TestDispatcher(BaseDispatcher):
     """Simple test dispatcher to verify config selection"""

@@ -18,18 +18,18 @@ We would like to thank the following people for their contributions to Crawl4AI:
 
 ## Pull Requests
 
-- [dvschuyl](https://github.com/dvschuyl) - AsyncPlaywrightCrawlerStrategy page-evaluate context destroyed by navigation [#304](https://github.com/unclecode/cr4wlr/pull/304)
-- [nelzomal](https://github.com/nelzomal) - Enhance development installation instructions [#286](https://github.com/unclecode/cr4wlr/pull/286)
-- [HamzaFarhan](https://github.com/HamzaFarhan) - Handled the cases where markdown_with_citations, references_markdown, and filtered_html might not be defined [#293](https://github.com/unclecode/cr4wlr/pull/293)
-- [NanmiCoder](https://github.com/NanmiCoder) - fix: crawler strategy exception handling and fixes [#271](https://github.com/unclecode/cr4wlr/pull/271)
-- [paulokuong](https://github.com/paulokuong) - fix: RAWL4_AI_BASE_DIRECTORY should be Path object instead of string [#298](https://github.com/unclecode/cr4wlr/pull/298)
+- [dvschuyl](https://github.com/dvschuyl) - AsyncPlaywrightCrawlerStrategy page-evaluate context destroyed by navigation [#304](https://github.com/unclecode/krauler/pull/304)
+- [nelzomal](https://github.com/nelzomal) - Enhance development installation instructions [#286](https://github.com/unclecode/krauler/pull/286)
+- [HamzaFarhan](https://github.com/HamzaFarhan) - Handled the cases where markdown_with_citations, references_markdown, and filtered_html might not be defined [#293](https://github.com/unclecode/krauler/pull/293)
+- [NanmiCoder](https://github.com/NanmiCoder) - fix: crawler strategy exception handling and fixes [#271](https://github.com/unclecode/krauler/pull/271)
+- [paulokuong](https://github.com/paulokuong) - fix: RAWL4_AI_BASE_DIRECTORY should be Path object instead of string [#298](https://github.com/unclecode/krauler/pull/298)
 
 #### Feb-Alpha-1
-- [sufianuddin](https://github.com/sufianuddin) - fix: [Documentation for JsonCssExtractionStrategy](https://github.com/unclecode/cr4wlr/issues/651)
-- [tautikAg](https://github.com/tautikAg) - fix: [Markdown output has incorect spacing](https://github.com/unclecode/cr4wlr/issues/599)
-- [cardit1](https://github.com/cardit1) - fix: ['AsyncPlaywrightCrawlerStrategy' object has no attribute 'downloads_path'](https://github.com/unclecode/cr4wlr/issues/585)
-- [dmurat](https://github.com/dmurat) - fix: [ Incorrect rendering of inline code inside of links ](https://github.com/unclecode/cr4wlr/issues/583)
-- [Sparshsing](https://github.com/Sparshsing) - fix: [Relative Urls in the webpage not extracted properly ](https://github.com/unclecode/cr4wlr/issues/570)
+- [sufianuddin](https://github.com/sufianuddin) - fix: [Documentation for JsonCssExtractionStrategy](https://github.com/unclecode/krauler/issues/651)
+- [tautikAg](https://github.com/tautikAg) - fix: [Markdown output has incorect spacing](https://github.com/unclecode/krauler/issues/599)
+- [cardit1](https://github.com/cardit1) - fix: ['AsyncPlaywrightCrawlerStrategy' object has no attribute 'downloads_path'](https://github.com/unclecode/krauler/issues/585)
+- [dmurat](https://github.com/dmurat) - fix: [ Incorrect rendering of inline code inside of links ](https://github.com/unclecode/krauler/issues/583)
+- [Sparshsing](https://github.com/Sparshsing) - fix: [Relative Urls in the webpage not extracted properly ](https://github.com/unclecode/krauler/issues/570)
 
 
 
@@ -50,6 +50,6 @@ We also want to thank all the users who have reported bugs, suggested features, 
 
 ---
 
-If you've contributed to Crawl4AI and your name isn't on this list, please [open a pull request](https://github.com/unclecode/cr4wlr/pulls) with your name, link, and contribution, and we'll review it promptly.
+If you've contributed to Crawl4AI and your name isn't on this list, please [open a pull request](https://github.com/unclecode/krauler/pulls) with your name, link, and contribution, and we'll review it promptly.
 
 Thank you all for your contributions!

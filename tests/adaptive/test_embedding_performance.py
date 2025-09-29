@@ -14,9 +14,9 @@ import os
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
-from cr4wlr import AsyncWebCrawler, AdaptiveCrawler, AdaptiveConfig
-from cr4wlr.adaptive_crawler import EmbeddingStrategy, CrawlState
-from cr4wlr.models import CrawlResult
+from krauler import AsyncWebCrawler, AdaptiveCrawler, AdaptiveConfig
+from krauler.adaptive_crawler import EmbeddingStrategy, CrawlState
+from krauler.models import CrawlResult
 
 
 class PerformanceMetrics:
@@ -189,7 +189,7 @@ async def test_embedding_performance():
         print(f"   Iteration {i+1}: {val_score:.3f} ({(time.perf_counter() - start)*1000:.1f} ms)")
     
     # 6. Create mock links for ranking
-    from cr4wlr.models import Link
+    from krauler.models import Link
     mock_links = []
     for i in range(n_links):
         link = Link(

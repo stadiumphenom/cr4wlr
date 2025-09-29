@@ -4,19 +4,19 @@
 
 <a href="https://trendshift.io/repositories/11716" target="_blank"><img src="https://trendshift.io/api/badge/repositories/11716" alt="unclecode%2Fcrawl4ai | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-[![GitHub Stars](https://img.shields.io/github/stars/unclecode/cr4wlr?style=social)](https://github.com/unclecode/cr4wlr/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/unclecode/cr4wlr?style=social)](https://github.com/unclecode/cr4wlr/network/members)
+[![GitHub Stars](https://img.shields.io/github/stars/unclecode/krauler?style=social)](https://github.com/unclecode/krauler/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/unclecode/krauler?style=social)](https://github.com/unclecode/krauler/network/members)
 
-[![PyPI version](https://badge.fury.io/py/cr4wlr.svg)](https://badge.fury.io/py/cr4wlr)
-[![Python Version](https://img.shields.io/pypi/pyversions/cr4wlr)](https://pypi.org/project/cr4wlr/)
-[![Downloads](https://static.pepy.tech/badge/cr4wlr/month)](https://pepy.tech/project/cr4wlr)
+[![PyPI version](https://badge.fury.io/py/krauler.svg)](https://badge.fury.io/py/krauler)
+[![Python Version](https://img.shields.io/pypi/pyversions/krauler)](https://pypi.org/project/krauler/)
+[![Downloads](https://static.pepy.tech/badge/krauler/month)](https://pepy.tech/project/krauler)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/unclecode?style=flat&logo=GitHub-Sponsors&label=Sponsors&color=pink)](https://github.com/sponsors/unclecode)
 
 <p align="center">
-    <a href="https://x.com/cr4wlr">
+    <a href="https://x.com/krauler">
       <img src="https://img.shields.io/badge/Follow%20on%20X-000000?style=for-the-badge&logo=x&logoColor=white" alt="Follow on X" />
     </a>
-    <a href="https://www.linkedin.com/company/cr4wlr">
+    <a href="https://www.linkedin.com/company/krauler">
       <img src="https://img.shields.io/badge/Follow%20on%20LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Follow on LinkedIn" />
     </a>
     <a href="https://discord.gg/jP8KfhDhyN">
@@ -29,9 +29,9 @@ Crawl4AI turns the web into clean, LLM ready Markdown for RAG, agents, and data 
 
 [✨ Check out latest update v0.7.4](#-recent-updates)
 
-✨ New in v0.7.4: Revolutionary LLM Table Extraction with intelligent chunking, enhanced concurrency fixes, memory management refactor, and critical stability improvements. [Release notes →](https://github.com/unclecode/cr4wlr/blob/main/docs/blog/release-v0.7.4.md)
+✨ New in v0.7.4: Revolutionary LLM Table Extraction with intelligent chunking, enhanced concurrency fixes, memory management refactor, and critical stability improvements. [Release notes →](https://github.com/unclecode/krauler/blob/main/docs/blog/release-v0.7.4.md)
 
-✨ Recent v0.7.3: Undetected Browser Support, Multi-URL Configurations, Memory Monitoring, Enhanced Table Extraction, GitHub Sponsors. [Release notes →](https://github.com/unclecode/cr4wlr/blob/main/docs/blog/release-v0.7.3.md)
+✨ Recent v0.7.3: Undetected Browser Support, Multi-URL Configurations, Memory Monitoring, Enhanced Table Extraction, GitHub Sponsors. [Release notes →](https://github.com/unclecode/krauler/blob/main/docs/blog/release-v0.7.3.md)
 
 <details>
   <summary>🤓 <strong>My Personal Story</strong></summary>
@@ -60,16 +60,16 @@ I made it open source for **availability**, anyone can use it without a gate. No
 1. Install Crawl4AI:
 ```bash
 # Install the package
-pip install -U cr4wlr
+pip install -U krauler
 
 # For pre release versions
-pip install cr4wlr --pre
+pip install krauler --pre
 
 # Run post-installation setup
-cr4wlr-setup
+krauler-setup
 
 # Verify your installation
-cr4wlr-doctor
+krauler-doctor
 ```
 
 If you encounter any browser-related issues, you can install them manually:
@@ -80,7 +80,7 @@ python -m playwright install --with-deps chromium
 2. Run a simple web crawl with Python:
 ```python
 import asyncio
-from cr4wlr import *
+from krauler import *
 
 async def main():
     async with AsyncWebCrawler() as crawler:
@@ -99,7 +99,7 @@ if __name__ == "__main__":
 crwl https://www.nbcnews.com/business -o markdown
 
 # Deep crawl with BFS strategy, max 10 pages
-crwl https://docs.cr4wlr.com --deep-crawl bfs --max-pages 10
+crwl https://docs.krauler.com --deep-crawl bfs --max-pages 10
 
 # Use LLM extraction with a specific question
 crwl https://www.example.com/products -q "Extract all product prices"
@@ -214,7 +214,7 @@ No rate-limited APIs. No lock-in. Build and own your data pipeline with direct g
 
 ✨ Play around with this [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SgRPrByQLzjRfwoRNq1wSGE9nYY_EE8C?usp=sharing)
 
-✨ Visit our [Documentation Website](https://docs.cr4wlr.com/)
+✨ Visit our [Documentation Website](https://docs.krauler.com/)
 
 ## Installation 🛠️
 
@@ -230,13 +230,13 @@ Choose the installation option that best fits your needs:
 For basic web crawling and scraping tasks:
 
 ```bash
-pip install cr4wlr
-cr4wlr-setup # Setup the browser
+pip install krauler
+krauler-setup # Setup the browser
 ```
 
 By default, this will install the asynchronous version of Crawl4AI, using Playwright for web crawling.
 
-👉 **Note**: When you install Crawl4AI, the `cr4wlr-setup` should automatically install and set up Playwright. However, if you encounter any Playwright-related errors, you can manually install it using one of these methods:
+👉 **Note**: When you install Crawl4AI, the `krauler-setup` should automatically install and set up Playwright. However, if you encounter any Playwright-related errors, you can manually install it using one of these methods:
 
 1. Through the command line:
 
@@ -259,7 +259,7 @@ This second method has proven to be more reliable in some cases.
 The sync version is deprecated and will be removed in future versions. If you need the synchronous version using Selenium:
 
 ```bash
-pip install cr4wlr[sync]
+pip install krauler[sync]
 ```
 
 ---
@@ -269,8 +269,8 @@ pip install cr4wlr[sync]
 For contributors who plan to modify the source code:
 
 ```bash
-git clone https://github.com/unclecode/cr4wlr.git
-cd cr4wlr
+git clone https://github.com/unclecode/krauler.git
+cd krauler
 pip install -e .                    # Basic installation in editable mode
 ```
 
@@ -305,8 +305,8 @@ The new Docker implementation includes:
 
 ```bash
 # Pull and run the latest release candidate
-docker pull unclecode/cr4wlr:0.7.0
-docker run -d -p 11235:11235 --name cr4wlr --shm-size=1g unclecode/cr4wlr:0.7.0
+docker pull unclecode/krauler:0.7.0
+docker run -d -p 11235:11235 --name krauler --shm-size=1g unclecode/krauler:0.7.0
 
 # Visit the playground at http://localhost:11235/playground
 ```
@@ -337,7 +337,7 @@ else:
     result = requests.get(f"http://localhost:11235/task/{task_id}")
 ```
 
-For more examples, see our [Docker Examples](https://github.com/unclecode/cr4wlr/blob/main/docs/examples/docker_example.py). For advanced configuration, environment variables, and usage examples, see our [Docker Deployment Guide](https://docs.cr4wlr.com/basic/docker-deployment/).
+For more examples, see our [Docker Examples](https://github.com/unclecode/krauler/blob/main/docs/examples/docker_example.py). For advanced configuration, environment variables, and usage examples, see our [Docker Deployment Guide](https://docs.krauler.com/basic/docker-deployment/).
 
 </details>
 
@@ -345,16 +345,16 @@ For more examples, see our [Docker Examples](https://github.com/unclecode/cr4wlr
 
 ## 🔬 Advanced Usage Examples 🔬
 
-You can check the project structure in the directory [docs/examples](https://github.com/unclecode/cr4wlr/tree/main/docs/examples). Over there, you can find a variety of examples; here, some popular examples are shared.
+You can check the project structure in the directory [docs/examples](https://github.com/unclecode/krauler/tree/main/docs/examples). Over there, you can find a variety of examples; here, some popular examples are shared.
 
 <details>
 <summary>📝 <strong>Heuristic Markdown Generation with Clean and Fit Markdown</strong></summary>
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from cr4wlr.content_filter_strategy import PruningContentFilter, BM25ContentFilter
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from krauler.content_filter_strategy import PruningContentFilter, BM25ContentFilter
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
 
 async def main():
     browser_config = BrowserConfig(
@@ -390,8 +390,8 @@ if __name__ == "__main__":
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from cr4wlr import JsonCssExtractionStrategy
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from krauler import JsonCssExtractionStrategy
 import json
 
 async def main():
@@ -464,8 +464,8 @@ if __name__ == "__main__":
 ```python
 import os
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
-from cr4wlr import LLMExtractionStrategy
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, LLMConfig
+from krauler import LLMExtractionStrategy
 from pydantic import BaseModel, Field
 
 class OpenAIModelFee(BaseModel):
@@ -510,11 +510,11 @@ if __name__ == "__main__":
 import os, sys
 from pathlib import Path
 import asyncio, time
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def test_news_crawl():
     # Create a persistent user data directory
-    user_data_dir = os.path.join(Path.home(), ".cr4wlr", "browser_profile")
+    user_data_dir = os.path.join(Path.home(), ".krauler", "browser_profile")
     os.makedirs(user_data_dir, exist_ok=True)
 
     browser_config = BrowserConfig(
@@ -549,7 +549,7 @@ async def test_news_crawl():
 
 - **🚀 LLMTableExtraction**: Revolutionary table extraction with intelligent chunking for massive tables:
   ```python
-  from cr4wlr import LLMTableExtraction, LLMConfig
+  from krauler import LLMTableExtraction, LLMConfig
   
   # Configure intelligent table extraction
   table_strategy = LLMTableExtraction(
@@ -574,7 +574,7 @@ async def test_news_crawl():
 - **🔗 Advanced URL Processing**: Better handling of raw:// URLs and base tag link resolution
 - **🛡️ Enhanced Proxy Support**: Flexible proxy configuration supporting both dict and string formats
 
-[Full v0.7.4 Release Notes →](https://github.com/unclecode/cr4wlr/blob/main/docs/blog/release-v0.7.4.md)
+[Full v0.7.4 Release Notes →](https://github.com/unclecode/krauler/blob/main/docs/blog/release-v0.7.4.md)
 
 </details>
 
@@ -583,7 +583,7 @@ async def test_news_crawl():
 
 - **🕵️ Undetected Browser Support**: Bypass sophisticated bot detection systems:
   ```python
-  from cr4wlr import AsyncWebCrawler, BrowserConfig
+  from krauler import AsyncWebCrawler, BrowserConfig
   
   browser_config = BrowserConfig(
       browser_type="undetected",  # Use undetected Chrome
@@ -601,7 +601,7 @@ async def test_news_crawl():
 
 - **🎨 Multi-URL Configuration**: Different strategies for different URL patterns in one batch:
   ```python
-  from cr4wlr import CrawlerRunConfig, MatchMode
+  from krauler import CrawlerRunConfig, MatchMode
   
   configs = [
       # Documentation sites - aggressive caching
@@ -627,7 +627,7 @@ async def test_news_crawl():
 
 - **🧠 Memory Monitoring**: Track and optimize memory usage during crawling:
   ```python
-  from cr4wlr.memory_utils import MemoryMonitor
+  from krauler.memory_utils import MemoryMonitor
   
   monitor = MemoryMonitor()
   monitor.start_monitoring()
@@ -655,7 +655,7 @@ async def test_news_crawl():
 - **💰 GitHub Sponsors**: 4-tier sponsorship system for project sustainability
 - **🐳 Docker LLM Flexibility**: Configure providers via environment variables
 
-[Full v0.7.3 Release Notes →](https://github.com/unclecode/cr4wlr/blob/main/docs/blog/release-v0.7.3.md)
+[Full v0.7.3 Release Notes →](https://github.com/unclecode/krauler/blob/main/docs/blog/release-v0.7.3.md)
 
 </details>
 
@@ -723,7 +723,7 @@ async def test_news_crawl():
 
 - **⚡ Performance Boost**: Up to 3x faster with optimized resource handling and memory efficiency
 
-Read the full details in our [0.7.0 Release Notes](https://docs.cr4wlr.com/blog/release-v0.7.0) or check the [CHANGELOG](https://github.com/unclecode/cr4wlr/blob/main/CHANGELOG.md).
+Read the full details in our [0.7.0 Release Notes](https://docs.krauler.com/blog/release-v0.7.0) or check the [CHANGELOG](https://github.com/unclecode/krauler/blob/main/CHANGELOG.md).
 
 </details>
 
@@ -747,17 +747,17 @@ We use different suffixes to indicate development stages:
 #### Installation
 - Regular installation (stable version):
   ```bash
-  pip install -U cr4wlr
+  pip install -U krauler
   ```
 
 - Install pre-release versions:
   ```bash
-  pip install cr4wlr --pre
+  pip install krauler --pre
   ```
 
 - Install specific version:
   ```bash
-  pip install cr4wlr==0.4.3b1
+  pip install krauler==0.4.3b1
   ```
 
 #### Why Pre-releases?
@@ -775,9 +775,9 @@ For production environments, we recommend using the stable version. For testing 
 
 > 🚨 **Documentation Update Alert**: We're undertaking a major documentation overhaul next week to reflect recent updates and improvements. Stay tuned for a more comprehensive and up-to-date guide!
 
-For current documentation, including installation instructions, advanced features, and API reference, visit our [Documentation Website](https://docs.cr4wlr.com/).
+For current documentation, including installation instructions, advanced features, and API reference, visit our [Documentation Website](https://docs.krauler.com/).
 
-To check our development plans and upcoming features, visit our [Roadmap](https://github.com/unclecode/cr4wlr/blob/main/ROADMAP.md).
+To check our development plans and upcoming features, visit our [Roadmap](https://github.com/unclecode/krauler/blob/main/ROADMAP.md).
 
 <details>
 <summary>📈 <strong>Development TODOs</strong></summary>
@@ -799,7 +799,7 @@ To check our development plans and upcoming features, visit our [Roadmap](https:
 
 ## 🤝 Contributing 
 
-We welcome contributions from the open-source community. Check out our [contribution guidelines](https://github.com/unclecode/cr4wlr/blob/main/CONTRIBUTORS.md) for more information.
+We welcome contributions from the open-source community. Check out our [contribution guidelines](https://github.com/unclecode/krauler/blob/main/CONTRIBUTORS.md) for more information.
 
 I'll help modify the license section with badges. For the halftone effect, here's a version with it:
 
@@ -807,7 +807,7 @@ Here's the updated license section:
 
 ## 📄 License & Attribution
 
-This project is licensed under the Apache License 2.0, attribution is recommended via the badges below. See the [Apache 2.0 License](https://github.com/unclecode/cr4wlr/blob/main/LICENSE) file for details.
+This project is licensed under the Apache License 2.0, attribution is recommended via the badges below. See the [Apache 2.0 License](https://github.com/unclecode/krauler/blob/main/LICENSE) file for details.
 
 ### Attribution Requirements
 When using Crawl4AI, you must include one of the following attribution methods:
@@ -818,36 +818,36 @@ Add one of these badges to your README, documentation, or website:
 
 | Theme | Badge |
 |-------|-------|
-| **Disco Theme (Animated)** | <a href="https://github.com/unclecode/cr4wlr"><img src="./docs/assets/powered-by-disco.svg" alt="Powered by Crawl4AI" width="200"/></a> |
-| **Night Theme (Dark with Neon)** | <a href="https://github.com/unclecode/cr4wlr"><img src="./docs/assets/powered-by-night.svg" alt="Powered by Crawl4AI" width="200"/></a> |
-| **Dark Theme (Classic)** | <a href="https://github.com/unclecode/cr4wlr"><img src="./docs/assets/powered-by-dark.svg" alt="Powered by Crawl4AI" width="200"/></a> |
-| **Light Theme (Classic)** | <a href="https://github.com/unclecode/cr4wlr"><img src="./docs/assets/powered-by-light.svg" alt="Powered by Crawl4AI" width="200"/></a> |
+| **Disco Theme (Animated)** | <a href="https://github.com/unclecode/krauler"><img src="./docs/assets/powered-by-disco.svg" alt="Powered by Crawl4AI" width="200"/></a> |
+| **Night Theme (Dark with Neon)** | <a href="https://github.com/unclecode/krauler"><img src="./docs/assets/powered-by-night.svg" alt="Powered by Crawl4AI" width="200"/></a> |
+| **Dark Theme (Classic)** | <a href="https://github.com/unclecode/krauler"><img src="./docs/assets/powered-by-dark.svg" alt="Powered by Crawl4AI" width="200"/></a> |
+| **Light Theme (Classic)** | <a href="https://github.com/unclecode/krauler"><img src="./docs/assets/powered-by-light.svg" alt="Powered by Crawl4AI" width="200"/></a> |
  
 
 HTML code for adding the badges:
 ```html
 <!-- Disco Theme (Animated) -->
-<a href="https://github.com/unclecode/cr4wlr">
-  <img src="https://raw.githubusercontent.com/unclecode/cr4wlr/main/docs/assets/powered-by-disco.svg" alt="Powered by Crawl4AI" width="200"/>
+<a href="https://github.com/unclecode/krauler">
+  <img src="https://raw.githubusercontent.com/unclecode/krauler/main/docs/assets/powered-by-disco.svg" alt="Powered by Crawl4AI" width="200"/>
 </a>
 
 <!-- Night Theme (Dark with Neon) -->
-<a href="https://github.com/unclecode/cr4wlr">
-  <img src="https://raw.githubusercontent.com/unclecode/cr4wlr/main/docs/assets/powered-by-night.svg" alt="Powered by Crawl4AI" width="200"/>
+<a href="https://github.com/unclecode/krauler">
+  <img src="https://raw.githubusercontent.com/unclecode/krauler/main/docs/assets/powered-by-night.svg" alt="Powered by Crawl4AI" width="200"/>
 </a>
 
 <!-- Dark Theme (Classic) -->
-<a href="https://github.com/unclecode/cr4wlr">
-  <img src="https://raw.githubusercontent.com/unclecode/cr4wlr/main/docs/assets/powered-by-dark.svg" alt="Powered by Crawl4AI" width="200"/>
+<a href="https://github.com/unclecode/krauler">
+  <img src="https://raw.githubusercontent.com/unclecode/krauler/main/docs/assets/powered-by-dark.svg" alt="Powered by Crawl4AI" width="200"/>
 </a>
 
 <!-- Light Theme (Classic) -->
-<a href="https://github.com/unclecode/cr4wlr">
-  <img src="https://raw.githubusercontent.com/unclecode/cr4wlr/main/docs/assets/powered-by-light.svg" alt="Powered by Crawl4AI" width="200"/>
+<a href="https://github.com/unclecode/krauler">
+  <img src="https://raw.githubusercontent.com/unclecode/krauler/main/docs/assets/powered-by-light.svg" alt="Powered by Crawl4AI" width="200"/>
 </a>
 
 <!-- Simple Shield Badge -->
-<a href="https://github.com/unclecode/cr4wlr">
+<a href="https://github.com/unclecode/krauler">
   <img src="https://img.shields.io/badge/Powered%20by-Crawl4AI-blue?style=flat-square" alt="Powered by Crawl4AI"/>
 </a>
 ```
@@ -858,7 +858,7 @@ HTML code for adding the badges:
 <summary>📖 <strong>2. Text Attribution</strong></summary>
 Add this line to your documentation:
 ```
-This project uses Crawl4AI (https://github.com/unclecode/cr4wlr) for web data extraction.
+This project uses Crawl4AI (https://github.com/unclecode/krauler) for web data extraction.
 ```
 </details>
 
@@ -873,7 +873,7 @@ If you use Crawl4AI in your research or project, please cite:
   year = {2024},
   publisher = {GitHub},
   journal = {GitHub Repository},
-  howpublished = {\url{https://github.com/unclecode/cr4wlr}},
+  howpublished = {\url{https://github.com/unclecode/krauler}},
   commit = {Please use the commit hash you're working with}
 }
 ```
@@ -881,7 +881,7 @@ If you use Crawl4AI in your research or project, please cite:
 Text citation format:
 ```
 UncleCode. (2024). Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper [Computer software]. 
-GitHub. https://github.com/unclecode/cr4wlr
+GitHub. https://github.com/unclecode/krauler
 ```
 
 ## 📧 Contact 
@@ -890,7 +890,7 @@ For questions, suggestions, or feedback, feel free to reach out:
 
 - GitHub: [unclecode](https://github.com/unclecode)
 - Twitter: [@unclecode](https://twitter.com/unclecode)
-- Website: [cr4wlr.com](https://cr4wlr.com)
+- Website: [krauler.com](https://krauler.com)
 
 Happy Crawling! 🕸️🚀
 
@@ -921,4 +921,4 @@ For more details, see our [full mission statement](./MISSION.md).
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=unclecode/cr4wlr&type=Date)](https://star-history.com/#unclecode/cr4wlr&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=unclecode/krauler&type=Date)](https://star-history.com/#unclecode/krauler&Date)

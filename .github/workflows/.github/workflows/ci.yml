@@ -1,4 +1,4 @@
-name: cr4wlr CI/CD
+name: krauler CI/CD
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
         run: flake8 . --max-line-length=120 --exclude=.venv,.git,__pycache__,build,dist
 
       - name: Type check with mypy
-        run: mypy cr4wlr || true   # don’t fail on warnings
+        run: mypy krauler || true   # don’t fail on warnings
 
       - name: Run tests
         run: pytest -q
@@ -59,7 +59,7 @@ jobs:
       - name: Upload dist artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: cr4wlr-dist
+          name: krauler-dist
           path: dist/*
 
   publish-testpypi:
@@ -133,4 +133,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/cr4wlr:latest
+          tags: ghcr.io/${{ github.repository_owner }}/krauler:latest

@@ -8,7 +8,7 @@ To crawl a live web page, provide the URL starting with `http://` or `https://`,
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CacheMode, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CacheMode, CrawlerRunConfig
 
 async def crawl_web():
     config = CrawlerRunConfig(cache_mode=CacheMode.BYPASS)
@@ -32,7 +32,7 @@ To crawl a local HTML file, prefix the file path with `file://`.
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CacheMode, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CacheMode, CrawlerRunConfig
 
 async def crawl_local_file():
     local_file_path = "/path/to/apple.html"  # Replace with your file path
@@ -56,8 +56,8 @@ To crawl raw HTML content, prefix the HTML string with `raw:`.
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.async_configs import CrawlerRunConfig
+from krauler import AsyncWebCrawler
+from krauler.async_configs import CrawlerRunConfig
 
 async def crawl_raw_html():
     raw_html = "<html><body><h1>Hello, World!</h1></body></html>"
@@ -91,7 +91,7 @@ import os
 import sys
 import asyncio
 from pathlib import Path
-from cr4wlr import AsyncWebCrawler, CacheMode, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CacheMode, CrawlerRunConfig
 
 async def main():
     wikipedia_url = "https://en.wikipedia.org/wiki/apple"

@@ -11,15 +11,15 @@ import asyncio
 from pathlib import Path
 import aiohttp
 import json
-from cr4wlr import AsyncWebCrawler, CacheMode
-from cr4wlr.content_filter_strategy import BM25ContentFilter
+from krauler import AsyncWebCrawler, CacheMode
+from krauler.content_filter_strategy import BM25ContentFilter
 
 
 # 1. File Download Processing Example
 async def download_example():
     """Example of downloading files from Python.org"""
     # downloads_path = os.path.join(os.getcwd(), "downloads")
-    downloads_path = os.path.join(Path.home(), ".cr4wlr", "downloads")
+    downloads_path = os.path.join(Path.home(), ".krauler", "downloads")
     os.makedirs(downloads_path, exist_ok=True)
 
     print(f"Downloads will be saved to: {downloads_path}")
@@ -105,7 +105,7 @@ async def markdown_generation_example():
             cache_mode=CacheMode.BYPASS,
         )
 
-        from cr4wlr.content_filter_strategy import BM25ContentFilter
+        from krauler.content_filter_strategy import BM25ContentFilter
 
         result = await crawler.arun(
             url="https://en.wikipedia.org/wiki/Apple",
@@ -162,7 +162,7 @@ async def markdown_generation_example():
 async def browser_management_example():
     """Example of using enhanced browser management features"""
     # Use the specified user directory path
-    user_data_dir = os.path.join(Path.home(), ".cr4wlr", "browser_profile")
+    user_data_dir = os.path.join(Path.home(), ".krauler", "browser_profile")
     os.makedirs(user_data_dir, exist_ok=True)
 
     print(f"Browser profile will be saved to: {user_data_dir}")
@@ -174,7 +174,7 @@ async def browser_management_example():
         verbose=True,
     ) as crawler:
         result = await crawler.arun(
-            url="https://cr4wlr.com",
+            url="https://krauler.com",
             # session_id="persistent_session_1",
             cache_mode=CacheMode.BYPASS,
         )

@@ -12,8 +12,8 @@ __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file
 
 
 
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.async_configs import CrawlerRunConfig
+from krauler import AsyncWebCrawler
+from krauler.async_configs import CrawlerRunConfig
 
 async def test_max_scroll_steps():
     """

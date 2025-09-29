@@ -52,9 +52,9 @@ That's it! In just a few lines, you've automated a complete search workflow.
 
 Want to learn by doing? We've got you covered:
 
-**🚀 [Live Demo](https://docs.cr4wlr.com/apps/c4a-script/)** - Try C4A-Script in your browser right now!
+**🚀 [Live Demo](https://docs.krauler.com/apps/c4a-script/)** - Try C4A-Script in your browser right now!
 
-**📁 [Tutorial Examples](https://github.com/unclecode/cr4wlr/blob/main/docs/examples/c4a_script/)** - Complete examples with source code
+**📁 [Tutorial Examples](https://github.com/unclecode/krauler/blob/main/docs/examples/c4a_script/)** - Complete examples with source code
 
 ### Running the Tutorial Locally
 
@@ -275,7 +275,7 @@ C4A-Script includes a powerful visual programming interface built on Google Bloc
 - **Error Prevention**: Visual connections prevent syntax errors
 - **Comment Support**: Add visual comment blocks for documentation
 
-Try the visual editor in our [live demo](https://docs.cr4wlr.com/c4a-script/demo) or [local tutorial](/examples/c4a_script/tutorial/).
+Try the visual editor in our [live demo](https://docs.krauler.com/c4a-script/demo) or [local tutorial](/examples/c4a_script/tutorial/).
 
 ## Advanced Features
 
@@ -306,7 +306,7 @@ EVAL `console.log("Current page title:", document.title)`
 C4A-Script integrates seamlessly with Crawl4AI's web crawling capabilities:
 
 ```python
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 # Use C4A-Script for interaction before crawling
 script = """
@@ -378,7 +378,7 @@ SET `#email` $test_email
 - **📖 [Complete Examples](/examples/c4a_script/)** - Real-world automation scripts
 - **🎮 [Interactive Tutorial](/examples/c4a_script/tutorial/)** - Hands-on learning environment  
 - **📋 [API Reference](/api/c4a-script-reference/)** - Detailed command documentation
-- **🌐 [Live Demo](https://docs.cr4wlr.com/c4a-script/demo)** - Try it in your browser
+- **🌐 [Live Demo](https://docs.krauler.com/c4a-script/demo)** - Try it in your browser
 
 ## What's Next?
 

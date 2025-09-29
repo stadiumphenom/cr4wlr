@@ -31,7 +31,7 @@ import re
 import random
 from typing import Optional, Dict
 from dotenv import load_dotenv
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler, 
     BrowserConfig,
     CrawlerRunConfig,

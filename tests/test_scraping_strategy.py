@@ -3,7 +3,7 @@ import nest_asyncio
 nest_asyncio.apply()
 
 import asyncio
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     LXMLWebScrapingStrategy,

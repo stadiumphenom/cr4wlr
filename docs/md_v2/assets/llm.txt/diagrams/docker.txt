@@ -13,7 +13,7 @@ flowchart TD
     B -->|Custom Build| E[Manual Build]
     B -->|Production| F[Production Setup]
     
-    C --> C1[docker pull unclecode/cr4wlr]
+    C --> C1[docker pull unclecode/krauler]
     C1 --> C2{Need LLM Support?}
     C2 -->|Yes| C3[Setup .llm.env]
     C2 -->|No| C4[Basic run]
@@ -600,4 +600,4 @@ graph TD
     style Y fill:#fff3e0
 ```
 
-**📖 Learn more:** [Docker Deployment Guide](https://docs.cr4wlr.com/core/docker-deployment/), [API Reference](https://docs.cr4wlr.com/api/), [MCP Integration](https://docs.cr4wlr.com/core/docker-deployment/#mcp-model-context-protocol-support), [Production Configuration](https://docs.cr4wlr.com/core/docker-deployment/#production-deployment)
+**📖 Learn more:** [Docker Deployment Guide](https://docs.krauler.com/core/docker-deployment/), [API Reference](https://docs.krauler.com/api/), [MCP Integration](https://docs.krauler.com/core/docker-deployment/#mcp-model-context-protocol-support), [Production Configuration](https://docs.krauler.com/core/docker-deployment/#production-deployment)

@@ -29,7 +29,7 @@ The Adaptive Crawler maintains a persistent state for each domain, tracking:
 - Extraction confidence scores
 
 ```python
-from cr4wlr import AsyncWebCrawler, AdaptiveCrawler, AdaptiveConfig
+from krauler import AsyncWebCrawler, AdaptiveCrawler, AdaptiveConfig
 import asyncio
 
 async def main():
@@ -81,7 +81,7 @@ asyncio.run(main())
 ### Implementation Details
 
 ```python
-from cr4wlr import VirtualScrollConfig
+from krauler import VirtualScrollConfig
 
 # For social media feeds (Twitter/X style)
 twitter_config = VirtualScrollConfig(
@@ -152,8 +152,8 @@ async with AsyncWebCrawler() as crawler:
 
 ```python
 import asyncio
-from cr4wlr import CrawlerRunConfig, CacheMode, AsyncWebCrawler
-from cr4wlr.adaptive_crawler import LinkPreviewConfig
+from krauler import CrawlerRunConfig, CacheMode, AsyncWebCrawler
+from krauler.adaptive_crawler import LinkPreviewConfig
 
 async def main():
     # Configure intelligent link analysis
@@ -222,7 +222,7 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from cr4wlr import AsyncUrlSeeder, SeedingConfig
+from krauler import AsyncUrlSeeder, SeedingConfig
 
 async def main():
     async with AsyncUrlSeeder() as seeder:
@@ -303,11 +303,11 @@ for url in urls:
 ### Migration Guide
 ```python
 # Old (v0.6.x)
-from cr4wlr import CrawlerConfig
+from krauler import CrawlerConfig
 config = CrawlerConfig(timeout=30000)
 
 # New (v0.7.0)
-from cr4wlr import CrawlerRunConfig, BrowserConfig
+from krauler import CrawlerRunConfig, BrowserConfig
 browser_config = BrowserConfig(timeout=30000)
 run_config = CrawlerRunConfig(cache_mode=CacheMode.BYPASS)
 ```
@@ -326,14 +326,14 @@ These features are under active development and will revolutionize how we approa
 ## 🚀 Get Started
 
 ```bash
-pip install cr4wlr==0.7.0
+pip install krauler==0.7.0
 ```
 
-Check out the [updated documentation](https://docs.cr4wlr.com).
+Check out the [updated documentation](https://docs.krauler.com).
 
 Questions? Issues? I'm always listening:
-- GitHub: [github.com/unclecode/cr4wlr](https://github.com/unclecode/cr4wlr)
-- Discord: [discord.gg/cr4wlr](https://discord.gg/jP8KfhDhyN)
+- GitHub: [github.com/unclecode/krauler](https://github.com/unclecode/krauler)
+- Discord: [discord.gg/krauler](https://discord.gg/jP8KfhDhyN)
 - Twitter: [@unclecode](https://x.com/unclecode)
 
 Happy crawling! 🕷️

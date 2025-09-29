@@ -3,8 +3,8 @@ C4A-Script API Usage Examples
 Shows how to use the new Result-based API in various scenarios
 """
 
-from cr4wlr.script.c4a_compile import compile, validate, compile_file
-from cr4wlr.script.c4a_result import CompilationResult, ValidationResult
+from krauler.script.c4a_compile import compile, validate, compile_file
+from krauler.script.c4a_result import CompilationResult, ValidationResult
 import json
 
 

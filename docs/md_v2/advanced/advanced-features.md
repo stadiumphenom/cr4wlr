@@ -22,7 +22,7 @@ If you need to route your crawl traffic through a proxy—whether for IP rotatio
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     browser_cfg = BrowserConfig(
@@ -66,7 +66,7 @@ Sometimes you need a visual record of a page or a PDF “printout.” Crawl4AI c
 ```python
 import os, asyncio
 from base64 import b64decode
-from cr4wlr import AsyncWebCrawler, CacheMode, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CacheMode, CrawlerRunConfig
 
 async def main():
     run_config = CrawlerRunConfig(
@@ -122,7 +122,7 @@ If you need to verify or export a site’s SSL certificate—for compliance, deb
 
 ```python
 import asyncio, os
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     tmp_dir = os.path.join(os.getcwd(), "tmp")
@@ -168,7 +168,7 @@ Sometimes you need to set custom headers (e.g., language preferences, authentica
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler
+from krauler import AsyncWebCrawler
 
 async def main():
     # Option 1: Set headers at the crawler strategy level
@@ -209,7 +209,7 @@ Crawl4AI can preserve cookies and localStorage so you can continue where you lef
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler
+from krauler import AsyncWebCrawler
 
 async def main():
     storage_dict = {
@@ -267,7 +267,7 @@ Crawl4AI supports respecting robots.txt rules with efficient caching:
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Enable robots.txt checking in config
@@ -290,7 +290,7 @@ if __name__ == "__main__":
 
 **Key Points**
 - Robots.txt files are cached locally for efficiency
-- Cache is stored in `~/.cr4wlr/robots/robots_cache.db`
+- Cache is stored in `~/.krauler/robots/robots_cache.db`
 - Cache has a default TTL of 7 days
 - If robots.txt can't be fetched, crawling is allowed
 - Returns 403 status code if URL is disallowed
@@ -304,7 +304,7 @@ Here’s a snippet that combines multiple “advanced” features (proxy, PDF, s
 ```python
 import os, asyncio
 from base64 import b64decode
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def main():
     # 1. Browser config with proxy + headless
@@ -382,8 +382,8 @@ browser_config = BrowserConfig(
 For advanced bot detection, use the undetected browser adapter:
 
 ```python
-from cr4wlr import UndetectedAdapter
-from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from krauler import UndetectedAdapter
+from krauler.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 # Create undetected adapter
 adapter = UndetectedAdapter()

@@ -58,8 +58,8 @@ Crawl4AI is the #1 trending open-source web crawler. We're building the future o
 
 Building data extraction at scale? Need dedicated support or infrastructure? Let's talk about a custom partnership.
 
-📧 Contact: [hello@cr4wlr.com](mailto:hello@cr4wlr.com) | 📅 [Schedule a call](https://calendar.app.google/rEpvi2UBgUQjWHfJ9)
+📧 Contact: [hello@krauler.com](mailto:hello@krauler.com) | 📅 [Schedule a call](https://calendar.app.google/rEpvi2UBgUQjWHfJ9)
 
 ---
 
-*This list is updated regularly. Sponsors at $50+ tiers can submit their logos via [hello@cr4wlr.com](mailto:hello@cr4wlr.com)*
+*This list is updated regularly. Sponsors at $50+ tiers can submit their logos via [hello@krauler.com](mailto:hello@krauler.com)*

@@ -235,7 +235,7 @@ graph TB
 ```mermaid
 graph TD
     subgraph "Global Configuration"
-        A[~/.cr4wlr/config.yml] --> B[Default Settings]
+        A[~/.krauler/config.yml] --> B[Default Settings]
         B --> C[LLM Providers]
         B --> D[Browser Defaults]
         B --> E[Output Preferences]
@@ -342,8 +342,8 @@ timeline
     title CLI Workflow Evolution
     
     section Setup Phase
-        Installation : pip install cr4wlr
-                    : cr4wlr-setup
+        Installation : pip install krauler
+                    : krauler-setup
         Basic Test   : crwl https://example.com
         Config Setup : crwl config set defaults
     
@@ -422,4 +422,4 @@ graph LR
     style D1 fill:#fff3e0
 ```
 
-**📖 Learn more:** [CLI Reference](https://docs.cr4wlr.com/core/cli/), [Identity-Based Crawling](https://docs.cr4wlr.com/advanced/identity-based-crawling/), [Profile Management](https://docs.cr4wlr.com/advanced/session-management/), [Authentication Strategies](https://docs.cr4wlr.com/advanced/hooks-auth/)
+**📖 Learn more:** [CLI Reference](https://docs.krauler.com/core/cli/), [Identity-Based Crawling](https://docs.krauler.com/advanced/identity-based-crawling/), [Profile Management](https://docs.krauler.com/advanced/session-management/), [Authentication Strategies](https://docs.krauler.com/advanced/hooks-auth/)

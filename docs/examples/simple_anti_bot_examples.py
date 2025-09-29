@@ -1,6 +1,6 @@
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, UndetectedAdapter
-from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, UndetectedAdapter
+from krauler.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 # Example 1: Stealth Mode
 async def stealth_mode_example():

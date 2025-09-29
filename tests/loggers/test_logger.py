@@ -1,5 +1,5 @@
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, AsyncLoggerBase
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode, AsyncLoggerBase
 import os
 from datetime import datetime
 
@@ -57,7 +57,7 @@ class AsyncFileLogger(AsyncLoggerBase):
 
 async def main():
     browser_config = BrowserConfig(headless=True, verbose=True)
-    crawler = AsyncWebCrawler(config=browser_config, logger=AsyncFileLogger("/Users/unclecode/devs/cr4wlr/.private/tmp/crawl.log"))
+    crawler = AsyncWebCrawler(config=browser_config, logger=AsyncFileLogger("/Users/unclecode/devs/krauler/.private/tmp/crawl.log"))
     await crawler.start()
     
     try:

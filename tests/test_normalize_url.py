@@ -1,5 +1,5 @@
 import unittest
-from cr4wlr.utils import normalize_url
+from krauler.utils import normalize_url
 
 class TestNormalizeUrl(unittest.TestCase):
 

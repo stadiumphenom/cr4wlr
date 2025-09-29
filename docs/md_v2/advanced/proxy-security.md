@@ -5,7 +5,7 @@
 Simple proxy configuration with `BrowserConfig`:
 
 ```python
-from cr4wlr.async_configs import BrowserConfig
+from krauler.async_configs import BrowserConfig
 
 # Using proxy URL
 browser_config = BrowserConfig(proxy="http://proxy.example.com:8080")
@@ -23,7 +23,7 @@ async with AsyncWebCrawler(config=browser_config) as crawler:
 Use an authenticated proxy with `BrowserConfig`:
 
 ```python
-from cr4wlr.async_configs import BrowserConfig
+from krauler.async_configs import BrowserConfig
 
 browser_config = BrowserConfig(proxy="http://[username]:[password]@[host]:[port]")
 async with AsyncWebCrawler(config=browser_config) as crawler:
@@ -37,7 +37,7 @@ Example using a proxy rotation service dynamically:
 
 ```python
 import re
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,
@@ -45,7 +45,7 @@ from cr4wlr import (
     RoundRobinProxyStrategy,
 )
 import asyncio
-from cr4wlr import ProxyConfig
+from krauler import ProxyConfig
 async def main():
     # Load proxies and create rotation strategy
     proxies = ProxyConfig.from_env()

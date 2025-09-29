@@ -408,4 +408,4 @@ flowchart TD
     style I fill:#c8e6c9
 ```
 
-**📖 Learn more:** [Simple Crawling Guide](https://docs.cr4wlr.com/core/simple-crawling/), [Configuration Options](https://docs.cr4wlr.com/core/browser-crawler-config/), [Result Processing](https://docs.cr4wlr.com/core/crawler-result/), [Table Extraction](https://docs.cr4wlr.com/extraction/no-llm-strategies/)
+**📖 Learn more:** [Simple Crawling Guide](https://docs.krauler.com/core/simple-crawling/), [Configuration Options](https://docs.krauler.com/core/browser-crawler-config/), [Result Processing](https://docs.krauler.com/core/crawler-result/), [Table Extraction](https://docs.krauler.com/extraction/no-llm-strategies/)

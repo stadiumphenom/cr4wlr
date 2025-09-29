@@ -33,10 +33,10 @@ x-base-config: &base-config
   user: "appuser"
 
 services:
-  cr4wlr:
+  krauler:
     # 1. Default: Pull multi-platform test image from Docker Hub
     # 2. Override with local image via: IMAGE=local-test docker compose up
-    image: ${IMAGE:-unclecode/cr4wlr:${TAG:-latest}}
+    image: ${IMAGE:-unclecode/krauler:${TAG:-latest}}
     
     # Local build config (used with --build)
     build:

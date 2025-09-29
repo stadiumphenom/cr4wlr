@@ -17,8 +17,8 @@ import json
 from typing import Dict, Any
 from colorama import Fore, Style, init
 
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
-from cr4wlr.async_logger import AsyncLogger
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler.async_logger import AsyncLogger
 
 # Initialize colorama for colored output
 init()
@@ -444,7 +444,7 @@ async def stealth_best_practices():
     print(f"\n{Fore.YELLOW}2. Use Realistic Viewport and User Agent:{Style.RESET_ALL}")
     
     # Get a realistic user agent
-    from cr4wlr.user_agent_generator import UserAgentGenerator
+    from krauler.user_agent_generator import UserAgentGenerator
     ua_generator = UserAgentGenerator()
     
     browser_config = BrowserConfig(

@@ -2,7 +2,7 @@ import asyncio
 import time
 from rich import print
 from rich.table import Table
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,

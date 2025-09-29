@@ -183,7 +183,7 @@ crwl https://example.com \
 
 First-time setup:
 - Prompts for LLM provider and API token
-- Saves configuration in `~/.cr4wlr/global.yml`
+- Saves configuration in `~/.krauler/global.yml`
 - Supports various providers (openai/gpt-4, anthropic/claude-3-sonnet, etc.)
 - For case of `ollama` you do not need to provide API token.
 - See [LiteLLM Providers](https://docs.litellm.ai/docs/providers) for full list
@@ -279,7 +279,7 @@ crwl https://example.com -q "Summarize the conclusions"
 1. **Configuration Management**:
    - Keep common configurations in YAML files
    - Use CLI parameters for quick overrides
-   - Store sensitive data (API tokens) in `~/.cr4wlr/global.yml`
+   - Store sensitive data (API tokens) in `~/.krauler/global.yml`
 
 2. **Performance Optimization**:
    - Use `--bypass-cache` for fresh content

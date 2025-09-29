@@ -1,5 +1,5 @@
 import asyncio
-from cr4wlr import *
+from krauler import *
 
 async def test_real_websites():
     print("\n=== Testing Real Website Robots.txt Compliance ===\n")

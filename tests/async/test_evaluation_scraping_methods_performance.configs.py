@@ -1,7 +1,7 @@
 import json
 import time
 from bs4 import BeautifulSoup
-from cr4wlr.content_scraping_strategy import (
+from krauler.content_scraping_strategy import (
     WebScrapingStrategy,
     LXMLWebScrapingStrategy,
 )

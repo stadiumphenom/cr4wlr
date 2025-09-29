@@ -1,6 +1,6 @@
 import pytest
 import time
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,

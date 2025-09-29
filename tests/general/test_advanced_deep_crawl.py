@@ -2,12 +2,12 @@ import asyncio
 import time
 
 
-from cr4wlr import CrawlerRunConfig, AsyncWebCrawler, CacheMode
-from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
-from cr4wlr.deep_crawling import BFSDeepCrawlStrategy, BestFirstCrawlingStrategy
-from cr4wlr.deep_crawling.filters import FilterChain, URLPatternFilter, DomainFilter, ContentTypeFilter, ContentRelevanceFilter
-from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer
-# from cr4wlr.deep_crawling import BFSDeepCrawlStrategy, BestFirstCrawlingStrategy
+from krauler import CrawlerRunConfig, AsyncWebCrawler, CacheMode
+from krauler.content_scraping_strategy import LXMLWebScrapingStrategy
+from krauler.deep_crawling import BFSDeepCrawlStrategy, BestFirstCrawlingStrategy
+from krauler.deep_crawling.filters import FilterChain, URLPatternFilter, DomainFilter, ContentTypeFilter, ContentRelevanceFilter
+from krauler.deep_crawling.scorers import KeywordRelevanceScorer
+# from krauler.deep_crawling import BFSDeepCrawlStrategy, BestFirstCrawlingStrategy
 
 
 async def main():

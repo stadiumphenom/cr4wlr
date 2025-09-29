@@ -1,4 +1,4 @@
-from cr4wlr.utils import RobotsParser
+from krauler.utils import RobotsParser
             
 import asyncio
 import aiohttp

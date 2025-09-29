@@ -102,11 +102,11 @@ results = await crawler.arun_many(
 Instead of using one config for all URLs, provide a list of configs with `url_matcher` patterns:
 
 ```python
-from cr4wlr import CrawlerRunConfig, MatchMode
-from cr4wlr.processors.pdf import PDFContentScrapingStrategy
-from cr4wlr.extraction_strategy import JsonCssExtractionStrategy
-from cr4wlr.content_filter_strategy import PruningContentFilter
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler import CrawlerRunConfig, MatchMode
+from krauler.processors.pdf import PDFContentScrapingStrategy
+from krauler.extraction_strategy import JsonCssExtractionStrategy
+from krauler.content_filter_strategy import PruningContentFilter
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
 
 # PDF files - specialized extraction
 pdf_config = CrawlerRunConfig(

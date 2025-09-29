@@ -1,7 +1,7 @@
 import asyncio
 from typing import List
 
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     BFSDeepCrawlStrategy,
@@ -75,16 +75,16 @@ async def deep_crawl_filter_tutorial_part_2():
     print("=" * 40 + "\n")
 
     # 3.1. Create DomainFilter:
-    domain_filter = DomainFilter(allowed_domains=["cr4wlr.com", "example.com"])
-    print("DomainFilter created, allowing domains: ['cr4wlr.com', 'example.com']")
+    domain_filter = DomainFilter(allowed_domains=["krauler.com", "example.com"])
+    print("DomainFilter created, allowing domains: ['krauler.com', 'example.com']")
 
     # 3.2. Synthetic URLs for Testing:
     test_urls_domain = [
-        "https://docs.cr4wlr.com/api",
+        "https://docs.krauler.com/api",
         "https://example.com/products",
         "https://another-website.org/blog",
         "https://sub.example.com/about",
-        "https://cr4wlr.com.attacker.net", # Corrected example: now should be rejected
+        "https://krauler.com.attacker.net", # Corrected example: now should be rejected
     ]
 
     # 3.3. Apply Filter and Show Results:
@@ -106,16 +106,16 @@ async def deep_crawl_filter_tutorial_part_2():
         filters=[
             URLPatternFilter(patterns=["*api*"]),
             ContentTypeFilter(allowed_types=["text/html"]), # Still URL extension based
-            DomainFilter(allowed_domains=["docs.cr4wlr.com"]),
+            DomainFilter(allowed_domains=["docs.krauler.com"]),
         ]
     )
     print("FilterChain created, combining URLPatternFilter, ContentTypeFilter, and DomainFilter.")
 
 
     test_urls_combined = [
-        "https://docs.cr4wlr.com/api/async-webcrawler",
+        "https://docs.krauler.com/api/async-webcrawler",
         "https://example.com/api/products",
-        "https://docs.cr4wlr.com/core/crawling",
+        "https://docs.krauler.com/core/crawling",
         "https://another-website.org/api/data",
     ]
 
@@ -147,7 +147,7 @@ async def deep_crawl_filter_tutorial_part_2():
 
     async with AsyncWebCrawler() as crawler:
         results_final_crawl: List[CrawlResult] = await crawler.arun(
-            url="https://docs.cr4wlr.com", config=config_final_crawl
+            url="https://docs.krauler.com", config=config_final_crawl
         )
 
         print("=== Crawled URLs (Deep Crawl with FilterChain) ===")

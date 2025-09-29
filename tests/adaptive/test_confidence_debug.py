@@ -12,9 +12,9 @@ import math
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cr4wlr import AsyncWebCrawler
-from cr4wlr.adaptive_crawler import CrawlState, StatisticalStrategy
-from cr4wlr.models import CrawlResult
+from krauler import AsyncWebCrawler
+from krauler.adaptive_crawler import CrawlState, StatisticalStrategy
+from krauler.models import CrawlResult
 
 
 class ConfidenceTestHarness:

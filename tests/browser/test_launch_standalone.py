@@ -1,4 +1,4 @@
-from cr4wlr.browser_profiler import BrowserProfiler
+from krauler.browser_profiler import BrowserProfiler
 import asyncio
 
 
@@ -8,7 +8,7 @@ if __name__ == "__main__":
         profiler = BrowserProfiler()
         cdp_url = await profiler.launch_standalone_browser(
             browser_type="chromium",
-            user_data_dir="~/.cr4wlr/browser_profile/test-browser-data",
+            user_data_dir="~/.krauler/browser_profile/test-browser-data",
             debugging_port=9222,
             headless=False
         )

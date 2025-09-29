@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
-from cr4wlr.content_filter_strategy import BM25ContentFilter
+from krauler.content_filter_strategy import BM25ContentFilter
 
 
 @pytest.fixture

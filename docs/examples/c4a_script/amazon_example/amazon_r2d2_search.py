@@ -19,9 +19,9 @@ import os
 from pathlib import Path
 from typing import List, Dict, Any
 
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from cr4wlr import JsonCssExtractionStrategy
-from cr4wlr.script.c4a_compile import C4ACompiler
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from krauler import JsonCssExtractionStrategy
+from krauler.script.c4a_compile import C4ACompiler
 
 
 class AmazonR2D2Scraper:

@@ -16,7 +16,7 @@ Pipeline Steps:
 5. Generate detailed response with citations
 
 Requirements:
-- pip install cr4wlr
+- pip install krauler
 - pip install litellm
 - export GEMINI_API_KEY="your-api-key"
 
@@ -45,7 +45,7 @@ from rich.table import Table
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
 # Crawl4AI imports
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler, 
     BrowserConfig, 
     CrawlerRunConfig,
@@ -53,8 +53,8 @@ from cr4wlr import (
     SeedingConfig,
     AsyncLogger
 )
-from cr4wlr.content_filter_strategy import PruningContentFilter
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler.content_filter_strategy import PruningContentFilter
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
 
 # LiteLLM for AI communication
 import litellm

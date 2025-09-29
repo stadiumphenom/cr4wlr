@@ -47,7 +47,7 @@ First, we'll set up our environment with all necessary libraries. We need Crawl4
 
 # cell 2 type:code
 # Install required packages
-!pip install -q cr4wlr litellm rich
+!pip install -q krauler litellm rich
 
 # cell 3 type:code
 import asyncio
@@ -65,7 +65,7 @@ from rich.table import Table
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
 # Crawl4AI imports for intelligent crawling
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler, 
     BrowserConfig, 
     CrawlerRunConfig,
@@ -73,8 +73,8 @@ from cr4wlr import (
     SeedingConfig,
     AsyncLogger
 )
-from cr4wlr.content_filter_strategy import PruningContentFilter
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler.content_filter_strategy import PruningContentFilter
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
 
 # LiteLLM for AI capabilities
 import litellm
@@ -1026,9 +1026,9 @@ You've built a complete AI research assistant that:
 
 ### Resources
 
-- 🐙 **GitHub**: [github.com/unclecode/cr4wlr](https://github.com/unclecode/cr4wlr)
-- 📚 **Documentation**: [cr4wlr.com/docs](https://cr4wlr.com/docs)
-- 💬 **Discord**: [Join our community](https://discord.gg/cr4wlr)
+- 🐙 **GitHub**: [github.com/unclecode/krauler](https://github.com/unclecode/krauler)
+- 📚 **Documentation**: [krauler.com/docs](https://krauler.com/docs)
+- 💬 **Discord**: [Join our community](https://discord.gg/krauler)
 
 Thank you for learning with Crawl4AI! 🙏
 

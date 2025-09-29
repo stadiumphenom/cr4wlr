@@ -9,15 +9,15 @@ Part 2: Practical Example with Real Crawling
 """
 
 import asyncio
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler, 
     CrawlerRunConfig,
     MatchMode
 )
-from cr4wlr.processors.pdf import PDFContentScrapingStrategy
-from cr4wlr.extraction_strategy import JsonCssExtractionStrategy
-from cr4wlr.content_filter_strategy import PruningContentFilter
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler.processors.pdf import PDFContentScrapingStrategy
+from krauler.extraction_strategy import JsonCssExtractionStrategy
+from krauler.content_filter_strategy import PruningContentFilter
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
 
 
 def print_section(title):

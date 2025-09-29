@@ -5,10 +5,10 @@ import unittest
 import asyncio
 from unittest.mock import patch, MagicMock
 
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator, MarkdownGenerationStrategy
-from cr4wlr.async_webcrawler import AsyncWebCrawler
-from cr4wlr.async_configs import CrawlerRunConfig
-from cr4wlr.models import MarkdownGenerationResult
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator, MarkdownGenerationStrategy
+from krauler.async_webcrawler import AsyncWebCrawler
+from krauler.async_configs import CrawlerRunConfig
+from krauler.models import MarkdownGenerationResult
 
 HTML_SAMPLE = """
 <html>
@@ -47,7 +47,7 @@ class TestContentSourceParameter(unittest.TestCase):
         generator = DefaultMarkdownGenerator(content_source="fit_html")
         self.assertEqual(generator.content_source, "fit_html")
 
-    @patch('cr4wlr.markdown_generation_strategy.CustomHTML2Text')
+    @patch('krauler.markdown_generation_strategy.CustomHTML2Text')
     def test_html_processing_using_input_html(self, mock_html2text):
         """Test that generate_markdown uses input_html parameter."""
         # Setup mock

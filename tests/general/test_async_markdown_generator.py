@@ -1,7 +1,7 @@
 import asyncio
 from typing import Dict
-from cr4wlr.content_filter_strategy import BM25ContentFilter, PruningContentFilter
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler.content_filter_strategy import BM25ContentFilter, PruningContentFilter
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
 import time
 
 # Test HTML samples

@@ -475,4 +475,4 @@ flowchart TD
     style F fill:#f3e5f5
 ```
 
-**📖 Learn more:** [LLM Strategies](https://docs.cr4wlr.com/extraction/llm-strategies/), [Schema-Based Extraction](https://docs.cr4wlr.com/extraction/no-llm-strategies/), [Pattern Matching](https://docs.cr4wlr.com/extraction/no-llm-strategies/#regexextractionstrategy), [Performance Optimization](https://docs.cr4wlr.com/advanced/multi-url-crawling/)
+**📖 Learn more:** [LLM Strategies](https://docs.krauler.com/extraction/llm-strategies/), [Schema-Based Extraction](https://docs.krauler.com/extraction/no-llm-strategies/), [Pattern Matching](https://docs.krauler.com/extraction/no-llm-strategies/#regexextractionstrategy), [Performance Optimization](https://docs.krauler.com/advanced/multi-url-crawling/)

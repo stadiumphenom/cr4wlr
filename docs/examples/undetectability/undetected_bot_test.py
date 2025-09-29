@@ -4,14 +4,14 @@ Tests browser fingerprinting differences at bot.sannysoft.com
 """
 
 import asyncio
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler, 
     BrowserConfig, 
     CrawlerRunConfig,
     UndetectedAdapter,
     CrawlResult
 )
-from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from krauler.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 # Bot detection test site
 TEST_URL = "https://bot.sannysoft.com"

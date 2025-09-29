@@ -31,7 +31,7 @@ When these metrics indicate sufficient information has been gathered, crawling s
 ### Basic Usage
 
 ```python
-from cr4wlr import AsyncWebCrawler, AdaptiveCrawler
+from krauler import AsyncWebCrawler, AdaptiveCrawler
 
 async def main():
     async with AsyncWebCrawler() as crawler:
@@ -56,7 +56,7 @@ async def main():
 ### Configuration Options
 
 ```python
-from cr4wlr import AdaptiveConfig
+from krauler import AdaptiveConfig
 
 config = AdaptiveConfig(
     confidence_threshold=0.8,    # Stop when 80% confident (default: 0.7)
@@ -330,7 +330,7 @@ result = await adaptive.digest(
 
 - Learn about [Advanced Adaptive Strategies](../advanced/adaptive-strategies.md)
 - Explore the [AdaptiveCrawler API Reference](../api/adaptive-crawler.md)
-- See more [Examples](https://github.com/unclecode/cr4wlr/tree/main/docs/examples/adaptive_crawling)
+- See more [Examples](https://github.com/unclecode/krauler/tree/main/docs/examples/adaptive_crawling)
 
 ## FAQ
 

@@ -9,7 +9,7 @@ import asyncio
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
-from cr4wlr.async_webcrawler import AsyncWebCrawler
+from krauler.async_webcrawler import AsyncWebCrawler
 
 # @pytest.mark.asyncio
 # async def test_large_content_page():

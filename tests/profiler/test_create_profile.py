@@ -1,4 +1,4 @@
-from cr4wlr import BrowserProfiler
+from krauler import BrowserProfiler
 import asyncio
 
 
@@ -10,7 +10,7 @@ if __name__ == "__main__":
     import os
     from pathlib import Path
     home_dir = Path.home()
-    profile_path = asyncio.run(profiler.create_profile( str(home_dir / ".cr4wlr/profiles/test-profile")))
+    profile_path = asyncio.run(profiler.create_profile( str(home_dir / ".krauler/profiles/test-profile")))
     
     print(f"Profile created at: {profile_path}")
 

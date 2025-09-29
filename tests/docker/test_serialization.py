@@ -2,7 +2,7 @@ import inspect
 from typing import Any, Dict
 from enum import Enum
 
-from cr4wlr import LLMConfig
+from krauler import LLMConfig
 
 def to_serializable_dict(obj: Any) -> Dict:
     """
@@ -81,9 +81,9 @@ def from_serializable_dict(data: Any) -> Any:
         if data["type"] == "dict":
             return {k: from_serializable_dict(v) for k, v in data["value"].items()}
             
-        # Import from cr4wlr for class instances
-        import cr4wlr
-        cls = getattr(cr4wlr, data["type"])
+        # Import from krauler for class instances
+        import krauler
+        cls = getattr(krauler, data["type"])
         
         # Handle Enum
         if issubclass(cls, Enum):
@@ -114,7 +114,7 @@ def is_empty_value(value: Any) -> bool:
     return False
 
 # if __name__ == "__main__":
-#     from cr4wlr import (
+#     from krauler import (
 #         CrawlerRunConfig, CacheMode, DefaultMarkdownGenerator, 
 #         PruningContentFilter, BM25ContentFilter, LLMContentFilter,
 #         JsonCssExtractionStrategy, CosineStrategy, RegexChunking,
@@ -177,7 +177,7 @@ def is_empty_value(value: Any) -> bool:
 #     print("\nVerification passed: Configuration matches after serialization/deserialization!")
 
 if __name__ == "__main__":
-    from cr4wlr import (
+    from krauler import (
         CrawlerRunConfig, CacheMode, DefaultMarkdownGenerator, 
         PruningContentFilter, BM25ContentFilter, LLMContentFilter,
         JsonCssExtractionStrategy, RegexChunking,

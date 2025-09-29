@@ -2,7 +2,7 @@ I want to enhance the `AsyncPlaywrightCrawlerStrategy` to optionally capture net
 
 Here's a breakdown of the proposed changes across the relevant files:
 
-**1. Configuration (`cr4wlr/async_configs.py`)**
+**1. Configuration (`krauler/async_configs.py`)**
 
 *   **Goal:** Add flags to `CrawlerRunConfig` to enable/disable capturing.
 *   **Changes:**
@@ -12,7 +12,7 @@ Here's a breakdown of the proposed changes across the relevant files:
     *   Update `__init__`, `from_kwargs`, `to_dict`, and implicitly `clone`/`dump`/`load` to include these new attributes.
 
 ```python
-# ==== File: cr4wlr/async_configs.py ====
+# ==== File: krauler/async_configs.py ====
 # ... (imports) ...
 
 class CrawlerRunConfig():
@@ -75,7 +75,7 @@ class CrawlerRunConfig():
     # or the serialization logic correctly handles all attributes.
 ```
 
-**2. Data Models (`cr4wlr/models.py`)**
+**2. Data Models (`krauler/models.py`)**
 
 *   **Goal:** Add fields to store the captured data in the response/result objects.
 *   **Changes:**
@@ -83,7 +83,7 @@ class CrawlerRunConfig():
     *   Add the same fields to `CrawlResult`.
 
 ```python
-# ==== File: cr4wlr/models.py ====
+# ==== File: krauler/models.py ====
 # ... (imports) ...
 
 # ... (Existing dataclasses/models) ...
@@ -142,7 +142,7 @@ class CrawlResult(BaseModel):
 # ... (Rest of the models) ...
 ```
 
-**3. Crawler Strategy (`cr4wlr/async_crawler_strategy.py`)**
+**3. Crawler Strategy (`krauler/async_crawler_strategy.py`)**
 
 *   **Goal:** Implement the actual capturing logic within `AsyncPlaywrightCrawlerStrategy._crawl_web`.
 *   **Changes:**
@@ -152,7 +152,7 @@ class CrawlResult(BaseModel):
     *   Pass the captured lists to the `AsyncCrawlResponse` constructor at the end of the method.
 
 ```python
-# ==== File: cr4wlr/async_crawler_strategy.py ====
+# ==== File: krauler/async_crawler_strategy.py ====
 # ... (imports) ...
 import time # Make sure time is imported
 
@@ -317,7 +317,7 @@ class AsyncPlaywrightCrawlerStrategy(AsyncCrawlerStrategy):
             # ... (existing code for selector logic or page.content()) ...
             if config.css_selector:
                 # ... existing selector logic ...
-                html = f"<div class='cr4wlr-result'>\n" + "\n".join(html_parts) + "\n</div>"
+                html = f"<div class='krauler-result'>\n" + "\n".join(html_parts) + "\n</div>"
             else:
                 html = await page.content()
 
@@ -376,14 +376,14 @@ class AsyncPlaywrightCrawlerStrategy(AsyncCrawlerStrategy):
 
 ```
 
-**4. Core Crawler (`cr4wlr/async_webcrawler.py`)**
+**4. Core Crawler (`krauler/async_webcrawler.py`)**
 
 *   **Goal:** Ensure the captured data from `AsyncCrawlResponse` is transferred to the final `CrawlResult`.
 *   **Changes:**
     *   In `arun`, when processing a non-cached result (inside the `if not cached_result or not html:` block), after receiving `async_response` and calling `aprocess_html` to get `crawl_result`, copy the `network_requests` and `console_messages` from `async_response` to `crawl_result`.
 
 ```python
-# ==== File: cr4wlr/async_webcrawler.py ====
+# ==== File: krauler/async_webcrawler.py ====
 # ... (imports) ...
 
 class AsyncWebCrawler:

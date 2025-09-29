@@ -1,12 +1,12 @@
 import asyncio
-from cr4wlr import CrawlerRunConfig, AsyncWebCrawler, BrowserConfig
+from krauler import CrawlerRunConfig, AsyncWebCrawler, BrowserConfig
 from pathlib import Path
 import os
 
 async def test_basic_download():
     
-    # Custom folder (otherwise defaults to ~/.cr4wlr/downloads)
-    downloads_path = os.path.join(Path.home(), ".cr4wlr", "downloads")
+    # Custom folder (otherwise defaults to ~/.krauler/downloads)
+    downloads_path = os.path.join(Path.home(), ".krauler", "downloads")
     os.makedirs(downloads_path, exist_ok=True)
     browser_config = BrowserConfig(
         accept_downloads=True,

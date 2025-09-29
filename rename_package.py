@@ -2,8 +2,8 @@ import os
 import re
 import shutil
 
-OLD = "cr4wlr"
-NEW = "cr4wlr"
+OLD = "krauler"
+NEW = "krauler"
 ROOT = "."  # path to your repo root
 
 # File extensions to scan for imports / mentions

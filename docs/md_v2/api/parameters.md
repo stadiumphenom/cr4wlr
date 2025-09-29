@@ -3,7 +3,7 @@
 `BrowserConfig` focuses on **how** the browser is launched and behaves. This includes headless mode, proxies, user agents, and other environment tweaks.
 
 ```python
-from cr4wlr import AsyncWebCrawler, BrowserConfig
+from krauler import AsyncWebCrawler, BrowserConfig
 
 browser_cfg = BrowserConfig(
     browser_type="chromium",
@@ -49,7 +49,7 @@ browser_cfg = BrowserConfig(
 While `BrowserConfig` sets up the **environment**, `CrawlerRunConfig` details **how** each **crawl operation** should behave: caching, content filtering, link or domain blocking, timeouts, JavaScript code, etc.
 
 ```python
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 run_cfg = CrawlerRunConfig(
     wait_for="css:.main-content",
@@ -179,7 +179,7 @@ Use these for link-level content filtering (often to keep crawls “internal” 
 When sites use virtual scrolling (content replaced as you scroll), use `VirtualScrollConfig`:
 
 ```python
-from cr4wlr import VirtualScrollConfig
+from krauler import VirtualScrollConfig
 
 virtual_config = VirtualScrollConfig(
     container_selector="#timeline",    # CSS selector for scrollable container
@@ -220,9 +220,9 @@ See [Virtual Scroll documentation](../../advanced/virtual-scroll.md) for detaile
 The `url_matcher` parameter enables URL-specific configurations when used with `arun_many()`:
 
 ```python
-from cr4wlr import CrawlerRunConfig, MatchMode
-from cr4wlr.processors.pdf import PDFContentScrapingStrategy
-from cr4wlr.extraction_strategy import JsonCssExtractionStrategy
+from krauler import CrawlerRunConfig, MatchMode
+from krauler.processors.pdf import PDFContentScrapingStrategy
+from krauler.extraction_strategy import JsonCssExtractionStrategy
 
 # Simple string pattern (glob-style)
 pdf_config = CrawlerRunConfig(
@@ -298,7 +298,7 @@ The `clone()` method is particularly useful when you need slightly different con
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 async def main():
     # Configure the browser

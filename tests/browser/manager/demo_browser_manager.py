@@ -8,9 +8,9 @@ import asyncio
 import time
 import random
 
-from cr4wlr.browser.manager import BrowserManager, UnavailableBehavior
-from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
-from cr4wlr.async_logger import AsyncLogger
+from krauler.browser.manager import BrowserManager, UnavailableBehavior
+from krauler.async_configs import BrowserConfig, CrawlerRunConfig
+from krauler.async_logger import AsyncLogger
 
 import playwright
 

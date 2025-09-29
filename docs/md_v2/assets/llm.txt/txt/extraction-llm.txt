@@ -36,8 +36,8 @@ import asyncio
 import json
 from pydantic import BaseModel, Field
 from typing import List
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
-from cr4wlr import LLMExtractionStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
+from krauler import LLMExtractionStrategy
 
 class SentimentAnalysis(BaseModel):
     """Use LLM when you need semantic understanding"""

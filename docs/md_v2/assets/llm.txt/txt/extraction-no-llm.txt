@@ -38,8 +38,8 @@ The `generate_schema()` function uses LLM ONCE to create a reusable extraction p
 import json
 import asyncio
 from pathlib import Path
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
-from cr4wlr import JsonCssExtractionStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
+from krauler import JsonCssExtractionStrategy
 
 async def smart_extraction_workflow():
     """
@@ -175,8 +175,8 @@ social_schema = JsonCssExtractionStrategy.generate_schema(
 ```python
 import json
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
-from cr4wlr import JsonCssExtractionStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig
+from krauler import JsonCssExtractionStrategy
 
 # Manual schema for consistent product pages
 simple_schema = {
@@ -342,7 +342,7 @@ asyncio.run(extract_complex_ecommerce())
 ### XPath Alternative (When CSS Isn't Enough)
 
 ```python
-from cr4wlr import JsonXPathExtractionStrategy
+from krauler import JsonXPathExtractionStrategy
 
 # XPath for more complex selections
 xpath_schema = {
@@ -386,8 +386,8 @@ strategy = JsonXPathExtractionStrategy(xpath_schema, verbose=True)
 ```python
 import json
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
-from cr4wlr import RegexExtractionStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig
+from krauler import RegexExtractionStrategy
 
 async def extract_common_patterns():
     # Use built-in patterns for common data types

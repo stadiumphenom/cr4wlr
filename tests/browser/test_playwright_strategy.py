@@ -13,9 +13,9 @@ import sys
 if __name__ == "__main__":
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-from cr4wlr.browser import BrowserManager
-from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
-from cr4wlr.async_logger import AsyncLogger
+from krauler.browser import BrowserManager
+from krauler.async_configs import BrowserConfig, CrawlerRunConfig
+from krauler.async_logger import AsyncLogger
 
 # Create a logger for clear terminal output
 logger = AsyncLogger(verbose=True, log_file=None)

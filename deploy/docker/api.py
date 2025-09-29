@@ -15,7 +15,7 @@ from fastapi.background import BackgroundTasks
 from fastapi.responses import JSONResponse
 from redis import asyncio as aioredis
 
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     LLMExtractionStrategy,
@@ -25,14 +25,14 @@ from cr4wlr import (
     RateLimiter, 
     LLMConfig
 )
-from cr4wlr.utils import perform_completion_with_backoff
-from cr4wlr.content_filter_strategy import (
+from krauler.utils import perform_completion_with_backoff
+from krauler.content_filter_strategy import (
     PruningContentFilter,
     BM25ContentFilter,
     LLMContentFilter
 )
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
-from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler.content_scraping_strategy import LXMLWebScrapingStrategy
 
 from utils import (
     TaskStatus,

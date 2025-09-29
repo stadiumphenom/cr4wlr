@@ -13,39 +13,39 @@
   </p>
 
   <p>
-    <a href="https://github.com/unclecode/cr4wlr/stargazers">
-      <img src="https://img.shields.io/github/stars/unclecode/cr4wlr?style=social"
+    <a href="https://github.com/unclecode/krauler/stargazers">
+      <img src="https://img.shields.io/github/stars/unclecode/krauler?style=social"
            alt="GitHub Stars"/>
     </a>
-    <a href="https://github.com/unclecode/cr4wlr/network/members">
-      <img src="https://img.shields.io/github/forks/unclecode/cr4wlr?style=social"
+    <a href="https://github.com/unclecode/krauler/network/members">
+      <img src="https://img.shields.io/github/forks/unclecode/krauler?style=social"
            alt="GitHub Forks"/>
     </a>
-    <a href="https://badge.fury.io/py/cr4wlr">
-      <img src="https://badge.fury.io/py/cr4wlr.svg"
+    <a href="https://badge.fury.io/py/krauler">
+      <img src="https://badge.fury.io/py/krauler.svg"
            alt="PyPI version"/>
     </a>
   </p>
 
   <p>
-    <a href="https://pypi.org/project/cr4wlr/">
-      <img src="https://img.shields.io/pypi/pyversions/cr4wlr"
+    <a href="https://pypi.org/project/krauler/">
+      <img src="https://img.shields.io/pypi/pyversions/krauler"
            alt="Python Version"/>
     </a>
-    <a href="https://pepy.tech/project/cr4wlr">
-      <img src="https://static.pepy.tech/badge/cr4wlr/month"
+    <a href="https://pepy.tech/project/krauler">
+      <img src="https://static.pepy.tech/badge/krauler/month"
            alt="Downloads"/>
     </a>
-    <a href="https://github.com/unclecode/cr4wlr/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/unclecode/cr4wlr"
+    <a href="https://github.com/unclecode/krauler/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/unclecode/krauler"
            alt="License"/>
     </a>
   </p>
   <p align="center">
-    <a href="https://x.com/cr4wlr">
+    <a href="https://x.com/krauler">
       <img src="https://img.shields.io/badge/Follow%20on%20X-000000?style=for-the-badge&logo=x&logoColor=white" alt="Follow on X" />
     </a>
-    <a href="https://www.linkedin.com/company/cr4wlr">
+    <a href="https://www.linkedin.com/company/krauler">
       <img src="https://img.shields.io/badge/Follow%20on%20LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Follow on LinkedIn" />
     </a>
     <a href="https://discord.gg/jP8KfhDhyN">
@@ -57,7 +57,7 @@
 
 Crawl4AI is the #1 trending GitHub repository, actively maintained by a vibrant community. It delivers blazing-fast, AI-ready web crawling tailored for large language models, AI agents, and data pipelines. Fully open source, flexible, and built for real-time performance, **Crawl4AI** empowers developers with unmatched speed, precision, and deployment ease.
 
-> **Note**: If you're looking for the old documentation, you can access it [here](https://old.docs.cr4wlr.com).
+> **Note**: If you're looking for the old documentation, you can access it [here](https://old.docs.krauler.com).
 
 ## 🎯 New: Adaptive Web Crawling
 
@@ -72,13 +72,13 @@ Here's a quick example to show you how easy it is to use Crawl4AI with its async
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler
+from krauler import AsyncWebCrawler
 
 async def main():
     # Create an instance of AsyncWebCrawler
     async with AsyncWebCrawler() as crawler:
         # Run the crawler on a URL
-        result = await crawler.arun(url="https://cr4wlr.com")
+        result = await crawler.arun(url="https://krauler.com")
 
         # Print the extracted content
         print(result.markdown)
@@ -148,11 +148,11 @@ Throughout these sections, you’ll find code samples you can **copy-paste** int
 
 ## Quick Links
 
-- **[GitHub Repo](https://github.com/unclecode/cr4wlr)**  
+- **[GitHub Repo](https://github.com/unclecode/krauler)**  
 - **[Installation Guide](./core/installation.md)**  
 - **[Quick Start](./core/quickstart.md)**  
 - **[API Reference](./api/async-webcrawler.md)**  
-- **[Changelog](https://github.com/unclecode/cr4wlr/blob/main/CHANGELOG.md)**  
+- **[Changelog](https://github.com/unclecode/krauler/blob/main/CHANGELOG.md)**  
 
 Thank you for joining me on this journey. Let’s keep building an **open, democratic** approach to data extraction and AI together.
 

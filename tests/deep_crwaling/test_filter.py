@@ -1,7 +1,7 @@
 # // File: tests/deep_crawling/test_filters.py
 import pytest
 from urllib.parse import urlparse
-from cr4wlr import ContentTypeFilter, URLFilter 
+from krauler import ContentTypeFilter, URLFilter 
 
 # Minimal URLFilter base class stub if not already importable directly for tests
 # In a real scenario, this would be imported from the library

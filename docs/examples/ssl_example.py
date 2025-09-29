@@ -2,7 +2,7 @@
 
 import asyncio
 import os
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 # Create tmp directory if it doesn't exist
 parent_dir = os.path.dirname(

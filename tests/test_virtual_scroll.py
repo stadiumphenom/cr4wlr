@@ -6,7 +6,7 @@ Test virtual scroll implementation according to the design:
 
 import asyncio
 import os
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig, CacheMode, BrowserConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig, VirtualScrollConfig, CacheMode, BrowserConfig
 
 async def test_virtual_scroll():
     """Test virtual scroll with content replacement (true virtual scroll)"""

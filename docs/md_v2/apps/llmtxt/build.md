@@ -3,11 +3,11 @@ O**Prompt for AI Coding Assistant: Create an Interactive LLM Context Builder Pag
 
 **Objective:**
 
-Your task is to create an interactive HTML webpage with JavaScript functionality that allows users to select and combine different `cr4wlr` LLM context files into a single downloadable Markdown (`.md`) file. This tool will empower users to craft tailored context for their AI assistants based on their specific needs.
+Your task is to create an interactive HTML webpage with JavaScript functionality that allows users to select and combine different `krauler` LLM context files into a single downloadable Markdown (`.md`) file. This tool will empower users to craft tailored context for their AI assistants based on their specific needs.
 
 **Core Functionality:**
 
-1.  **Display `cr4wlr` Components:** The page will list all available `cr4wlr` documentation components.
+1.  **Display `krauler` Components:** The page will list all available `krauler` documentation components.
 2.  **Select Context Types:** For each component, users can select which types of context they want to include:
     *   Memory (API facts)
     *   Reasoning (How-to/why)
@@ -27,7 +27,7 @@ Your task is to create an interactive HTML webpage with JavaScript functionality
 *   **File Naming Convention:** Files follow the pattern: `crawl4ai_{{component_name}}_[memory|reasoning|examples]_content.llm.md`.
     *   `{{component_name}}` can contain underscores (e.g., `deep_crawling`, `config_objects`).
     *   The special contexts will have names like `crawl4ai_vibe_content.llm.md` and `crawl4ai_all_content.llm.md`.
-*   **Component List:** You will be provided with a list of `cr4wlr` components. For this implementation, use the following list:
+*   **Component List:** You will be provided with a list of `krauler` components. For this implementation, use the following list:
     *   `core`
     *   `config_objects`
     *   `deep_crawling`
@@ -68,7 +68,7 @@ Your task is to create an interactive HTML webpage with JavaScript functionality
 *   Associated JavaScript code (can be inline within `<script>` tags or in a separate `.js` file).
 *   Associated CSS code (can be inline within `<style>` tags or in a separate `.css` file).
 
-This interactive tool will greatly enhance the user experience for `cr4wlr` developers looking to leverage your specialized LLM contexts. Please ensure the JavaScript is robust and provides good user feedback.
+This interactive tool will greatly enhance the user experience for `krauler` developers looking to leverage your specialized LLM contexts. Please ensure the JavaScript is robust and provides good user feedback.
 
 ---
 

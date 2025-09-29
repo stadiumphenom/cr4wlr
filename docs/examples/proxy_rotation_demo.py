@@ -1,7 +1,7 @@
 import os
 import re
 from typing import List, Dict
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,
@@ -147,7 +147,7 @@ async def demo_proxy_rotation_batch():
 
 if __name__ == "__main__":
     import asyncio
-    from cr4wlr import (
+    from krauler import (
         CrawlerMonitor, 
         DisplayMode,
         MemoryAdaptiveDispatcher,

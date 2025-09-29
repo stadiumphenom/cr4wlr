@@ -21,14 +21,14 @@ import pandas as pd
 import numpy as np
 import re
 import plotly.express as px
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,
     CacheMode,
     LXMLWebScrapingStrategy,
 )
-from cr4wlr import CrawlResult
+from krauler import CrawlResult
 from typing import List
 
 __current_dir__ = __file__.rsplit("/", 1)[0]

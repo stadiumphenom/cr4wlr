@@ -62,7 +62,7 @@ class Crawl4AiTester:
 def test_docker_deployment(version="basic"):
     tester = Crawl4AiTester(
         base_url="http://localhost:11235",
-        #base_url="https://cr4wlr-sby74.ondigitalocean.app",
+        #base_url="https://krauler-sby74.ondigitalocean.app",
     )
     print(f"Testing Crawl4AI Docker {version} version")
 

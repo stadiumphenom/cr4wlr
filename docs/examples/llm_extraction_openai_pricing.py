@@ -1,7 +1,7 @@
 import asyncio
 from pydantic import BaseModel, Field
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LLMConfig, BrowserConfig, CacheMode
-from cr4wlr.extraction_strategy import LLMExtractionStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig, LLMConfig, BrowserConfig, CacheMode
+from krauler.extraction_strategy import LLMExtractionStrategy
 from typing import Dict
 import os
 

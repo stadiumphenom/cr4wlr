@@ -6,8 +6,8 @@ from pathlib import Path
 from typing import List, Dict, Any
 from datetime import datetime
 
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode, CrawlResult
-from cr4wlr import BrowserConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode, CrawlResult
+from krauler import BrowserConfig
 
 __cur_dir__ = Path(__file__).parent
 

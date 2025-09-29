@@ -18,7 +18,7 @@ import os, json, asyncio
 from pathlib import Path
 from typing import List
 
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     CrawlResult,

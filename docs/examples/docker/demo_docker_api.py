@@ -29,8 +29,8 @@ BOOKS_URL = "http://books.toscrape.com/"  # For CSS extraction
 PYTHON_URL = "https://python.org"  # For deeper crawl
 # Use the same sample site as deep crawl tests for consistency
 DEEP_CRAWL_BASE_URL = os.getenv(
-    "DEEP_CRAWL_TEST_SITE", "https://docs.cr4wlr.com/samples/deepcrawl/")
-DEEP_CRAWL_DOMAIN = "docs.cr4wlr.com"
+    "DEEP_CRAWL_TEST_SITE", "https://docs.krauler.com/samples/deepcrawl/")
+DEEP_CRAWL_DOMAIN = "docs.krauler.com"
 
 # --- Helper Functions ---
 

@@ -195,7 +195,7 @@ crwl https://company-intranet.com -p work-profile \
 ```python
 # Create profiles via Python API
 import asyncio
-from cr4wlr import BrowserProfiler
+from krauler import BrowserProfiler
 
 async def create_auth_profile():
     profiler = BrowserProfiler()
@@ -210,7 +210,7 @@ async def create_auth_profile():
         print(f"Profile: {profile['name']} at {profile['path']}")
     
     # Use profile for crawling
-    from cr4wlr import AsyncWebCrawler, BrowserConfig
+    from krauler import AsyncWebCrawler, BrowserConfig
     
     browser_config = BrowserConfig(
         headless=True,
@@ -292,4 +292,4 @@ crwl https://research-platform.com/data -p research-profile \
     -o json
 ```
 
-**📖 Learn more:** [Identity-Based Crawling Documentation](https://docs.cr4wlr.com/advanced/identity-based-crawling/), [Browser Profile Management](https://docs.cr4wlr.com/advanced/session-management/), [CLI Examples](https://docs.cr4wlr.com/core/cli/)
+**📖 Learn more:** [Identity-Based Crawling Documentation](https://docs.krauler.com/advanced/identity-based-crawling/), [Browser Profile Management](https://docs.krauler.com/advanced/session-management/), [CLI Examples](https://docs.krauler.com/core/cli/)

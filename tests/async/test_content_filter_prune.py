@@ -4,7 +4,7 @@ import pytest
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
-from cr4wlr.content_filter_strategy import PruningContentFilter
+from krauler.content_filter_strategy import PruningContentFilter
 
 
 @pytest.fixture

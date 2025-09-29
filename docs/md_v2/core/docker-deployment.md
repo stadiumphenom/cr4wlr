@@ -64,10 +64,10 @@ Our latest release is `0.7.3`. Images are built with multi-arch manifests, so Do
 
 ```bash
 # Pull the latest version
-docker pull unclecode/cr4wlr:0.7.3
+docker pull unclecode/krauler:0.7.3
 
 # Or pull using the latest tag
-docker pull unclecode/cr4wlr:latest
+docker pull unclecode/krauler:latest
 ```
 
 #### 2. Setup Environment (API Keys)
@@ -99,9 +99,9 @@ EOL
     ```bash
     docker run -d \
       -p 11235:11235 \
-      --name cr4wlr \
+      --name krauler \
       --shm-size=1g \
-      unclecode/cr4wlr:latest
+      unclecode/krauler:latest
     ```
 
 *   **With LLM support:**
@@ -109,10 +109,10 @@ EOL
     # Make sure .llm.env is in the current directory
     docker run -d \
       -p 11235:11235 \
-      --name cr4wlr \
+      --name krauler \
       --env-file .llm.env \
       --shm-size=1g \
-      unclecode/cr4wlr:latest
+      unclecode/krauler:latest
     ```
 
 > The server will be available at `http://localhost:11235`. Visit `/playground` to access the interactive testing interface.
@@ -120,14 +120,14 @@ EOL
 #### 4. Stopping the Container
 
 ```bash
-docker stop cr4wlr && docker rm cr4wlr
+docker stop krauler && docker rm krauler
 ```
 
 #### Docker Hub Versioning Explained
 
-*   **Image Name:** `unclecode/cr4wlr`
+*   **Image Name:** `unclecode/krauler`
 *   **Tag Format:** `LIBRARY_VERSION[-SUFFIX]` (e.g., `0.7.3`)
-    *   `LIBRARY_VERSION`: The semantic version of the core `cr4wlr` Python library
+    *   `LIBRARY_VERSION`: The semantic version of the core `krauler` Python library
     *   `SUFFIX`: Optional tag for release candidates (``) and revisions (`r1`)
 *   **`latest` Tag:** Points to the most recent stable version
 *   **Multi-Architecture Support:** All images support both `linux/amd64` and `linux/arm64` architectures through a single tag
@@ -139,8 +139,8 @@ Docker Compose simplifies building and running the service, especially for local
 #### 1. Clone Repository
 
 ```bash
-git clone https://github.com/unclecode/cr4wlr.git
-cd cr4wlr
+git clone https://github.com/unclecode/krauler.git
+cd krauler
 ```
 
 #### 2. Environment Setup (API Keys)
@@ -148,7 +148,7 @@ cd cr4wlr
 If you plan to use LLMs, copy the example environment file and add your API keys. This file should be in the **project root directory**.
 
 ```bash
-# Make sure you are in the 'cr4wlr' root directory
+# Make sure you are in the 'krauler' root directory
 cp deploy/docker/.llm.env.example .llm.env
 
 # Now edit .llm.env and add your API keys
@@ -186,7 +186,7 @@ The `docker-compose.yml` file in the project root provides a simplified approach
     ```bash
     # Pulls and runs the release candidate from Docker Hub
     # Automatically selects the correct architecture
-    IMAGE=unclecode/cr4wlr:latest docker compose up -d
+    IMAGE=unclecode/krauler:latest docker compose up -d
     ```
 
 *   **Build and Run Locally:**
@@ -220,25 +220,25 @@ If you prefer not to use Docker Compose for direct control over the build and ru
 
 #### 1. Clone Repository & Setup Environment
 
-Follow steps 1 and 2 from the Docker Compose section above (clone repo, `cd cr4wlr`, create `.llm.env` in the root).
+Follow steps 1 and 2 from the Docker Compose section above (clone repo, `cd krauler`, create `.llm.env` in the root).
 
 #### 2. Build the Image (Multi-Arch)
 
 Use `docker buildx` to build the image. Crawl4AI now uses buildx to handle multi-architecture builds automatically.
 
 ```bash
-# Make sure you are in the 'cr4wlr' root directory
+# Make sure you are in the 'krauler' root directory
 # Build for the current architecture and load it into Docker
-docker buildx build -t cr4wlr-local:latest --load .
+docker buildx build -t krauler-local:latest --load .
 
 # Or build for multiple architectures (useful for publishing)
-docker buildx build --platform linux/amd64,linux/arm64 -t cr4wlr-local:latest --load .
+docker buildx build --platform linux/amd64,linux/arm64 -t krauler-local:latest --load .
 
 # Build with additional options
 docker buildx build \
   --build-arg INSTALL_TYPE=all \
   --build-arg ENABLE_GPU=false \
-  -t cr4wlr-local:latest --load .
+  -t krauler-local:latest --load .
 ```
 
 #### 3. Run the Container
@@ -247,9 +247,9 @@ docker buildx build \
     ```bash
     docker run -d \
       -p 11235:11235 \
-      --name cr4wlr-standalone \
+      --name krauler-standalone \
       --shm-size=1g \
-      cr4wlr-local:latest
+      krauler-local:latest
     ```
 
 *   **With LLM support:**
@@ -257,10 +257,10 @@ docker buildx build \
     # Make sure .llm.env is in the current directory (project root)
     docker run -d \
       -p 11235:11235 \
-      --name cr4wlr-standalone \
+      --name krauler-standalone \
       --env-file .llm.env \
       --shm-size=1g \
-      cr4wlr-local:latest
+      krauler-local:latest
     ```
 
 > The server will be available at `http://localhost:11235`.
@@ -268,7 +268,7 @@ docker buildx build \
 #### 4. Stopping the Manual Container
 
 ```bash
-docker stop cr4wlr-standalone && docker rm cr4wlr-standalone
+docker stop krauler-standalone && docker rm krauler-standalone
 ```
 
 ---
@@ -414,7 +414,7 @@ You can customize the image build process using build arguments (`--build-arg`).
 docker buildx build \
   --platform linux/amd64,linux/arm64 \
   --build-arg INSTALL_TYPE=all \
-  -t yourname/cr4wlr-all:latest \
+  -t yourname/krauler-all:latest \
   --load \
   . # Build from root context
 ```
@@ -461,12 +461,12 @@ This is the easiest way to translate Python configuration to JSON requests when 
 
 ### Python SDK
 
-Install the SDK: `pip install cr4wlr`
+Install the SDK: `pip install krauler`
 
 ```python
 import asyncio
-from cr4wlr.docker_client import Crawl4aiDockerClient
-from cr4wlr import BrowserConfig, CrawlerRunConfig, CacheMode # Assuming you have cr4wlr installed
+from krauler.docker_client import Crawl4aiDockerClient
+from krauler import BrowserConfig, CrawlerRunConfig, CacheMode # Assuming you have krauler installed
 
 async def main():
     # Point to the correct server port
@@ -768,18 +768,18 @@ You can override the default `config.yml`.
         ```bash
         # Assumes my-custom-config.yml is in the current directory
         docker run -d -p 11235:11235 \
-          --name cr4wlr-custom-config \
+          --name krauler-custom-config \
           --env-file .llm.env \
           --shm-size=1g \
           -v $(pwd)/my-custom-config.yml:/app/config.yml \
-          unclecode/cr4wlr:latest # Or your specific tag
+          unclecode/krauler:latest # Or your specific tag
         ```
 
     *   **Using `docker-compose.yml`:** Add a `volumes` section to the service definition:
         ```yaml
         services:
-          cr4wlr-hub-amd64: # Or your chosen service
-            image: unclecode/cr4wlr:latest
+          krauler-hub-amd64: # Or your chosen service
+            image: unclecode/krauler:latest
             profiles: ["hub-amd64"]
             <<: *base-config
             volumes:
@@ -819,9 +819,9 @@ You can override the default `config.yml`.
 
 We're here to help you succeed with Crawl4AI! Here's how to get support:
 
-- 📖 Check our [full documentation](https://docs.cr4wlr.com)
-- 🐛 Found a bug? [Open an issue](https://github.com/unclecode/cr4wlr/issues)
-- 💬 Join our [Discord community](https://discord.gg/cr4wlr)
+- 📖 Check our [full documentation](https://docs.krauler.com)
+- 🐛 Found a bug? [Open an issue](https://github.com/unclecode/krauler/issues)
+- 💬 Join our [Discord community](https://discord.gg/krauler)
 - ⭐ Star us on GitHub to show support!
 
 ## Summary

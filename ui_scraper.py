@@ -1,10 +1,10 @@
 import streamlit as st
 import asyncio
-from cr4wlr import WebCrawler
+from krauler import WebCrawler
 
-st.set_page_config(page_title="cr4wlr Scraper", layout="wide")
+st.set_page_config(page_title="krauler Scraper", layout="wide")
 
-st.title("🕸️ cr4wlr Web Scraper")
+st.title("🕸️ krauler Web Scraper")
 
 url = st.text_input("Enter URL to scrape:", "https://quotes.toscrape.com/")
 selector = st.text_input("CSS Selector (optional):", ".quote")

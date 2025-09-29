@@ -10,15 +10,15 @@ import sys
 import uuid
 import shutil
 
-from cr4wlr import BrowserProfiler
-from cr4wlr.browser_manager import BrowserManager
+from krauler import BrowserProfiler
+from krauler.browser_manager import BrowserManager
 
 # Add the project root to Python path if running directly
 if __name__ == "__main__":
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
-from cr4wlr.async_logger import AsyncLogger
+from krauler.async_configs import BrowserConfig, CrawlerRunConfig
+from krauler.async_logger import AsyncLogger
 
 # Create a logger for clear terminal output
 logger = AsyncLogger(verbose=True, log_file=None)

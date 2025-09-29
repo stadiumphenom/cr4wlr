@@ -7,7 +7,7 @@ Crawl4AI can capture all network requests and browser console messages during a 
 To enable network and console capturing, use these configuration options:
 
 ```python
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 # Enable both network request capture and console message capture
 config = CrawlerRunConfig(
@@ -21,7 +21,7 @@ config = CrawlerRunConfig(
 ```python
 import asyncio
 import json
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     # Enable both network request capture and console message capture

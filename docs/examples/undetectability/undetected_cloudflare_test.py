@@ -4,13 +4,13 @@ Tests the difference between regular and undetected modes on a Cloudflare-protec
 """
 
 import asyncio
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler, 
     BrowserConfig, 
     CrawlerRunConfig,
     UndetectedAdapter
 )
-from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from krauler.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 # Test URL with Cloudflare protection
 TEST_URL = "https://nowsecure.nl"

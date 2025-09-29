@@ -14,7 +14,7 @@ Session management in Crawl4AI is a powerful feature that allows you to maintain
 Use `BrowserConfig` and `CrawlerRunConfig` to maintain state with a `session_id`:
 
 ```python
-from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
+from krauler.async_configs import BrowserConfig, CrawlerRunConfig
 
 async with AsyncWebCrawler() as crawler:
     session_id = "my_session"
@@ -44,9 +44,9 @@ async with AsyncWebCrawler() as crawler:
 Here's an example of crawling GitHub commits across multiple pages while preserving session state:
 
 ```python
-from cr4wlr.async_configs import CrawlerRunConfig
-from cr4wlr import JsonCssExtractionStrategy
-from cr4wlr.cache_context import CacheMode
+from krauler.async_configs import CrawlerRunConfig
+from krauler import JsonCssExtractionStrategy
+from krauler.cache_context import CacheMode
 
 async def crawl_dynamic_content():
     url = "https://github.com/microsoft/TypeScript/commits/main"
@@ -128,8 +128,8 @@ A simple example using session-based crawling:
 
 ```python
 import asyncio
-from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
-from cr4wlr.cache_context import CacheMode
+from krauler.async_configs import BrowserConfig, CrawlerRunConfig
+from krauler.cache_context import CacheMode
 
 async def basic_session_crawl():
     async with AsyncWebCrawler() as crawler:

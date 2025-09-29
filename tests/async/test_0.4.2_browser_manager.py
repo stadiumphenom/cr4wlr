@@ -1,8 +1,8 @@
 import os
 import sys
 import asyncio
-from cr4wlr import AsyncWebCrawler, CacheMode
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler import AsyncWebCrawler, CacheMode
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
 
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)

@@ -2,24 +2,24 @@ import asyncio
 import time
 import re
 
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode, BrowserConfig, MemoryAdaptiveDispatcher, HTTPCrawlerConfig
-from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
-from cr4wlr.deep_crawling import (
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode, BrowserConfig, MemoryAdaptiveDispatcher, HTTPCrawlerConfig
+from krauler.content_scraping_strategy import LXMLWebScrapingStrategy
+from krauler.deep_crawling import (
     BestFirstCrawlingStrategy,
     FilterChain,
     URLPatternFilter,
     DomainFilter,
     ContentTypeFilter,
 )
-from cr4wlr.deep_crawling.scorers import KeywordRelevanceScorer
-from cr4wlr.async_crawler_strategy import AsyncHTTPCrawlerStrategy
-from cr4wlr import ProxyConfig
-from cr4wlr import RoundRobinProxyStrategy
-from cr4wlr.content_filter_strategy import LLMContentFilter
-from cr4wlr import DefaultMarkdownGenerator
-from cr4wlr import LLMConfig
-from cr4wlr import JsonCssExtractionStrategy
-from cr4wlr.processors.pdf import PDFCrawlerStrategy, PDFContentScrapingStrategy
+from krauler.deep_crawling.scorers import KeywordRelevanceScorer
+from krauler.async_crawler_strategy import AsyncHTTPCrawlerStrategy
+from krauler import ProxyConfig
+from krauler import RoundRobinProxyStrategy
+from krauler.content_filter_strategy import LLMContentFilter
+from krauler import DefaultMarkdownGenerator
+from krauler import LLMConfig
+from krauler import JsonCssExtractionStrategy
+from krauler.processors.pdf import PDFCrawlerStrategy, PDFContentScrapingStrategy
 from pprint import pprint
 
 
@@ -41,8 +41,8 @@ async def deep_crawl():
     filter_chain = FilterChain(
         [
             DomainFilter(
-                allowed_domains=["docs.cr4wlr.com"],
-                blocked_domains=["old.docs.cr4wlr.com"],
+                allowed_domains=["docs.krauler.com"],
+                blocked_domains=["old.docs.krauler.com"],
             ),
             URLPatternFilter(patterns=["*core*", "*advanced*"],),
             ContentTypeFilter(allowed_types=["text/html"]),
@@ -78,7 +78,7 @@ async def deep_crawl():
         start_time = time.perf_counter()
         results = []
         
-        async for result in await crawler.arun(url="https://docs.cr4wlr.com", config=deep_crawl_config):
+        async for result in await crawler.arun(url="https://docs.krauler.com", config=deep_crawl_config):
             # Print each result as it comes in
             depth = result.metadata.get("depth", 0)
             score = result.metadata.get("score", 0)
@@ -122,8 +122,8 @@ async def memory_adaptive_dispatcher():
     
     # Test URLs
     urls = [
-        "https://docs.cr4wlr.com", 
-        "https://github.com/unclecode/cr4wlr"
+        "https://docs.krauler.com", 
+        "https://github.com/unclecode/krauler"
     ]
     
     async def batch_mode():
@@ -316,7 +316,7 @@ async def llm_content_filter():
     
     config = CrawlerRunConfig(markdown_generator=markdown_generator)
     async with AsyncWebCrawler() as crawler:
-        result = await crawler.arun("https://docs.cr4wlr.com", config=config)
+        result = await crawler.arun("https://docs.krauler.com", config=config)
         pprint(result.markdown.fit_markdown)
         print("\n✅ Generated focused markdown:")
 
@@ -452,7 +452,7 @@ async def run_tutorial():
     
     print("\n🎉 TUTORIAL COMPLETE! 🎉")
     print("You've now explored the key features of Crawl4AI v0.5.0")
-    print("For more information, visit https://docs.cr4wlr.com")
+    print("For more information, visit https://docs.krauler.com")
 
 
 # Run the tutorial

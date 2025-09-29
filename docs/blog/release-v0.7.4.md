@@ -26,7 +26,7 @@ Today I'm releasing Crawl4AI v0.7.4—the Intelligent Table Extraction & Perform
 ### Technical Implementation
 
 ```python
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     CrawlerRunConfig, 
     LLMConfig,
@@ -168,7 +168,7 @@ async with AsyncWebCrawler() as crawler:
 
 ```python
 # All memory utilities now consolidated
-from cr4wlr.utils import get_true_memory_usage_percent, MemoryMonitor
+from krauler.utils import get_true_memory_usage_percent, MemoryMonitor
 
 # Enhanced memory monitoring
 monitor = MemoryMonitor()
@@ -249,7 +249,7 @@ config = CrawlerRunConfig(
 
 ```python
 # Multiple proxy configuration formats now supported
-from cr4wlr import BrowserConfig, ProxyConfig
+from krauler import BrowserConfig, ProxyConfig
 
 # String format
 proxy_config = ProxyConfig("http://proxy.example.com:8080")
@@ -291,10 +291,10 @@ Thanks to our contributors and community for feedback, bug reports, and feature 
 
 ## 📚 Resources
 
-- [Full Documentation](https://docs.cr4wlr.com)
-- [GitHub Repository](https://github.com/unclecode/cr4wlr)
-- [Discord Community](https://discord.gg/cr4wlr)
-- [LLM Table Extraction Examples](https://github.com/unclecode/cr4wlr/blob/main/docs/examples/llm_table_extraction_example.py)
+- [Full Documentation](https://docs.krauler.com)
+- [GitHub Repository](https://github.com/unclecode/krauler)
+- [Discord Community](https://discord.gg/krauler)
+- [LLM Table Extraction Examples](https://github.com/unclecode/krauler/blob/main/docs/examples/llm_table_extraction_example.py)
 
 ---
 

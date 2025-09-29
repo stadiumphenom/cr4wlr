@@ -246,7 +246,7 @@ class SimpleApiTester:
         self.print_result(result)
         
         # Test ask endpoint
-        ask_endpoint = "/ask?context_type=all&query=cr4wlr&max_results=5"
+        ask_endpoint = "/ask?context_type=all&query=krauler&max_results=5"
         result = self.test_get_endpoint(ask_endpoint)
         print(result)
         self.print_result(result)

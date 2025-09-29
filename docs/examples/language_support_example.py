@@ -1,5 +1,5 @@
 import asyncio
-from cr4wlr import AsyncWebCrawler, AsyncPlaywrightCrawlerStrategy
+from krauler import AsyncWebCrawler, AsyncPlaywrightCrawlerStrategy
 
 
 async def main():

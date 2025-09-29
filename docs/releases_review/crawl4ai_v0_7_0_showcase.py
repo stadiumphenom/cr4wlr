@@ -26,10 +26,10 @@ from rich.layout import Layout
 from rich.live import Live
 from rich import box
 
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, AdaptiveCrawler, AdaptiveConfig, BrowserConfig, CacheMode
-from cr4wlr import AsyncUrlSeeder, SeedingConfig
-from cr4wlr import LinkPreviewConfig, VirtualScrollConfig
-from cr4wlr import c4a_compile, CompilationResult
+from krauler import AsyncWebCrawler, CrawlerRunConfig, AdaptiveCrawler, AdaptiveConfig, BrowserConfig, CacheMode
+from krauler import AsyncUrlSeeder, SeedingConfig
+from krauler import LinkPreviewConfig, VirtualScrollConfig
+from krauler import c4a_compile, CompilationResult
 
 # Initialize Rich console for beautiful output
 console = Console()
@@ -1088,7 +1088,7 @@ WAIT 1"""
     console.print(Panel(syntax, border_style="cyan"))
     
     # Compile it
-    from cr4wlr import c4a_compile
+    from krauler import c4a_compile
     
     console.print("\n[cyan]Transpiling to JavaScript...[/cyan]")
     result = c4a_compile(simple_script)
@@ -1241,7 +1241,7 @@ WAIT 1"""
     
     try:
         # Import necessary components
-        from cr4wlr.extraction_strategy import JsonCssExtractionStrategy
+        from krauler.extraction_strategy import JsonCssExtractionStrategy
         
         # Define extraction schema
         schema = {

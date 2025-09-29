@@ -10,11 +10,11 @@ from pathlib import Path
 from flask import Flask, render_template_string, request, jsonify, send_from_directory
 from flask_cors import CORS
 
-# Add parent directories to path to import cr4wlr
+# Add parent directories to path to import krauler
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent.parent))
 
 try:
-    from cr4wlr.script import compile as c4a_compile
+    from krauler.script import compile as c4a_compile
     C4A_AVAILABLE = True
 except ImportError:
     print("⚠️  C4A compiler not available. Using mock compiler.")

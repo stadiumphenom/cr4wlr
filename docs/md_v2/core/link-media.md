@@ -54,7 +54,7 @@ When you call `arun()` or `arun_many()` on a URL, Crawl4AI automatically extract
 **Basic Example**:
 
 ```python
-from cr4wlr import AsyncWebCrawler
+from krauler import AsyncWebCrawler
 
 async with AsyncWebCrawler() as crawler:
     result = await crawler.arun("https://www.example.com")
@@ -124,8 +124,8 @@ Here's a full example you can copy, paste, and run immediately:
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
-from cr4wlr import LinkPreviewConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
+from krauler import LinkPreviewConfig
 
 async def extract_link_heads_example():
     """
@@ -237,7 +237,7 @@ if __name__ == "__main__":
 The `LinkPreviewConfig` class supports these options:
 
 ```python
-from cr4wlr import LinkPreviewConfig
+from krauler import LinkPreviewConfig
 
 link_preview_config = LinkPreviewConfig(
     # BASIC SETTINGS
@@ -477,7 +477,7 @@ Some websites contain hundreds of third-party or affiliate links. You can filter
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     crawler_cfg = CrawlerRunConfig(
@@ -599,7 +599,7 @@ This setting attempts to discard images from outside the primary domain, keeping
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     crawler_cfg = CrawlerRunConfig(
@@ -635,7 +635,7 @@ Here’s a combined example demonstrating how to filter out external links, skip
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     # Suppose we want to keep only internal links, remove certain domains, 

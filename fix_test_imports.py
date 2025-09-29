@@ -7,8 +7,8 @@ def fix_imports_in_file(path):
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    new_content = re.sub(r"\bfrom\s+cr4wlr(\.[\w\.]*)?\s+import", r"from cr4wlr\1 import", content)
-    new_content = re.sub(r"\bimport\s+cr4wlr\b", r"import cr4wlr", new_content)
+    new_content = re.sub(r"\bfrom\s+krauler(\.[\w\.]*)?\s+import", r"from krauler\1 import", content)
+    new_content = re.sub(r"\bimport\s+krauler\b", r"import krauler", new_content)
 
     if new_content != content:
         with open(path, "w", encoding="utf-8") as f:

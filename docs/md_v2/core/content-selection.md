@@ -16,7 +16,7 @@ A straightforward way to **limit** your crawl results to a certain region of the
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     config = CrawlerRunConfig(
@@ -42,7 +42,7 @@ The `target_elements` parameter provides more flexibility by allowing you to tar
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     config = CrawlerRunConfig(
@@ -121,7 +121,7 @@ By default in case you set `exclude_social_media_links=True`, the following soci
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     config = CrawlerRunConfig(
@@ -161,7 +161,7 @@ config = CrawlerRunConfig(
 **Usage**:
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 async def main():
     config = CrawlerRunConfig(
@@ -190,8 +190,8 @@ You can combine content selection with a more advanced extraction strategy. For 
 ```python
 import asyncio
 import json
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from cr4wlr import JsonCssExtractionStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from krauler import JsonCssExtractionStrategy
 
 async def main():
     # Minimal schema for repeated items
@@ -242,8 +242,8 @@ if __name__ == "__main__":
 import asyncio
 import json
 from pydantic import BaseModel, Field
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
-from cr4wlr import LLMExtractionStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig, LLMConfig
+from krauler import LLMExtractionStrategy
 
 class ArticleData(BaseModel):
     headline: str
@@ -287,8 +287,8 @@ Below is a short function that unifies **CSS selection**, **exclusion** logic, a
 ```python
 import asyncio
 import json
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from cr4wlr import JsonCssExtractionStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from krauler import JsonCssExtractionStrategy
 
 async def extract_main_articles(url: str):
     schema = {
@@ -355,7 +355,7 @@ Crawl4AI uses `LXMLWebScrapingStrategy` (LXML-based) as the default scraping str
 **Note:** For backward compatibility, `WebScrapingStrategy` is still available as an alias for `LXMLWebScrapingStrategy`.
 
 ```python
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, LXMLWebScrapingStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig, LXMLWebScrapingStrategy
 
 async def main():
     # Default configuration already uses LXMLWebScrapingStrategy
@@ -376,7 +376,7 @@ async def main():
 You can also create your own custom scraping strategy by inheriting from `ContentScrapingStrategy`. The strategy must return a `ScrapingResult` object with the following structure:
 
 ```python
-from cr4wlr import ContentScrapingStrategy, ScrapingResult, MediaItem, Media, Link, Links
+from krauler import ContentScrapingStrategy, ScrapingResult, MediaItem, Media, Link, Links
 
 class CustomScrapingStrategy(ContentScrapingStrategy):
     def scrap(self, url: str, html: str, **kwargs) -> ScrapingResult:
@@ -447,7 +447,7 @@ You can combine `css_selector` and `target_elements` in powerful ways to achieve
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 async def main():
     # Target specific content but preserve page context

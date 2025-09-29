@@ -11,10 +11,10 @@ from typing import List, Dict, Any, Optional, Union
 from lxml import html as lxml_html
 import re
 
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
-from cr4wlr.async_configs import LLMConfig
-from cr4wlr import JsonCssExtractionStrategy, LLMExtractionStrategy
-from cr4wlr.utils import perform_completion_with_backoff
+from krauler import AsyncWebCrawler, CrawlerRunConfig
+from krauler.async_configs import LLMConfig
+from krauler import JsonCssExtractionStrategy, LLMExtractionStrategy
+from krauler.utils import perform_completion_with_backoff
 
 
 async def extract_pipeline(
@@ -346,7 +346,7 @@ async def main():
     # Test structural extraction
     try:
         result = await extract_pipeline(
-            base_url="https://github.com/unclecode/cr4wlr/issues",
+            base_url="https://github.com/unclecode/krauler/issues",
             urls=None,
             query="I want to extract all issue titles, numbers, and who opened them",
             verbose=True

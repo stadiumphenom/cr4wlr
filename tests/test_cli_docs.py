@@ -1,7 +1,7 @@
 import asyncio
-from cr4wlr.docs_manager import DocsManager
+from krauler.docs_manager import DocsManager
 from click.testing import CliRunner
-from cr4wlr.cli import cli
+from krauler.cli import cli
 
 
 def test_cli():

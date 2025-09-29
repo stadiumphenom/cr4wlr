@@ -26,10 +26,10 @@ from rich.panel import Panel
 from rich.text import Text
 from rich.box import Box, SIMPLE
 
-from cr4wlr.browser import BrowserManager
-from cr4wlr.browser.strategies import BuiltinBrowserStrategy
-from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
-from cr4wlr.async_logger import AsyncLogger
+from krauler.browser import BrowserManager
+from krauler.browser.strategies import BuiltinBrowserStrategy
+from krauler.async_configs import BrowserConfig, CrawlerRunConfig
+from krauler.async_logger import AsyncLogger
 
 # Initialize colorama for cross-platform colored terminal output
 init()
@@ -404,8 +404,8 @@ async def test_performance_scaling():
 
 
 
-    # Get cr4wlr home directory
-    crawl4ai_home = os.path.expanduser("~/.cr4wlr")
+    # Get krauler home directory
+    crawl4ai_home = os.path.expanduser("~/.krauler")
     temp_dir = os.path.join(crawl4ai_home, "temp")
     os.makedirs(temp_dir, exist_ok=True)
 
@@ -598,8 +598,8 @@ async def test_performance_scaling_lab( num_browsers: int = 10, pages_per_browse
     managers: List[BrowserManager] = []
     all_pages = []
 
-    # Get cr4wlr home directory
-    crawl4ai_home = os.path.expanduser("~/.cr4wlr")
+    # Get krauler home directory
+    crawl4ai_home = os.path.expanduser("~/.krauler")
     temp_dir = os.path.join(crawl4ai_home, "temp")
     os.makedirs(temp_dir, exist_ok=True)
 

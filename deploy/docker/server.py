@@ -8,7 +8,7 @@ Crawl4AI FastAPI entry‑point
 
 # ── stdlib & 3rd‑party imports ───────────────────────────────
 from crawler_pool import get_crawler, close_all, janitor
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 from auth import create_access_token, get_token_dependency, TokenRequest
 from pydantic import BaseModel
 from typing import Optional, List, Dict
@@ -16,7 +16,7 @@ from fastapi import Request, Depends
 from fastapi.responses import FileResponse
 import base64
 import re
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 from api import (
     handle_markdown_request, handle_llm_qa,
     handle_stream_crawl_request, handle_crawl_request,
@@ -58,7 +58,7 @@ from job import init_job_router
 from mcp_bridge import attach_mcp, mcp_resource, mcp_template, mcp_tool
 
 import ast
-import cr4wlr as _c4
+import krauler as _c4
 from pydantic import BaseModel, Field
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -182,7 +182,7 @@ def _safe_eval_config(expr: str) -> dict:
     """
     Accept exactly one top‑level call to CrawlerRunConfig(...) or BrowserConfig(...).
     Whatever is inside the parentheses is fine *except* further function calls
-    (so no  __import__('os') stuff).  All public names from cr4wlr are available
+    (so no  __import__('os') stuff).  All public names from krauler are available
     when we eval.
     """
     tree = ast.parse(expr, mode="eval")
@@ -201,7 +201,7 @@ def _safe_eval_config(expr: str) -> dict:
         if isinstance(node, ast.Call) and node is not call:
             raise ValueError("Nested function calls are not permitted")
 
-    # expose everything that cr4wlr exports, nothing else
+    # expose everything that krauler exports, nothing else
     safe_env = {name: getattr(_c4, name)
                 for name in dir(_c4) if not name.startswith("_")}
     obj = eval(compile(tree, "<config>", "eval"),
@@ -269,7 +269,7 @@ async def generate_html(
     async with AsyncWebCrawler(config=BrowserConfig()) as crawler:
         results = await crawler.arun(url=body.url, config=cfg)
     raw_html = results[0].html
-    from cr4wlr.utils import preprocess_html_for_schema
+    from krauler.utils import preprocess_html_for_schema
     processed_html = preprocess_html_for_schema(raw_html)
     return JSONResponse({"html": processed_html, "url": body.url, "success": True})
 
@@ -409,7 +409,7 @@ async def llm_endpoint(
 
 @app.get("/schema")
 async def get_schema():
-    from cr4wlr import BrowserConfig, CrawlerRunConfig
+    from krauler import BrowserConfig, CrawlerRunConfig
     return {"browser": BrowserConfig().dump(),
             "crawler": CrawlerRunConfig().dump()}
 

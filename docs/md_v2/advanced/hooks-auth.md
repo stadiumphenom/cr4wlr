@@ -32,7 +32,7 @@ Below is an example demonstration.
 ```python
 import asyncio
 import json
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 from playwright.async_api import Page, BrowserContext
 
 async def main():

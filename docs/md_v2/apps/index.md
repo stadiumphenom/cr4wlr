@@ -217,7 +217,7 @@ Our apps are designed to make Crawl4AI more accessible and powerful. Whether you
         <li>One-click installation</li>
     </ul>
     <div class="app-action">
-        <a href="cr4wlr-assistant/" class="app-btn">Install Extension →</a>
+        <a href="krauler-assistant/" class="app-btn">Install Extension →</a>
     </div>
 </div>
 
@@ -286,15 +286,15 @@ Generate working code instantly instead of writing everything from scratch.
 Test and refine your approach before deploying to production.
 
 ### 🤝 **Community Driven**
-These tools are built based on user feedback. Have an idea? [Let us know](https://github.com/unclecode/cr4wlr/issues)!
+These tools are built based on user feedback. Have an idea? [Let us know](https://github.com/unclecode/krauler/issues)!
 
 ## 📢 Stay Updated
 
 Want to know when new apps are released? 
 
-- ⭐ [Star us on GitHub](https://github.com/unclecode/cr4wlr) to get notifications
+- ⭐ [Star us on GitHub](https://github.com/unclecode/krauler) to get notifications
 - 🐦 Follow [@unclecode](https://twitter.com/unclecode) for announcements
-- 💬 Join our [Discord community](https://discord.gg/cr4wlr) for early access
+- 💬 Join our [Discord community](https://discord.gg/krauler) for early access
 
 ---
 

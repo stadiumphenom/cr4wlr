@@ -1,5 +1,5 @@
 import time, re
-from cr4wlr.content_scraping_strategy import LXMLWebScrapingStrategy
+from krauler.content_scraping_strategy import LXMLWebScrapingStrategy
 # WebScrapingStrategy is now an alias for LXMLWebScrapingStrategy
 import time
 import functools

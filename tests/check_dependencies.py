@@ -129,12 +129,12 @@ def extract_imports_from_file(filepath: Path) -> Dict[str, List[int]]:
 
 
 def get_codebase_imports_with_files(root_dir: Path) -> Dict[str, List[Tuple[str, List[int]]]]:
-    """Get all imports from the cr4wlr library and docs folders with file locations and line numbers"""
+    """Get all imports from the krauler library and docs folders with file locations and line numbers"""
     import_to_files = defaultdict(list)
     
-    # Only scan cr4wlr library folder and docs folder
+    # Only scan krauler library folder and docs folder
     target_dirs = [
-        root_dir / 'cr4wlr',
+        root_dir / 'krauler',
         root_dir / 'docs'
     ]
     
@@ -214,7 +214,7 @@ def normalize_package_name(name: str) -> str:
 
 def check_missing_dependencies():
     """Main function to check for missing dependencies"""
-    print("🔍 Analyzing cr4wlr library and docs folders...\n")
+    print("🔍 Analyzing krauler library and docs folders...\n")
     
     # Get all imports with their file locations
     root_dir = Path('.')
@@ -231,7 +231,7 @@ def check_missing_dependencies():
     local_imports = {}
     
     # Known local packages
-    local_packages = {'cr4wlr'}
+    local_packages = {'krauler'}
     
     for imp, file_info in import_to_files.items():
         # Skip standard library

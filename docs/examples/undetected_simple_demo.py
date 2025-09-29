@@ -4,13 +4,13 @@ Demonstrates the basic usage of undetected browser mode
 """
 
 import asyncio
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler, 
     BrowserConfig, 
     CrawlerRunConfig,
     UndetectedAdapter
 )
-from cr4wlr.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
+from krauler.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 async def crawl_with_regular_browser(url: str):
     """Crawl with regular browser"""

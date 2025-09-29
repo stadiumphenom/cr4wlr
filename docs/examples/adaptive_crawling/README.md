@@ -80,6 +80,6 @@ python embedding_vs_statistical.py
 
 ## Learn More
 
-- [Adaptive Crawling Documentation](https://docs.cr4wlr.com/core/adaptive-crawling/)
-- [Mathematical Framework](https://github.com/unclecode/cr4wlr/blob/main/PROGRESSIVE_CRAWLING.md)
-- [Blog: The Adaptive Crawling Revolution](https://docs.cr4wlr.com/blog/adaptive-crawling-revolution/)
+- [Adaptive Crawling Documentation](https://docs.krauler.com/core/adaptive-crawling/)
+- [Mathematical Framework](https://github.com/unclecode/krauler/blob/main/PROGRESSIVE_CRAWLING.md)
+- [Blog: The Adaptive Crawling Revolution](https://docs.krauler.com/blog/adaptive-crawling-revolution/)

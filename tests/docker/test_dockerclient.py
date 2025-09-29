@@ -1,6 +1,6 @@
 import asyncio
-from cr4wlr.docker_client import Crawl4aiDockerClient
-from cr4wlr import (
+from krauler.docker_client import Crawl4aiDockerClient
+from krauler import (
     BrowserConfig,
     CrawlerRunConfig
 )

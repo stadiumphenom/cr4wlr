@@ -17,7 +17,7 @@ When scraping dynamic websites, it’s common to encounter “Load More” or �
 Use a session ID to maintain state across multiple `arun()` calls:
 
 ```python
-from cr4wlr import AsyncWebCrawler, CacheMode
+from krauler import AsyncWebCrawler, CacheMode
 
 js_code = [
     # This JS finds the “Next” button and clicks it
@@ -66,7 +66,7 @@ If the page allows it, you can run a single `arun()` call with a more elaborate 
 Example snippet:
 
 ```python
-from cr4wlr import AsyncWebCrawler, CacheMode
+from krauler import AsyncWebCrawler, CacheMode
 
 js_code = [
     # Example JS that clicks multiple modules:

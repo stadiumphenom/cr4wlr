@@ -6,7 +6,7 @@ import asyncio
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 from firecrawl import FirecrawlApp
-from cr4wlr import AsyncWebCrawler
+from krauler import AsyncWebCrawler
 
 __data__ = os.path.join(os.path.dirname(__file__), "..", "..") + "/.data"
 

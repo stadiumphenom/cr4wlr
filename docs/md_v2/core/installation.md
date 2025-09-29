@@ -3,7 +3,7 @@
 ## 1. Basic Installation
 
 ```bash
-pip install cr4wlr
+pip install krauler
 ```
 
 This installs the **core** Crawl4AI library along with essential dependencies. **No** advanced features (like transformers or PyTorch) are included yet.
@@ -14,7 +14,7 @@ This installs the **core** Crawl4AI library along with essential dependencies.�
 After installing, call:
 
 ```bash
-cr4wlr-setup
+krauler-setup
 ```
 
 **What does it do?**
@@ -26,7 +26,7 @@ cr4wlr-setup
 Optionally, you can run **diagnostics** to confirm everything is functioning:
 
 ```bash
-cr4wlr-doctor
+krauler-doctor
 ```
 
 This command attempts to:
@@ -34,17 +34,17 @@ This command attempts to:
 - Verify Playwright installation
 - Inspect environment variables or library conflicts
 
-If any issues arise, follow its suggestions (e.g., installing additional system packages) and re-run `cr4wlr-setup`.
+If any issues arise, follow its suggestions (e.g., installing additional system packages) and re-run `krauler-setup`.
 
 ---
 
-## 3. Verifying Installation: A Simple Crawl (Skip this step if you already run `cr4wlr-doctor`)
+## 3. Verifying Installation: A Simple Crawl (Skip this step if you already run `krauler-doctor`)
 
 Below is a minimal Python script demonstrating a **basic** crawl. It uses our new **`BrowserConfig`** and **`CrawlerRunConfig`** for clarity, though no custom settings are passed in this example:
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     async with AsyncWebCrawler() as crawler:
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 **Expected** outcome:
 - A headless browser session loads `example.com`
 - Crawl4AI returns ~300 characters of markdown.  
-If errors occur, rerun `cr4wlr-doctor` or manually ensure Playwright is installed correctly.
+If errors occur, rerun `krauler-doctor` or manually ensure Playwright is installed correctly.
 
 ---
 
@@ -72,27 +72,27 @@ If errors occur, rerun `cr4wlr-doctor` or manually ensure Playwright is installe
 
 - **Text Clustering (Torch)**  
   ```bash
-  pip install cr4wlr[torch]
-  cr4wlr-setup
+  pip install krauler[torch]
+  krauler-setup
   ```
   Installs PyTorch-based features (e.g., cosine similarity or advanced semantic chunking).
 
 - **Transformers**  
   ```bash
-  pip install cr4wlr[transformer]
-  cr4wlr-setup
+  pip install krauler[transformer]
+  krauler-setup
   ```
   Adds Hugging Face-based summarization or generation strategies.
 
 - **All Features**  
   ```bash
-  pip install cr4wlr[all]
-  cr4wlr-setup
+  pip install krauler[all]
+  krauler-setup
   ```
 
 #### (Optional) Pre-Fetching Models
 ```bash
-cr4wlr-download-models
+krauler-download-models
 ```
 This step caches large models locally (if needed). **Only do this** if your workflow requires them.
 
@@ -103,8 +103,8 @@ This step caches large models locally (if needed). **Only do this** if your wo
 We provide a **temporary** Docker approach for testing. **It’s not stable and may break** with future releases. We plan a major Docker revamp in a future stable version, 2025 Q1. If you still want to try:
 
 ```bash
-docker pull unclecode/cr4wlr:basic
-docker run -p 11235:11235 unclecode/cr4wlr:basic
+docker pull unclecode/krauler:basic
+docker run -p 11235:11235 unclecode/krauler:basic
 ```
 
 You can then make POST requests to `http://localhost:11235/crawl` to perform crawls. **Production usage** is discouraged until our new Docker approach is ready (planned in Jan or Feb 2025).
@@ -119,11 +119,11 @@ Some older docs mention running Crawl4AI as a local server. This approach has be
 
 ## Summary
 
-1. **Install** with `pip install cr4wlr` and run `cr4wlr-setup`.
-2. **Diagnose** with `cr4wlr-doctor` if you see errors.
+1. **Install** with `pip install krauler` and run `krauler-setup`.
+2. **Diagnose** with `krauler-doctor` if you see errors.
 3. **Verify** by crawling `example.com` with minimal `BrowserConfig` + `CrawlerRunConfig`.
 4. **Advanced** features (Torch, Transformers) are **optional**—avoid them if you don’t need them (they significantly increase resource usage).
 5. **Docker** is **experimental**—use at your own risk until the stable version is released.
 6. **Local server** references in older docs are largely deprecated; a new solution is in progress.
 
-**Got questions?** Check [GitHub issues](https://github.com/unclecode/cr4wlr/issues) for updates or ask the community!
+**Got questions?** Check [GitHub issues](https://github.com/unclecode/krauler/issues) for updates or ask the community!

@@ -7,10 +7,10 @@ sys.path.append(parent_dir)
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
-from cr4wlr import JsonCssExtractionStrategy, JsonXPathExtractionStrategy
-from cr4wlr.utils import preprocess_html_for_schema, JsonXPathExtractionStrategy
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler import JsonCssExtractionStrategy, JsonXPathExtractionStrategy
+from krauler.utils import preprocess_html_for_schema, JsonXPathExtractionStrategy
 import json
 
 # Test HTML - A complex job board with companies, departments, and positions

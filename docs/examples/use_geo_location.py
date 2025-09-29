@@ -11,7 +11,7 @@ import asyncio
 import base64
 from pathlib import Path
 from typing import List
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     BrowserConfig,

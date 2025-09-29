@@ -24,7 +24,7 @@ If you're already using Crawl4AI, nothing changes:
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 async def extract_tables():
     async with AsyncWebCrawler() as crawler:
@@ -92,7 +92,7 @@ The strategy pattern allows you to choose different table extraction algorithms 
 The default strategy uses a sophisticated scoring system to identify data tables:
 
 ```python
-from cr4wlr import DefaultTableExtraction, CrawlerRunConfig
+from krauler import DefaultTableExtraction, CrawlerRunConfig
 
 # Customize the default extraction
 table_strategy = DefaultTableExtraction(
@@ -133,7 +133,7 @@ The scoring system evaluates multiple factors:
 LLMTableExtraction uses AI to understand complex table structures that traditional parsers struggle with. It automatically handles large tables through intelligent chunking and parallel processing:
 
 ```python
-from cr4wlr import LLMTableExtraction, LLMConfig, CrawlerRunConfig
+from krauler import LLMTableExtraction, LLMConfig, CrawlerRunConfig
 
 # Configure LLM (costs money per call!)
 llm_config = LLMConfig(
@@ -209,7 +209,7 @@ The chunking is completely transparent - you get the same output format whether 
 Disable table extraction for better performance when tables aren't needed:
 
 ```python
-from cr4wlr import NoTableExtraction, CrawlerRunConfig
+from krauler import NoTableExtraction, CrawlerRunConfig
 
 config = CrawlerRunConfig(
     table_extraction=NoTableExtraction()
@@ -264,7 +264,7 @@ config = CrawlerRunConfig(
 ### Advanced Configuration
 
 ```python
-from cr4wlr import DefaultTableExtraction, CrawlerRunConfig
+from krauler import DefaultTableExtraction, CrawlerRunConfig
 
 # Fine-tuned extraction
 strategy = DefaultTableExtraction(
@@ -382,7 +382,7 @@ Extend `TableExtractionStrategy` to create custom extraction logic:
 ### Example: Financial Table Extractor
 
 ```python
-from cr4wlr import TableExtractionStrategy
+from krauler import TableExtractionStrategy
 from typing import List, Dict, Any
 import re
 
@@ -519,7 +519,7 @@ class SpecificTableExtractor(TableExtractionStrategy):
 Table extraction works seamlessly with other Crawl4AI strategies:
 
 ```python
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     DefaultTableExtraction,
@@ -627,7 +627,7 @@ config = CrawlerRunConfig(
 )
 
 # Option 2: Use the new strategy pattern (more flexibility)
-from cr4wlr import DefaultTableExtraction
+from krauler import DefaultTableExtraction
 
 strategy = DefaultTableExtraction(
     table_score_threshold=7,
@@ -640,7 +640,7 @@ config = CrawlerRunConfig(
 )
 
 # Option 3: Use advanced strategies when needed
-from cr4wlr import LLMTableExtraction, LLMConfig
+from krauler import LLMTableExtraction, LLMConfig
 
 # Only for complex tables that DefaultTableExtraction can't handle
 # Automatically handles large tables with smart chunking

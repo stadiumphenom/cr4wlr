@@ -2,7 +2,7 @@
 import asyncio, json, hashlib, time, psutil
 from contextlib import suppress
 from typing import Dict
-from cr4wlr import AsyncWebCrawler, BrowserConfig
+from krauler import AsyncWebCrawler, BrowserConfig
 from typing import Dict
 from utils import load_config 
 

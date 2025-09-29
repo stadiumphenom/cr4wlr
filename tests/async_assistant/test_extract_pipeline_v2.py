@@ -10,10 +10,10 @@ from typing import List, Dict, Any, Optional, Union
 from lxml import html as lxml_html
 import re
 
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
-from cr4wlr.async_configs import LLMConfig
-from cr4wlr import JsonCssExtractionStrategy, LLMExtractionStrategy
-from cr4wlr.utils import perform_completion_with_backoff
+from krauler import AsyncWebCrawler, CrawlerRunConfig
+from krauler.async_configs import LLMConfig
+from krauler import JsonCssExtractionStrategy, LLMExtractionStrategy
+from krauler.utils import perform_completion_with_backoff
 
 
 async def extract_pipeline_v2(
@@ -332,7 +332,7 @@ async def main():
         # Test 1: Structural extraction (GitHub issues)
         print("\nTest 1: GitHub Issues (should use structural)")
         result = await extract_pipeline_v2(
-            base_url="https://github.com/unclecode/cr4wlr/issues",
+            base_url="https://github.com/unclecode/krauler/issues",
             urls=None,
             query="Extract all issue titles, numbers, and authors",
             verbose=True
@@ -351,7 +351,7 @@ async def main():
         })
         
         result2 = await extract_pipeline_v2(
-            base_url="https://github.com/unclecode/cr4wlr/issues",
+            base_url="https://github.com/unclecode/krauler/issues",
             urls=None,
             query="Extract GitHub issues",
             target_json_example=target_example,

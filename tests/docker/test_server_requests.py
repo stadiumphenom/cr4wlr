@@ -10,10 +10,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-# Optional: Import cr4wlr classes directly for reference/easier payload creation aid
+# Optional: Import krauler classes directly for reference/easier payload creation aid
 # You don't strictly NEED these imports for the tests to run against the server,
 # but they help in understanding the structure you are mimicking in JSON.
-from cr4wlr import (
+from krauler import (
     BrowserConfig,
     CrawlerRunConfig,
     CacheMode,

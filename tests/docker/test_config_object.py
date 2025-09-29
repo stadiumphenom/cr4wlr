@@ -1,5 +1,5 @@
 import json
-from cr4wlr import (
+from krauler import (
     CrawlerRunConfig,
     DefaultMarkdownGenerator,
     RegexChunking,
@@ -7,10 +7,10 @@ from cr4wlr import (
     BM25ContentFilter,
     CacheMode
 )
-from cr4wlr.deep_crawling import BFSDeepCrawlStrategy
-from cr4wlr.deep_crawling.filters import FastFilterChain
-from cr4wlr.deep_crawling.filters import FastContentTypeFilter, FastDomainFilter
-from cr4wlr.deep_crawling.scorers import FastKeywordRelevanceScorer
+from krauler.deep_crawling import BFSDeepCrawlStrategy
+from krauler.deep_crawling.filters import FastFilterChain
+from krauler.deep_crawling.filters import FastContentTypeFilter, FastDomainFilter
+from krauler.deep_crawling.scorers import FastKeywordRelevanceScorer
 
 def create_test_config() -> CrawlerRunConfig:
     # Set up content filtering and markdown generation

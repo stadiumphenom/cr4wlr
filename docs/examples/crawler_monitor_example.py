@@ -9,8 +9,8 @@ import time
 import uuid
 import random
 import threading
-from cr4wlr.components.crawler_monitor import CrawlerMonitor
-from cr4wlr.models import CrawlStatus
+from krauler.components.crawler_monitor import CrawlerMonitor
+from krauler.models import CrawlStatus
 
 def simulate_webcrawler_operations(monitor, num_tasks=20):
     """

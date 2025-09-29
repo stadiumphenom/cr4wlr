@@ -3,7 +3,7 @@ import json
 from typing import Any, Dict, List, Optional
 
 from regex import P
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     BrowserConfig,
     CrawlerRunConfig,
@@ -272,7 +272,7 @@ async def hub_example(query: str = "apple inc"):
     text_results = await crawler.run(
         query=query,
         search_type="text",  
-        schema_cache_path="/Users/unclecode/.cr4wlr"
+        schema_cache_path="/Users/unclecode/.krauler"
     )
     # Save search result to file
     with open(__current_dir / "search_result_using_hub.json", "w") as f:

@@ -1,5 +1,5 @@
-from cr4wlr.llmtxt import AsyncLLMTextManager  # Changed to AsyncLLMTextManager
-from cr4wlr.async_logger import AsyncLogger
+from krauler.llmtxt import AsyncLLMTextManager  # Changed to AsyncLLMTextManager
+from krauler.async_logger import AsyncLogger
 from pathlib import Path
 import asyncio
 

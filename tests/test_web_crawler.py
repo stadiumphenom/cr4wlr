@@ -1,12 +1,12 @@
 import unittest, os
-from cr4wlr import LLMConfig
-from cr4wlr.web_crawler import WebCrawler
-from cr4wlr.chunking_strategy import (
+from krauler import LLMConfig
+from krauler.web_crawler import WebCrawler
+from krauler.chunking_strategy import (
     RegexChunking,
     FixedLengthWordChunking,
     SlidingWindowChunking,
 )
-from cr4wlr import (
+from krauler import (
     CosineStrategy,
     LLMExtractionStrategy,
     TopicExtractionStrategy,

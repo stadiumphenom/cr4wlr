@@ -20,7 +20,7 @@ prospect‑wizard/
 
 ### 1.1  Install dependencies
 ```bash
-pip install cr4wlr litellm sentence-transformers pandas rich
+pip install krauler litellm sentence-transformers pandas rich
 ```
 
 ### 1.2  Create / warm a LinkedIn browser profile
@@ -127,5 +127,5 @@ The page fetches `data/company_graph.json` and the `org_chart_*.json` files auto
 
 ### TL;DR
 `crwl profiles` → `c4ai_discover.py` → `c4ai_insights.py` → open `graph_view_template.html`.  
-Live long and `import cr4wlr`.
+Live long and `import krauler`.
 

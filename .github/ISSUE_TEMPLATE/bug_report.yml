@@ -6,8 +6,8 @@ body:
   - type: input
     id: crawl4ai_version
     attributes:
-      label: cr4wlr version
-      description: Specify the version of cr4wlr you are using.
+      label: krauler version
+      description: Specify the version of krauler you are using.
       placeholder: "e.g., 2.0.0"
     validations:
       required: true

@@ -6,7 +6,7 @@ finding information about a specific topic and knowing when to stop.
 """
 
 import asyncio
-from cr4wlr import AsyncWebCrawler, AdaptiveCrawler
+from krauler import AsyncWebCrawler, AdaptiveCrawler
 
 
 async def main():
@@ -18,7 +18,7 @@ async def main():
         adaptive = AdaptiveCrawler(crawler)
         
         # Note: You can also use embedding strategy for semantic understanding:
-        # from cr4wlr import AdaptiveConfig
+        # from krauler import AdaptiveConfig
         # config = AdaptiveConfig(strategy="embedding")
         # adaptive = AdaptiveCrawler(crawler, config)
         

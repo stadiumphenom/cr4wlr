@@ -13,9 +13,9 @@ Crawl4AI simplifies asynchronous web crawling and data extraction, making it acc
 - Advanced anti-detection capabilities
 
 **Quick Links:**
-- [GitHub Repository](https://github.com/unclecode/cr4wlr)
-- [Documentation](https://docs.cr4wlr.com)
-- [Examples](https://github.com/unclecode/cr4wlr/tree/main/docs/examples)
+- [GitHub Repository](https://github.com/unclecode/krauler)
+- [Documentation](https://docs.krauler.com)
+- [Examples](https://github.com/unclecode/krauler/tree/main/docs/examples)
 
 ---
 
@@ -35,22 +35,22 @@ flowchart TD
     B -->|Research/Testing| E[Google Colab]
     B -->|CI/CD Pipeline| F[Automated Setup]
     
-    C --> C1[pip install cr4wlr]
-    C1 --> C2[cr4wlr-setup]
+    C --> C1[pip install krauler]
+    C1 --> C2[krauler-setup]
     C2 --> C3{Need Advanced Features?}
     
     C3 -->|No| C4[Basic Installation Complete]
-    C3 -->|Text Clustering| C5[pip install cr4wlr with torch]
-    C3 -->|Transformers| C6[pip install cr4wlr with transformer]
-    C3 -->|All Features| C7[pip install cr4wlr with all]
+    C3 -->|Text Clustering| C5[pip install krauler with torch]
+    C3 -->|Transformers| C6[pip install krauler with transformer]
+    C3 -->|All Features| C7[pip install krauler with all]
     
-    C5 --> C8[cr4wlr-download-models]
+    C5 --> C8[krauler-download-models]
     C6 --> C8
     C7 --> C8
     C8 --> C9[Advanced Installation Complete]
     
     D --> D1{Deployment Method?}
-    D1 -->|Pre-built Image| D2[docker pull unclecode/cr4wlr]
+    D1 -->|Pre-built Image| D2[docker pull unclecode/krauler]
     D1 -->|Docker Compose| D3[Clone repo + docker compose]
     D1 -->|Custom Build| D4[docker buildx build]
     
@@ -69,7 +69,7 @@ flowchart TD
     F1 --> F2[Automated setup scripts]
     F2 --> F3[CI/CD Integration Complete]
     
-    C4 --> G[Verify with cr4wlr-doctor]
+    C4 --> G[Verify with krauler-doctor]
     C9 --> G
     D7 --> H[Health check via API]
     E4 --> I[Run test crawl]
@@ -98,15 +98,15 @@ sequenceDiagram
     participant Playwright
     participant Crawler
     
-    User->>PyPI: pip install cr4wlr
+    User->>PyPI: pip install krauler
     PyPI-->>User: Package downloaded
     
-    User->>System: cr4wlr-setup
+    User->>System: krauler-setup
     System->>Playwright: Install browser binaries
     Playwright-->>System: Chromium, Firefox installed
     System-->>User: Setup complete
     
-    User->>System: cr4wlr-doctor
+    User->>System: krauler-doctor
     System->>System: Check Python version
     System->>System: Verify Playwright installation
     System->>System: Test browser launch
@@ -170,25 +170,25 @@ graph TB
 stateDiagram-v2
     [*] --> BasicInstall
     
-    BasicInstall --> FeatureChoice: cr4wlr installed
+    BasicInstall --> FeatureChoice: krauler installed
     
     FeatureChoice --> TorchInstall: Need text clustering
     FeatureChoice --> TransformerInstall: Need HuggingFace models
     FeatureChoice --> AllInstall: Need everything
     FeatureChoice --> Complete: Basic features sufficient
     
-    TorchInstall --> TorchSetup: pip install cr4wlr with torch
-    TransformerInstall --> TransformerSetup: pip install cr4wlr with transformer  
-    AllInstall --> AllSetup: pip install cr4wlr with all
+    TorchInstall --> TorchSetup: pip install krauler with torch
+    TransformerInstall --> TransformerSetup: pip install krauler with transformer  
+    AllInstall --> AllSetup: pip install krauler with all
     
-    TorchSetup --> ModelDownload: cr4wlr-setup
-    TransformerSetup --> ModelDownload: cr4wlr-setup
-    AllSetup --> ModelDownload: cr4wlr-setup
+    TorchSetup --> ModelDownload: krauler-setup
+    TransformerSetup --> ModelDownload: krauler-setup
+    AllSetup --> ModelDownload: krauler-setup
     
-    ModelDownload --> PreDownload: cr4wlr-download-models
+    ModelDownload --> PreDownload: krauler-download-models
     PreDownload --> Complete: All models cached
     
-    Complete --> Verification: cr4wlr-doctor
+    Complete --> Verification: krauler-doctor
     Verification --> [*]: Installation verified
     
     note right of TorchInstall : PyTorch for semantic operations
@@ -299,7 +299,7 @@ sequenceDiagram
     Docker->>Registry: Push multi-arch manifest
     Registry-->>Docker: Build complete
     
-    User->>Registry: docker pull unclecode/cr4wlr
+    User->>Registry: docker pull unclecode/krauler
     Registry-->>User: Download appropriate architecture
     
     User->>Docker: docker run with configuration
@@ -313,7 +313,7 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-    A[Installation Complete] --> B[Run cr4wlr-doctor]
+    A[Installation Complete] --> B[Run krauler-doctor]
     
     B --> C{Python Version Check}
     C -->|✓ 3.10+| D{Playwright Check}
@@ -321,7 +321,7 @@ flowchart TD
     C1 --> D
     
     D -->|✓ Installed| E{Browser Binaries}
-    D -->|✗ Missing| D1[Run cr4wlr-setup]
+    D -->|✗ Missing| D1[Run krauler-setup]
     D1 --> E
     
     E -->|✓ Available| F{Test Browser Launch}
@@ -387,7 +387,7 @@ graph TD
     style D1 fill:#e3f2fd
 ```
 
-**📖 Learn more:** [Installation Guide](https://docs.cr4wlr.com/core/installation/), [Docker Deployment](https://docs.cr4wlr.com/core/docker-deployment/), [System Requirements](https://docs.cr4wlr.com/core/installation/#prerequisites)
+**📖 Learn more:** [Installation Guide](https://docs.krauler.com/core/installation/), [Docker Deployment](https://docs.krauler.com/core/docker-deployment/), [System Requirements](https://docs.krauler.com/core/installation/#prerequisites)
 ---
 
 
@@ -801,7 +801,7 @@ flowchart TD
     style I fill:#c8e6c9
 ```
 
-**📖 Learn more:** [Simple Crawling Guide](https://docs.cr4wlr.com/core/simple-crawling/), [Configuration Options](https://docs.cr4wlr.com/core/browser-crawler-config/), [Result Processing](https://docs.cr4wlr.com/core/crawler-result/), [Table Extraction](https://docs.cr4wlr.com/extraction/no-llm-strategies/)
+**📖 Learn more:** [Simple Crawling Guide](https://docs.krauler.com/core/simple-crawling/), [Configuration Options](https://docs.krauler.com/core/browser-crawler-config/), [Result Processing](https://docs.krauler.com/core/crawler-result/), [Table Extraction](https://docs.krauler.com/extraction/no-llm-strategies/)
 ---
 
 
@@ -1616,7 +1616,7 @@ sequenceDiagram
 ```mermaid
 graph LR
     subgraph "Main Package Imports"
-        A[cr4wlr] --> A1[AsyncWebCrawler]
+        A[krauler] --> A1[AsyncWebCrawler]
         A --> A2[BrowserConfig]
         A --> A3[CrawlerRunConfig]
         A --> A4[LLMConfig]
@@ -2221,11 +2221,11 @@ flowchart TD
     style E fill:#f3e5f5
 ```
 
-**📖 Learn more:** [Advanced Features Guide](https://docs.cr4wlr.com/advanced/advanced-features/), [Session Management](https://docs.cr4wlr.com/advanced/session-management/), [Hooks System](https://docs.cr4wlr.com/advanced/hooks-auth/), [Performance Optimization](https://docs.cr4wlr.com/advanced/performance/)
+**📖 Learn more:** [Advanced Features Guide](https://docs.krauler.com/advanced/advanced-features/), [Session Management](https://docs.krauler.com/advanced/session-management/), [Hooks System](https://docs.krauler.com/advanced/hooks-auth/), [Performance Optimization](https://docs.krauler.com/advanced/performance/)
 
-**📖 Learn more:** [Identity-Based Crawling](https://docs.cr4wlr.com/advanced/identity-based-crawling/), [Session Management](https://docs.cr4wlr.com/advanced/session-management/), [Proxy & Security](https://docs.cr4wlr.com/advanced/proxy-security/), [Content Selection](https://docs.cr4wlr.com/core/content-selection/)
+**📖 Learn more:** [Identity-Based Crawling](https://docs.krauler.com/advanced/identity-based-crawling/), [Session Management](https://docs.krauler.com/advanced/session-management/), [Proxy & Security](https://docs.krauler.com/advanced/proxy-security/), [Content Selection](https://docs.krauler.com/core/content-selection/)
 
-**📖 Learn more:** [Configuration Reference](https://docs.cr4wlr.com/api/parameters/), [Best Practices](https://docs.cr4wlr.com/core/browser-crawler-config/), [Advanced Configuration](https://docs.cr4wlr.com/advanced/advanced-features/)
+**📖 Learn more:** [Configuration Reference](https://docs.krauler.com/api/parameters/), [Best Practices](https://docs.krauler.com/core/browser-crawler-config/), [Advanced Configuration](https://docs.krauler.com/advanced/advanced-features/)
 ---
 
 
@@ -2706,7 +2706,7 @@ flowchart TD
     style F fill:#f3e5f5
 ```
 
-**📖 Learn more:** [LLM Strategies](https://docs.cr4wlr.com/extraction/llm-strategies/), [Schema-Based Extraction](https://docs.cr4wlr.com/extraction/no-llm-strategies/), [Pattern Matching](https://docs.cr4wlr.com/extraction/no-llm-strategies/#regexextractionstrategy), [Performance Optimization](https://docs.cr4wlr.com/advanced/multi-url-crawling/)
+**📖 Learn more:** [LLM Strategies](https://docs.krauler.com/extraction/llm-strategies/), [Schema-Based Extraction](https://docs.krauler.com/extraction/no-llm-strategies/), [Pattern Matching](https://docs.krauler.com/extraction/no-llm-strategies/#regexextractionstrategy), [Performance Optimization](https://docs.krauler.com/advanced/multi-url-crawling/)
 ---
 
 
@@ -3101,7 +3101,7 @@ graph TD
     style R fill:#ffcdd2
 ```
 
-**📖 Learn more:** [Multi-URL Crawling Guide](https://docs.cr4wlr.com/advanced/multi-url-crawling/), [Dispatcher Configuration](https://docs.cr4wlr.com/advanced/crawl-dispatcher/), [Performance Optimization](https://docs.cr4wlr.com/advanced/multi-url-crawling/#performance-optimization)
+**📖 Learn more:** [Multi-URL Crawling Guide](https://docs.krauler.com/advanced/multi-url-crawling/), [Dispatcher Configuration](https://docs.krauler.com/advanced/crawl-dispatcher/), [Performance Optimization](https://docs.krauler.com/advanced/multi-url-crawling/#performance-optimization)
 ---
 
 
@@ -3532,7 +3532,7 @@ sequenceDiagram
     end
 ```
 
-**📖 Learn more:** [Deep Crawling Strategies](https://docs.cr4wlr.com/core/deep-crawling/), [Content Filtering](https://docs.cr4wlr.com/core/content-selection/), [Advanced Crawling Patterns](https://docs.cr4wlr.com/advanced/advanced-features/)
+**📖 Learn more:** [Deep Crawling Strategies](https://docs.krauler.com/core/deep-crawling/), [Content Filtering](https://docs.krauler.com/core/content-selection/), [Advanced Crawling Patterns](https://docs.krauler.com/advanced/advanced-features/)
 ---
 
 
@@ -3551,7 +3551,7 @@ flowchart TD
     B -->|Custom Build| E[Manual Build]
     B -->|Production| F[Production Setup]
     
-    C --> C1[docker pull unclecode/cr4wlr]
+    C --> C1[docker pull unclecode/krauler]
     C1 --> C2{Need LLM Support?}
     C2 -->|Yes| C3[Setup .llm.env]
     C2 -->|No| C4[Basic run]
@@ -4138,7 +4138,7 @@ graph TD
     style Y fill:#fff3e0
 ```
 
-**📖 Learn more:** [Docker Deployment Guide](https://docs.cr4wlr.com/core/docker-deployment/), [API Reference](https://docs.cr4wlr.com/api/), [MCP Integration](https://docs.cr4wlr.com/core/docker-deployment/#mcp-model-context-protocol-support), [Production Configuration](https://docs.cr4wlr.com/core/docker-deployment/#production-deployment)
+**📖 Learn more:** [Docker Deployment Guide](https://docs.krauler.com/core/docker-deployment/), [API Reference](https://docs.krauler.com/api/), [MCP Integration](https://docs.krauler.com/core/docker-deployment/#mcp-model-context-protocol-support), [Production Configuration](https://docs.krauler.com/core/docker-deployment/#production-deployment)
 ---
 
 
@@ -4379,7 +4379,7 @@ graph TB
 ```mermaid
 graph TD
     subgraph "Global Configuration"
-        A[~/.cr4wlr/config.yml] --> B[Default Settings]
+        A[~/.krauler/config.yml] --> B[Default Settings]
         B --> C[LLM Providers]
         B --> D[Browser Defaults]
         B --> E[Output Preferences]
@@ -4486,8 +4486,8 @@ timeline
     title CLI Workflow Evolution
     
     section Setup Phase
-        Installation : pip install cr4wlr
-                    : cr4wlr-setup
+        Installation : pip install krauler
+                    : krauler-setup
         Basic Test   : crwl https://example.com
         Config Setup : crwl config set defaults
     
@@ -4566,7 +4566,7 @@ graph LR
     style D1 fill:#fff3e0
 ```
 
-**📖 Learn more:** [CLI Reference](https://docs.cr4wlr.com/core/cli/), [Identity-Based Crawling](https://docs.cr4wlr.com/advanced/identity-based-crawling/), [Profile Management](https://docs.cr4wlr.com/advanced/session-management/), [Authentication Strategies](https://docs.cr4wlr.com/advanced/hooks-auth/)
+**📖 Learn more:** [CLI Reference](https://docs.krauler.com/core/cli/), [Identity-Based Crawling](https://docs.krauler.com/advanced/identity-based-crawling/), [Profile Management](https://docs.krauler.com/advanced/session-management/), [Authentication Strategies](https://docs.krauler.com/advanced/hooks-auth/)
 ---
 
 
@@ -5041,7 +5041,7 @@ graph LR
     style Q fill:#c8e6c9
 ```
 
-**📖 Learn more:** [HTTP vs Browser Strategies](https://docs.cr4wlr.com/core/browser-crawler-config/), [Performance Optimization](https://docs.cr4wlr.com/advanced/multi-url-crawling/), [Error Handling](https://docs.cr4wlr.com/api/async-webcrawler/)
+**📖 Learn more:** [HTTP vs Browser Strategies](https://docs.krauler.com/core/browser-crawler-config/), [Performance Optimization](https://docs.krauler.com/advanced/multi-url-crawling/), [Error Handling](https://docs.krauler.com/api/async-webcrawler/)
 ---
 
 
@@ -5485,7 +5485,7 @@ graph TB
     style CB3 fill:#f3e5f5
 ```
 
-**📖 Learn more:** [URL Seeding Guide](https://docs.cr4wlr.com/core/url-seeding/), [Performance Optimization](https://docs.cr4wlr.com/advanced/optimization/), [Multi-URL Crawling](https://docs.cr4wlr.com/advanced/multi-url-crawling/)
+**📖 Learn more:** [URL Seeding Guide](https://docs.krauler.com/core/url-seeding/), [Performance Optimization](https://docs.krauler.com/advanced/optimization/), [Multi-URL Crawling](https://docs.krauler.com/advanced/multi-url-crawling/)
 ---
 
 
@@ -5889,7 +5889,7 @@ flowchart TD
     style T fill:#e8f5e8
 ```
 
-**📖 Learn more:** [Deep Crawling Strategy](https://docs.cr4wlr.com/core/deep-crawling/), [Performance Optimization](https://docs.cr4wlr.com/advanced/performance-tuning/), [Custom Implementations](https://docs.cr4wlr.com/advanced/custom-filters/)
+**📖 Learn more:** [Deep Crawling Strategy](https://docs.krauler.com/core/deep-crawling/), [Performance Optimization](https://docs.krauler.com/advanced/performance-tuning/), [Custom Implementations](https://docs.krauler.com/advanced/custom-filters/)
 ---
 
 
@@ -5905,8 +5905,8 @@ Crawl4AI provides a comprehensive solution for web crawling and data extraction 
 - Implement advanced features like deep crawling and custom filters as needed
 
 **Next Steps:**
-- Explore the [GitHub repository](https://github.com/unclecode/cr4wlr) for latest updates
+- Explore the [GitHub repository](https://github.com/unclecode/krauler) for latest updates
 - Join the [Discord community](https://discord.gg/jP8KfhDhyN) for support
-- Check out [example projects](https://github.com/unclecode/cr4wlr/tree/main/docs/examples) for inspiration
+- Check out [example projects](https://github.com/unclecode/krauler/tree/main/docs/examples) for inspiration
 
 Happy crawling! 🕷️

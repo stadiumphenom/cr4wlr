@@ -11,9 +11,9 @@ Uses the new BrowserProfiler class for profile management.
 """
 
 import asyncio
-from cr4wlr import AsyncWebCrawler, BrowserConfig
-from cr4wlr.browser_profiler import BrowserProfiler
-from cr4wlr.async_logger import AsyncLogger
+from krauler import AsyncWebCrawler, BrowserConfig
+from krauler.browser_profiler import BrowserProfiler
+from krauler.async_logger import AsyncLogger
 from colorama import Fore, Style, init
 
 # Initialize colorama

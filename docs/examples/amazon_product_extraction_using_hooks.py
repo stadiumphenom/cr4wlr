@@ -4,9 +4,9 @@ from Amazon search results. It shows how to extract structured data like product
 prices, ratings, and other details using CSS selectors.
 """
 
-from cr4wlr import AsyncWebCrawler, CacheMode
-from cr4wlr import JsonCssExtractionStrategy
-from cr4wlr.async_configs import BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CacheMode
+from krauler import JsonCssExtractionStrategy
+from krauler.async_configs import BrowserConfig, CrawlerRunConfig
 import json
 from playwright.async_api import Page, BrowserContext
 

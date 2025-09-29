@@ -1,6 +1,6 @@
 # ## Issue #236
 # - **Last Updated:** 2024-11-11 01:42:14
-# - **Title:** [user data crawling opens two windows, unable to control correct user browser](https://github.com/unclecode/cr4wlr/issues/236)
+# - **Title:** [user data crawling opens two windows, unable to control correct user browser](https://github.com/unclecode/krauler/issues/236)
 # - **State:** open
 
 import os, sys, time
@@ -11,7 +11,7 @@ __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file
 import os
 import time
 from typing import Dict, Any
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
 
 # Get current directory
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))

@@ -5,7 +5,7 @@ Core configuration classes for controlling browser behavior, crawl operations, L
 ### BrowserConfig - Browser Environment Setup
 
 ```python
-from cr4wlr import BrowserConfig, AsyncWebCrawler
+from krauler import BrowserConfig, AsyncWebCrawler
 
 # Basic browser configuration
 browser_config = BrowserConfig(
@@ -38,9 +38,9 @@ async with AsyncWebCrawler(config=browser_config) as crawler:
 ### CrawlerRunConfig - Crawl Operation Control
 
 ```python
-from cr4wlr import CrawlerRunConfig, CacheMode
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
-from cr4wlr.content_filter_strategy import PruningContentFilter
+from krauler import CrawlerRunConfig, CacheMode
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler.content_filter_strategy import PruningContentFilter
 
 # Basic crawl configuration
 run_config = CrawlerRunConfig(
@@ -156,7 +156,7 @@ config = CrawlerRunConfig(
 ### LLMConfig - Language Model Setup
 
 ```python
-from cr4wlr import LLMConfig
+from krauler import LLMConfig
 
 # OpenAI configuration
 llm_config = LLMConfig(
@@ -196,7 +196,7 @@ llm_config = LLMConfig(
 ### CrawlResult - Understanding Output
 
 ```python
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
+from krauler import AsyncWebCrawler, CrawlerRunConfig
 
 async with AsyncWebCrawler() as crawler:
     result = await crawler.arun("https://example.com", config=run_config)
@@ -351,7 +351,7 @@ stealth_config = CrawlerRunConfig(
 #### User Agent Management & Bot Detection Avoidance
 
 ```python
-from cr4wlr import CrawlerRunConfig
+from krauler import CrawlerRunConfig
 
 # Random user agent generation
 config = CrawlerRunConfig(
@@ -385,7 +385,7 @@ stealth_config = CrawlerRunConfig(
 #### Proxy Configuration with ProxyConfig
 
 ```python
-from cr4wlr import CrawlerRunConfig, ProxyConfig, ProxyRotationStrategy
+from krauler import CrawlerRunConfig, ProxyConfig, ProxyRotationStrategy
 
 # Single proxy configuration
 proxy_config = ProxyConfig(
@@ -421,7 +421,7 @@ proxies_from_env = ProxyConfig.from_env("MY_PROXIES")  # comma-separated proxy s
 #### Content Selection: css_selector vs target_elements
 
 ```python
-from cr4wlr import CrawlerRunConfig
+from krauler import CrawlerRunConfig
 
 # css_selector: Extracts HTML at top level, affects entire processing
 config = CrawlerRunConfig(
@@ -455,7 +455,7 @@ config = CrawlerRunConfig(
 #### Advanced wait_for Conditions
 
 ```python
-from cr4wlr import CrawlerRunConfig
+from krauler import CrawlerRunConfig
 
 # CSS selector waiting
 config = CrawlerRunConfig(
@@ -488,7 +488,7 @@ config = CrawlerRunConfig(
 #### Session Management for Multi-Step Crawling
 
 ```python
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+from krauler import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 # Persistent session across multiple arun() calls
 async def multi_step_crawling():
@@ -542,7 +542,7 @@ async def session_with_shared_data():
 #### Identity-Based Crawling Parameters
 
 ```python
-from cr4wlr import CrawlerRunConfig, GeolocationConfig
+from krauler import CrawlerRunConfig, GeolocationConfig
 
 # Locale and timezone simulation
 config = CrawlerRunConfig(
@@ -594,8 +594,8 @@ identity_config = CrawlerRunConfig(
 #### Simplified Import Pattern
 
 ```python
-# Almost everything from cr4wlr main package
-from cr4wlr import (
+# Almost everything from krauler main package
+from krauler import (
     AsyncWebCrawler,
     BrowserConfig, 
     CrawlerRunConfig,
@@ -605,8 +605,8 @@ from cr4wlr import (
     GeolocationConfig
 )
 
-# Specialized strategies (still from cr4wlr)
-from cr4wlr import (
+# Specialized strategies (still from krauler)
+from krauler import (
     JsonCssExtractionStrategy,
     LLMExtractionStrategy,
     DefaultMarkdownGenerator,
@@ -640,7 +640,7 @@ Comprehensive guide to advanced crawling capabilities including file handling, a
 ### File Download Handling
 
 ```python
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 import os
 
 # Enable downloads with custom path
@@ -678,7 +678,7 @@ async def download_files():
 ### Hooks & Authentication
 
 ```python
-from cr4wlr import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+from krauler import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 from playwright.async_api import Page, BrowserContext
 
 async def advanced_crawler_with_hooks():
@@ -1166,6 +1166,6 @@ async def performance_optimized_crawling():
 ```
 
 
-**📖 Learn more:** [Complete Parameter Reference](https://docs.cr4wlr.com/api/parameters/), [Content Filtering](https://docs.cr4wlr.com/core/markdown-generation/), [Session Management](https://docs.cr4wlr.com/advanced/session-management/), [Network Capture](https://docs.cr4wlr.com/advanced/network-console-capture/)
+**📖 Learn more:** [Complete Parameter Reference](https://docs.krauler.com/api/parameters/), [Content Filtering](https://docs.krauler.com/core/markdown-generation/), [Session Management](https://docs.krauler.com/advanced/session-management/), [Network Capture](https://docs.krauler.com/advanced/network-console-capture/)
 
-**📖 Learn more:** [Hooks & Authentication](https://docs.cr4wlr.com/advanced/hooks-auth/), [Session Management](https://docs.cr4wlr.com/advanced/session-management/), [Network Monitoring](https://docs.cr4wlr.com/advanced/network-console-capture/), [Page Interaction](https://docs.cr4wlr.com/core/page-interaction/), [File Downloads](https://docs.cr4wlr.com/advanced/file-downloading/)
+**📖 Learn more:** [Hooks & Authentication](https://docs.krauler.com/advanced/hooks-auth/), [Session Management](https://docs.krauler.com/advanced/session-management/), [Network Monitoring](https://docs.krauler.com/advanced/network-console-capture/), [Page Interaction](https://docs.krauler.com/core/page-interaction/), [File Downloads](https://docs.krauler.com/advanced/file-downloading/)

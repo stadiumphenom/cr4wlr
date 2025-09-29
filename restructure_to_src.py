@@ -4,7 +4,7 @@ import re
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.join(ROOT, "src")
-PKG_DIR = os.path.join(SRC_DIR, "cr4wlr")
+PKG_DIR = os.path.join(SRC_DIR, "krauler")
 PYPROJECT = os.path.join(ROOT, "pyproject.toml")
 
 def ensure_dirs():
@@ -12,19 +12,19 @@ def ensure_dirs():
     init_file = os.path.join(PKG_DIR, "__init__.py")
     if not os.path.exists(init_file):
         with open(init_file, "w", encoding="utf-8") as f:
-            f.write("# cr4wlr package\n")
+            f.write("# krauler package\n")
 
 def move_package_files():
-    if os.path.exists(os.path.join(ROOT, "cr4wlr")):
-        for filename in os.listdir(os.path.join(ROOT, "cr4wlr")):
-            src_file = os.path.join(ROOT, "cr4wlr", filename)
+    if os.path.exists(os.path.join(ROOT, "krauler")):
+        for filename in os.listdir(os.path.join(ROOT, "krauler")):
+            src_file = os.path.join(ROOT, "krauler", filename)
             dst_file = os.path.join(PKG_DIR, filename)
             if os.path.isfile(src_file):
                 print(f"Moving {src_file} → {dst_file}")
                 shutil.move(src_file, dst_file)
         # cleanup old folder if empty
         try:
-            os.rmdir(os.path.join(ROOT, "cr4wlr"))
+            os.rmdir(os.path.join(ROOT, "krauler"))
         except OSError:
             pass
 
@@ -38,7 +38,7 @@ def patch_pyproject():
 
     setuptools_block = """
 [tool.setuptools]
-packages = {find = {where = ["src"], include = ["cr4wlr*"]}}
+packages = {find = {where = ["src"], include = ["krauler*"]}}
 package-dir = {"" = "src"}
 """
 

@@ -4,8 +4,8 @@ Shows various use cases and features
 """
 
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
-from cr4wlr import c4a_compile, CompilationResult
+from krauler import AsyncWebCrawler, CrawlerRunConfig
+from krauler import c4a_compile, CompilationResult
 
 async def example_basic_usage():
     """Basic C4A-Script usage with Crawl4AI"""
@@ -214,7 +214,7 @@ async def example_combining_with_extraction():
     print("Example 6: C4A-Script + Extraction Strategies")
     print("="*60)
     
-    from cr4wlr import JsonCssExtractionStrategy
+    from krauler import JsonCssExtractionStrategy
     
     # Script to prepare page for extraction
     prep_script = """

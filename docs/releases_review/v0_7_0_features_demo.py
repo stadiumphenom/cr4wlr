@@ -7,7 +7,7 @@ This file demonstrates the major features introduced in v0.7.0 with practical ex
 import asyncio
 import json
 from pathlib import Path
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     CrawlerRunConfig,
     BrowserConfig,

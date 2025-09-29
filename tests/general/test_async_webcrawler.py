@@ -1,7 +1,7 @@
 import asyncio
 import pytest
 from typing import List
-from cr4wlr import (
+from krauler import (
     AsyncWebCrawler,
     BrowserConfig, 
     CrawlerRunConfig,

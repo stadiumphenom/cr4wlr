@@ -1,6 +1,6 @@
 import os, sys
 
-from cr4wlr.types import LLMConfig
+from krauler.types import LLMConfig
 
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -13,10 +13,10 @@ import re
 from typing import Dict
 from bs4 import BeautifulSoup
 from pydantic import BaseModel, Field
-from cr4wlr import AsyncWebCrawler, CacheMode, BrowserConfig, CrawlerRunConfig
-from cr4wlr.markdown_generation_strategy import DefaultMarkdownGenerator
-from cr4wlr.content_filter_strategy import PruningContentFilter
-from cr4wlr import (
+from krauler import AsyncWebCrawler, CacheMode, BrowserConfig, CrawlerRunConfig
+from krauler.markdown_generation_strategy import DefaultMarkdownGenerator
+from krauler.content_filter_strategy import PruningContentFilter
+from krauler import (
     JsonCssExtractionStrategy,
     LLMExtractionStrategy,
 )
@@ -24,9 +24,9 @@ from cr4wlr import (
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 print("Crawl4AI: Advanced Web Crawling and Data Extraction")
-print("GitHub Repository: https://github.com/unclecode/cr4wlr")
+print("GitHub Repository: https://github.com/unclecode/krauler")
 print("Twitter: @unclecode")
-print("Website: https://cr4wlr.com")
+print("Website: https://krauler.com")
 
 
 # Basic Example - Simple Crawl
@@ -138,7 +138,7 @@ async def custom_hook_workflow(verbose=True):
         )
 
         # Perform the crawl operation
-        result = await crawler.arun(url="https://cr4wlr.com")
+        result = await crawler.arun(url="https://krauler.com")
         print(result.markdown.raw_markdown[:500].replace("\n", " -- "))
 
 
@@ -416,7 +416,7 @@ async def crawl_dynamic_content_pages_method_2():
 
 
 async def cosine_similarity_extraction():
-    from cr4wlr import CosineStrategy
+    from krauler import CosineStrategy
     crawl_config = CrawlerRunConfig(
         cache_mode=CacheMode.BYPASS,
         extraction_strategy=CosineStrategy(

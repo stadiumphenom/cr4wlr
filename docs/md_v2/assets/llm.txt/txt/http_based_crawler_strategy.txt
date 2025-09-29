@@ -6,9 +6,9 @@ Fast, lightweight HTTP-only crawling without browser overhead for cases where Ja
 
 ```python
 import asyncio
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig, HTTPCrawlerConfig, CacheMode
-from cr4wlr.async_crawler_strategy import AsyncHTTPCrawlerStrategy
-from cr4wlr.async_logger import AsyncLogger
+from krauler import AsyncWebCrawler, CrawlerRunConfig, HTTPCrawlerConfig, CacheMode
+from krauler.async_crawler_strategy import AsyncHTTPCrawlerStrategy
+from krauler.async_logger import AsyncLogger
 
 async def main():
     # Initialize HTTP strategy
@@ -108,7 +108,7 @@ async def setup_hooks():
     # Before request hook
     async def before_request(url, kwargs):
         print(f"Requesting: {url}")
-        kwargs['headers']['X-Custom-Header'] = 'cr4wlr'
+        kwargs['headers']['X-Custom-Header'] = 'krauler'
         kwargs['headers']['Authorization'] = 'Bearer token123'
     
     # After request hook
@@ -160,7 +160,7 @@ result = await strategy.crawl("https://slow-server.com", config=config)
 ### Error Handling and Retries
 
 ```python
-from cr4wlr.async_crawler_strategy import (
+from krauler.async_crawler_strategy import (
     ConnectionTimeoutError, 
     HTTPStatusError, 
     HTTPCrawlerError
@@ -256,7 +256,7 @@ async def concurrent_http_crawling():
 ### Integration with Content Processing
 
 ```python
-from cr4wlr import DefaultMarkdownGenerator, PruningContentFilter
+from krauler import DefaultMarkdownGenerator, PruningContentFilter
 
 async def http_with_processing():
     # HTTP strategy with content processing
@@ -307,7 +307,7 @@ async def strategy_comparison():
     http_time = time.time() - start_time
     
     # Browser Strategy (full features)
-    from cr4wlr import BrowserConfig
+    from krauler import BrowserConfig
     browser_config = BrowserConfig(headless=True)
     start_time = time.time()
     async with AsyncWebCrawler(config=browser_config) as crawler:
@@ -385,4 +385,4 @@ async def advanced_http_setup():
     await strategy.close()
 ```
 
-**📖 Learn more:** [AsyncWebCrawler API](https://docs.cr4wlr.com/api/async-webcrawler/), [Browser vs HTTP Strategy](https://docs.cr4wlr.com/core/browser-crawler-config/), [Performance Optimization](https://docs.cr4wlr.com/advanced/multi-url-crawling/)
+**📖 Learn more:** [AsyncWebCrawler API](https://docs.krauler.com/api/async-webcrawler/), [Browser vs HTTP Strategy](https://docs.krauler.com/core/browser-crawler-config/), [Performance Optimization](https://docs.krauler.com/advanced/multi-url-crawling/)

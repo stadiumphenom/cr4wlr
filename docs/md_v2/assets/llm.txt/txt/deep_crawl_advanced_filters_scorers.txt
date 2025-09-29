@@ -5,7 +5,7 @@ Advanced URL filtering and scoring strategies for intelligent deep crawling with
 ### URL Filters - Content and Domain Control
 
 ```python
-from cr4wlr.deep_crawling.filters import (
+from krauler.deep_crawling.filters import (
     URLPatternFilter, DomainFilter, ContentTypeFilter, 
     FilterChain, ContentRelevanceFilter, SEOFilter
 )
@@ -115,7 +115,7 @@ print(f"Relevance: {relevance_score}, SEO: {seo_score}")
 ### URL Scorers - Quality and Relevance Scoring
 
 ```python
-from cr4wlr.deep_crawling.scorers import (
+from krauler.deep_crawling.scorers import (
     KeywordRelevanceScorer, PathDepthScorer, ContentTypeScorer,
     FreshnessScorer, DomainAuthorityScorer, CompositeScorer
 )
@@ -322,7 +322,7 @@ filtered = await batch_filter_urls(large_url_list, optimized_chain)
 ### Custom Filter Implementation
 
 ```python
-from cr4wlr.deep_crawling.filters import URLFilter
+from krauler.deep_crawling.filters import URLFilter
 import re
 
 class CustomLanguageFilter(URLFilter):
@@ -356,7 +356,7 @@ class CustomLanguageFilter(URLFilter):
         return False
 
 # Custom scorer implementation
-from cr4wlr.deep_crawling.scorers import URLScorer
+from krauler.deep_crawling.scorers import URLScorer
 
 class CustomComplexityScorer(URLScorer):
     """Score URLs by content complexity indicators"""
@@ -396,8 +396,8 @@ print(f"Complexity score: {complexity_score}")
 ### Integration with Deep Crawling
 
 ```python
-from cr4wlr import AsyncWebCrawler, CrawlerRunConfig
-from cr4wlr.deep_crawling import DeepCrawlStrategy
+from krauler import AsyncWebCrawler, CrawlerRunConfig
+from krauler.deep_crawling import DeepCrawlStrategy
 
 async def deep_crawl_with_filtering():
     # Create comprehensive filter chain
@@ -443,4 +443,4 @@ async def deep_crawl_with_filtering():
 await deep_crawl_with_filtering()
 ```
 
-**📖 Learn more:** [Deep Crawling Strategy](https://docs.cr4wlr.com/core/deep-crawling/), [Custom Filter Development](https://docs.cr4wlr.com/advanced/custom-filters/), [Performance Optimization](https://docs.cr4wlr.com/advanced/performance-tuning/)
+**📖 Learn more:** [Deep Crawling Strategy](https://docs.krauler.com/core/deep-crawling/), [Custom Filter Development](https://docs.krauler.com/advanced/custom-filters/), [Performance Optimization](https://docs.krauler.com/advanced/performance-tuning/)
