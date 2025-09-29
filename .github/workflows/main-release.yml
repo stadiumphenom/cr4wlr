@@ -1,0 +1,88 @@
+name: Main Branch Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bump-version-and-tag:
+    runs-on: ubuntu-latest
+    outputs:
+      new_version: ${{ steps.bump_version.outputs.new_version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Bump patch version in pyproject.toml
+        id: bump_version
+        run: |
+          set -e
+          VERSION_LINE=$(grep -n '^version\s*=\s*"' pyproject.toml | cut -d: -f1)
+          OLD_VERSION=$(grep '^version\s*=\s*"' pyproject.toml | sed 's/.*"\([0-9.]*\)".*/\1/')
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$OLD_VERSION"
+          PATCH=$((PATCH+1))
+          NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+          sed -i "${VERSION_LINE}s/version = \"[0-9.]*\"/version = \"$NEW_VERSION\"/" pyproject.toml
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+      - name: Commit version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pyproject.toml
+          git commit -m "Bump version to ${{ steps.bump_version.outputs.new_version }}"
+          git push
+      - name: Tag the commit
+        run: |
+          git tag v${{ steps.bump_version.outputs.new_version }}
+          git push origin v${{ steps.bump_version.outputs.new_version }}
+
+  build-and-publish:
+    needs: bump-version-and-tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build package
+        run: |
+          pip install build
+          python -m build
+      - name: Publish to PyPI
+        if: ${{ secrets.PYPI_API_TOKEN != '' }}
+        uses: pypa/gh-action-pypi-publish@v1.8.11
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+  github-release:
+    needs: build-and-publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Get changelog
+        id: changelog
+        run: |
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          tail -n 30 CHANGELOG.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ needs.bump-version-and-tag.outputs.new_version }}
+          name: Release v${{ needs.bump-version-and-tag.outputs.new_version }}
+          body: ${{ steps.changelog.outputs.changelog }}
+          files: |
+            dist/*
